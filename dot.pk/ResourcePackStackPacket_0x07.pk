@@ -1,0 +1,79 @@
+ 1478de8:	b5b0      	push	{r4, r5, r7, lr}
+ 1478dea:	b088      	sub	sp, #32
+ 1478dec:	460c      	mov	r4, r1
+ 1478dee:	4605      	mov	r5, r0
+ 1478df0:	4620      	mov	r0, r4
+ 1478df2:	f492 cf68 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+ 1478df6:	f885 0028 	strb.w	r0, [r5, #40]	; 0x28
+ 1478dfa:	2001      	movs	r0, #1
+ 1478dfc:	f48d c95a 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1478e00:	4924      	ldr	r1, [pc, #144]	; (1478e94 <ResourcePackStackPacket::read(BinaryStream&)+0xac>)
+ 1478e02:	4a25      	ldr	r2, [pc, #148]	; (1478e98 <ResourcePackStackPacket::read(BinaryStream&)+0xb0>)
+ 1478e04:	4479      	add	r1, pc
+ 1478e06:	9004      	str	r0, [sp, #16]
+ 1478e08:	447a      	add	r2, pc
+ 1478e0a:	6809      	ldr	r1, [r1, #0]
+ 1478e0c:	6812      	ldr	r2, [r2, #0]
+ 1478e0e:	e9cd 2106 	strd	r2, r1, [sp, #24]
+ 1478e12:	f105 0110 	add.w	r1, r5, #16
+ 1478e16:	aa04      	add	r2, sp, #16
+ 1478e18:	4620      	mov	r0, r4
+ 1478e1a:	f4ce ca56 	blx	9472c8 <void ReadOnlyBinaryStream::readVectorList<PackInstanceId>(std::vector<PackInstanceId, std::allocator<PackInstanceId> >&, std::function<PackInstanceId (ReadOnlyBinaryStream&)>&&)@plt>
+ 1478e1e:	9b06      	ldr	r3, [sp, #24]
+ 1478e20:	b11b      	cbz	r3, 1478e2a <ResourcePackStackPacket::read(BinaryStream&)+0x42>
+ 1478e22:	a804      	add	r0, sp, #16
+ 1478e24:	2203      	movs	r2, #3
+ 1478e26:	4601      	mov	r1, r0
+ 1478e28:	4798      	blx	r3
+ 1478e2a:	2001      	movs	r0, #1
+ 1478e2c:	f48d c942 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1478e30:	491a      	ldr	r1, [pc, #104]	; (1478e9c <ResourcePackStackPacket::read(BinaryStream&)+0xb4>)
+ 1478e32:	4a1b      	ldr	r2, [pc, #108]	; (1478ea0 <ResourcePackStackPacket::read(BinaryStream&)+0xb8>)
+ 1478e34:	4479      	add	r1, pc
+ 1478e36:	9000      	str	r0, [sp, #0]
+ 1478e38:	447a      	add	r2, pc
+ 1478e3a:	6809      	ldr	r1, [r1, #0]
+ 1478e3c:	6812      	ldr	r2, [r2, #0]
+ 1478e3e:	e9cd 2102 	strd	r2, r1, [sp, #8]
+ 1478e42:	f105 011c 	add.w	r1, r5, #28
+ 1478e46:	466a      	mov	r2, sp
+ 1478e48:	4620      	mov	r0, r4
+ 1478e4a:	f4ce ca3e 	blx	9472c8 <void ReadOnlyBinaryStream::readVectorList<PackInstanceId>(std::vector<PackInstanceId, std::allocator<PackInstanceId> >&, std::function<PackInstanceId (ReadOnlyBinaryStream&)>&&)@plt>
+ 1478e4e:	9b02      	ldr	r3, [sp, #8]
+ 1478e50:	b11b      	cbz	r3, 1478e5a <ResourcePackStackPacket::read(BinaryStream&)+0x72>
+ 1478e52:	4668      	mov	r0, sp
+ 1478e54:	2203      	movs	r2, #3
+ 1478e56:	4601      	mov	r1, r0
+ 1478e58:	4798      	blx	r3
+ 1478e5a:	b008      	add	sp, #32
+ 1478e5c:	bdb0      	pop	{r4, r5, r7, pc}
+ 1478e5e:	9b06      	ldr	r3, [sp, #24]
+ 1478e60:	4604      	mov	r4, r0
+ 1478e62:	b16b      	cbz	r3, 1478e80 <ResourcePackStackPacket::read(BinaryStream&)+0x98>
+ 1478e64:	a804      	add	r0, sp, #16
+ 1478e66:	2203      	movs	r2, #3
+ 1478e68:	4601      	mov	r1, r0
+ 1478e6a:	4798      	blx	r3
+ 1478e6c:	e008      	b.n	1478e80 <ResourcePackStackPacket::read(BinaryStream&)+0x98>
+ 1478e6e:	f665 dc83 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1478e72:	9b02      	ldr	r3, [sp, #8]
+ 1478e74:	4604      	mov	r4, r0
+ 1478e76:	b11b      	cbz	r3, 1478e80 <ResourcePackStackPacket::read(BinaryStream&)+0x98>
+ 1478e78:	4668      	mov	r0, sp
+ 1478e7a:	2203      	movs	r2, #3
+ 1478e7c:	4601      	mov	r1, r0
+ 1478e7e:	4798      	blx	r3
+ 1478e80:	4620      	mov	r0, r4
+ 1478e82:	f48d c912 	blx	9060a8 <_Unwind_Resume@plt>
+ 1478e86:	f665 dc77 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1478e8a:	f665 dc75 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1478e8e:	f665 dc73 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1478e92:	bf00      	nop
+ 1478e94:	2f7c      	cmp	r7, #124	; 0x7c
+ 1478e96:	0133      	lsls	r3, r6, #4
+ 1478e98:	2f7c      	cmp	r7, #124	; 0x7c
+ 1478e9a:	0133      	lsls	r3, r6, #4
+ 1478e9c:	2f54      	cmp	r7, #84	; 0x54
+ 1478e9e:	0133      	lsls	r3, r6, #4
+ 1478ea0:	2f54      	cmp	r7, #84	; 0x54
+ 1478ea2:	0133      	lsls	r3, r6, #4

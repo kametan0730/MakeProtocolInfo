@@ -1,0 +1,98 @@
+  ddcf80:	b5b0      	push	{r4, r5, r7, lr}
+  ddcf82:	b086      	sub	sp, #24
+  ddcf84:	ad04      	add	r5, sp, #16
+  ddcf86:	4604      	mov	r4, r0
+  ddcf88:	4628      	mov	r0, r5
+  ddcf8a:	f72a e074 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ddcf8e:	a801      	add	r0, sp, #4
+  ddcf90:	4629      	mov	r1, r5
+  ddcf92:	f73f e2f2 	blx	91c578 <SubClientConnectionRequest::fromString(std::string const&)@plt>
+  ddcf96:	200c      	movs	r0, #12
+  ddcf98:	f729 e08c 	blx	9060b4 <operator new(unsigned int)@plt>
+  ddcf9c:	4605      	mov	r5, r0
+  ddcf9e:	a901      	add	r1, sp, #4
+  ddcfa0:	4628      	mov	r0, r5
+  ddcfa2:	f73f e014 	blx	91bfcc <SubClientConnectionRequest::SubClientConnectionRequest(SubClientConnectionRequest const&)@plt>
+  ddcfa6:	6920      	ldr	r0, [r4, #16]
+  ddcfa8:	6125      	str	r5, [r4, #16]
+  ddcfaa:	b118      	cbz	r0, ddcfb4 <SubClientLoginPacket::read(BinaryStream&)+0x34>
+  ddcfac:	f73f e014 	blx	91bfd8 <SubClientConnectionRequest::~SubClientConnectionRequest()@plt>
+  ddcfb0:	f729 e074 	blx	90609c <operator delete(void*)@plt>
+  ddcfb4:	a801      	add	r0, sp, #4
+  ddcfb6:	f73f e010 	blx	91bfd8 <SubClientConnectionRequest::~SubClientConnectionRequest()@plt>
+  ddcfba:	482c      	ldr	r0, [pc, #176]	; (ddd06c <SubClientLoginPacket::read(BinaryStream&)+0xec>)
+  ddcfbc:	9904      	ldr	r1, [sp, #16]
+  ddcfbe:	4478      	add	r0, pc
+  ddcfc0:	6802      	ldr	r2, [r0, #0]
+  ddcfc2:	f1a1 000c 	sub.w	r0, r1, #12
+  ddcfc6:	4290      	cmp	r0, r2
+  ddcfc8:	d101      	bne.n	ddcfce <SubClientLoginPacket::read(BinaryStream&)+0x4e>
+  ddcfca:	b006      	add	sp, #24
+  ddcfcc:	bdb0      	pop	{r4, r5, r7, pc}
+  ddcfce:	4a28      	ldr	r2, [pc, #160]	; (ddd070 <SubClientLoginPacket::read(BinaryStream&)+0xf0>)
+  ddcfd0:	447a      	add	r2, pc
+  ddcfd2:	6813      	ldr	r3, [r2, #0]
+  ddcfd4:	1f0a      	subs	r2, r1, #4
+  ddcfd6:	b15b      	cbz	r3, ddcff0 <SubClientLoginPacket::read(BinaryStream&)+0x70>
+  ddcfd8:	f3bf 8f5b 	dmb	ish
+  ddcfdc:	e852 1f00 	ldrex	r1, [r2]
+  ddcfe0:	1e4b      	subs	r3, r1, #1
+  ddcfe2:	e842 3500 	strex	r5, r3, [r2]
+  ddcfe6:	2d00      	cmp	r5, #0
+  ddcfe8:	d1f8      	bne.n	ddcfdc <SubClientLoginPacket::read(BinaryStream&)+0x5c>
+  ddcfea:	f3bf 8f5b 	dmb	ish
+  ddcfee:	e002      	b.n	ddcff6 <SubClientLoginPacket::read(BinaryStream&)+0x76>
+  ddcff0:	6811      	ldr	r1, [r2, #0]
+  ddcff2:	1e4b      	subs	r3, r1, #1
+  ddcff4:	6013      	str	r3, [r2, #0]
+  ddcff6:	2900      	cmp	r1, #0
+  ddcff8:	bfdc      	itt	le
+  ddcffa:	f10d 0114 	addle.w	r1, sp, #20
+  ddcffe:	f3a7 eb6e 	blxle	11846dc <RealmsPendingInvitationsScreenController::RealmsPendingInvitationsScreenController(std::shared_ptr<MainMenuScreenModel>, bool)+0x1c4>
+  ddd002:	e7e2      	b.n	ddcfca <SubClientLoginPacket::read(BinaryStream&)+0x4a>
+  ddd004:	4604      	mov	r4, r0
+  ddd006:	e008      	b.n	ddd01a <SubClientLoginPacket::read(BinaryStream&)+0x9a>
+  ddd008:	4604      	mov	r4, r0
+  ddd00a:	e003      	b.n	ddd014 <SubClientLoginPacket::read(BinaryStream&)+0x94>
+  ddd00c:	4604      	mov	r4, r0
+  ddd00e:	4628      	mov	r0, r5
+  ddd010:	f729 e044 	blx	90609c <operator delete(void*)@plt>
+  ddd014:	a801      	add	r0, sp, #4
+  ddd016:	f73e e7e0 	blx	91bfd8 <SubClientConnectionRequest::~SubClientConnectionRequest()@plt>
+  ddd01a:	4812      	ldr	r0, [pc, #72]	; (ddd064 <SubClientLoginPacket::read(BinaryStream&)+0xe4>)
+  ddd01c:	9904      	ldr	r1, [sp, #16]
+  ddd01e:	4478      	add	r0, pc
+  ddd020:	6802      	ldr	r2, [r0, #0]
+  ddd022:	f1a1 000c 	sub.w	r0, r1, #12
+  ddd026:	4290      	cmp	r0, r2
+  ddd028:	d015      	beq.n	ddd056 <SubClientLoginPacket::read(BinaryStream&)+0xd6>
+  ddd02a:	4a0f      	ldr	r2, [pc, #60]	; (ddd068 <SubClientLoginPacket::read(BinaryStream&)+0xe8>)
+  ddd02c:	447a      	add	r2, pc
+  ddd02e:	6813      	ldr	r3, [r2, #0]
+  ddd030:	1f0a      	subs	r2, r1, #4
+  ddd032:	b19b      	cbz	r3, ddd05c <SubClientLoginPacket::read(BinaryStream&)+0xdc>
+  ddd034:	f3bf 8f5b 	dmb	ish
+  ddd038:	e852 1f00 	ldrex	r1, [r2]
+  ddd03c:	1e4b      	subs	r3, r1, #1
+  ddd03e:	e842 3500 	strex	r5, r3, [r2]
+  ddd042:	2d00      	cmp	r5, #0
+  ddd044:	d1f8      	bne.n	ddd038 <SubClientLoginPacket::read(BinaryStream&)+0xb8>
+  ddd046:	f3bf 8f5b 	dmb	ish
+  ddd04a:	2900      	cmp	r1, #0
+  ddd04c:	bfdc      	itt	le
+  ddd04e:	f10d 0114 	addle.w	r1, sp, #20
+  ddd052:	f3a7 eb44 	blxle	11846dc <RealmsPendingInvitationsScreenController::RealmsPendingInvitationsScreenController(std::shared_ptr<MainMenuScreenModel>, bool)+0x1c4>
+  ddd056:	4620      	mov	r0, r4
+  ddd058:	f729 e026 	blx	9060a8 <_Unwind_Resume@plt>
+  ddd05c:	6811      	ldr	r1, [r2, #0]
+  ddd05e:	1e4b      	subs	r3, r1, #1
+  ddd060:	6013      	str	r3, [r2, #0]
+  ddd062:	e7f2      	b.n	ddd04a <SubClientLoginPacket::read(BinaryStream&)+0xca>
+  ddd064:	7eae      	ldrb	r6, [r5, #26]
+  ddd066:	019c      	lsls	r4, r3, #6
+  ddd068:	7ea4      	ldrb	r4, [r4, #26]
+  ddd06a:	019c      	lsls	r4, r3, #6
+  ddd06c:	7f0e      	ldrb	r6, [r1, #28]
+  ddd06e:	019c      	lsls	r4, r3, #6
+  ddd070:	7f00      	ldrb	r0, [r0, #28]
+  ddd072:	019c      	lsls	r4, r3, #6

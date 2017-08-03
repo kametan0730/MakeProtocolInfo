@@ -1,0 +1,42 @@
+ 148777c:	b5b0      	push	{r4, r5, r7, lr}
+ 148777e:	b084      	sub	sp, #16
+ 1487780:	4604      	mov	r4, r0
+ 1487782:	2001      	movs	r0, #1
+ 1487784:	460d      	mov	r5, r1
+ 1487786:	f47e cc96 	blx	9060b4 <operator new(unsigned int)@plt>
+ 148778a:	4913      	ldr	r1, [pc, #76]	; (14877d8 <CraftingDataPacket::read(BinaryStream&)+0x5c>)
+ 148778c:	4a13      	ldr	r2, [pc, #76]	; (14877dc <CraftingDataPacket::read(BinaryStream&)+0x60>)
+ 148778e:	4479      	add	r1, pc
+ 1487790:	9000      	str	r0, [sp, #0]
+ 1487792:	447a      	add	r2, pc
+ 1487794:	e9cd 2102 	strd	r2, r1, [sp, #8]
+ 1487798:	f104 0110 	add.w	r1, r4, #16
+ 148779c:	466a      	mov	r2, sp
+ 148779e:	4628      	mov	r0, r5
+ 14877a0:	f4c1 ca28 	blx	948bf4 <void ReadOnlyBinaryStream::readVectorList<CraftingDataEntry>(std::vector<CraftingDataEntry, std::allocator<CraftingDataEntry> >&, std::function<CraftingDataEntry (ReadOnlyBinaryStream&)>&&)@plt>
+ 14877a4:	9b02      	ldr	r3, [sp, #8]
+ 14877a6:	b11b      	cbz	r3, 14877b0 <CraftingDataPacket::read(BinaryStream&)+0x34>
+ 14877a8:	4668      	mov	r0, sp
+ 14877aa:	2203      	movs	r2, #3
+ 14877ac:	4601      	mov	r1, r0
+ 14877ae:	4798      	blx	r3
+ 14877b0:	4628      	mov	r0, r5
+ 14877b2:	f484 ca88 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+ 14877b6:	7720      	strb	r0, [r4, #28]
+ 14877b8:	b004      	add	sp, #16
+ 14877ba:	bdb0      	pop	{r4, r5, r7, pc}
+ 14877bc:	9b02      	ldr	r3, [sp, #8]
+ 14877be:	4604      	mov	r4, r0
+ 14877c0:	b11b      	cbz	r3, 14877ca <CraftingDataPacket::read(BinaryStream&)+0x4e>
+ 14877c2:	4668      	mov	r0, sp
+ 14877c4:	2203      	movs	r2, #3
+ 14877c6:	4601      	mov	r1, r0
+ 14877c8:	4798      	blx	r3
+ 14877ca:	4620      	mov	r0, r4
+ 14877cc:	f47e cc6c 	blx	9060a8 <_Unwind_Resume@plt>
+ 14877d0:	f656 dfd2 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 14877d4:	f656 dfd0 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 14877d8:	0679      	lsls	r1, r7, #25
+ 14877da:	0000      	movs	r0, r0
+ 14877dc:	06df      	lsls	r7, r3, #27
+	...

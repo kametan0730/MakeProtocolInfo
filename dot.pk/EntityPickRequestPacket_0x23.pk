@@ -1,0 +1,10 @@
+  e1e748:	b5b0      	push	{r4, r5, r7, lr}
+  e1e74a:	460c      	mov	r4, r1
+  e1e74c:	4605      	mov	r5, r0
+  e1e74e:	4620      	mov	r0, r4
+  e1e750:	f6f6 e40e 	blx	914f70 <ReadOnlyBinaryStream::getSignedInt64()@plt>
+  e1e754:	e9c5 0104 	strd	r0, r1, [r5, #16]
+  e1e758:	4620      	mov	r0, r4
+  e1e75a:	f6e8 e450 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+  e1e75e:	7628      	strb	r0, [r5, #24]
+  e1e760:	bdb0      	pop	{r4, r5, r7, pc}

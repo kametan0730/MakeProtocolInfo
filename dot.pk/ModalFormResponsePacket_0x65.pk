@@ -1,0 +1,83 @@
+  ca9594:	b570      	push	{r4, r5, r6, lr}
+  ca9596:	b084      	sub	sp, #16
+  ca9598:	460c      	mov	r4, r1
+  ca959a:	4605      	mov	r5, r0
+  ca959c:	4620      	mov	r0, r4
+  ca959e:	f46b ec40 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ca95a2:	ae01      	add	r6, sp, #4
+  ca95a4:	6128      	str	r0, [r5, #16]
+  ca95a6:	4621      	mov	r1, r4
+  ca95a8:	4630      	mov	r0, r6
+  ca95aa:	f45d ed64 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ca95ae:	f105 0014 	add.w	r0, r5, #20
+  ca95b2:	4631      	mov	r1, r6
+  ca95b4:	f0e5 e85e 	blx	d8e674 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x4bc>
+  ca95b8:	4827      	ldr	r0, [pc, #156]	; (ca9658 <ModalFormResponsePacket::read(BinaryStream&)+0xc4>)
+  ca95ba:	9901      	ldr	r1, [sp, #4]
+  ca95bc:	4478      	add	r0, pc
+  ca95be:	6802      	ldr	r2, [r0, #0]
+  ca95c0:	f1a1 000c 	sub.w	r0, r1, #12
+  ca95c4:	4290      	cmp	r0, r2
+  ca95c6:	d101      	bne.n	ca95cc <ModalFormResponsePacket::read(BinaryStream&)+0x38>
+  ca95c8:	b004      	add	sp, #16
+  ca95ca:	bd70      	pop	{r4, r5, r6, pc}
+  ca95cc:	4a23      	ldr	r2, [pc, #140]	; (ca965c <ModalFormResponsePacket::read(BinaryStream&)+0xc8>)
+  ca95ce:	447a      	add	r2, pc
+  ca95d0:	6813      	ldr	r3, [r2, #0]
+  ca95d2:	1f0a      	subs	r2, r1, #4
+  ca95d4:	b15b      	cbz	r3, ca95ee <ModalFormResponsePacket::read(BinaryStream&)+0x5a>
+  ca95d6:	f3bf 8f5b 	dmb	ish
+  ca95da:	e852 1f00 	ldrex	r1, [r2]
+  ca95de:	1e4b      	subs	r3, r1, #1
+  ca95e0:	e842 3600 	strex	r6, r3, [r2]
+  ca95e4:	2e00      	cmp	r6, #0
+  ca95e6:	d1f8      	bne.n	ca95da <ModalFormResponsePacket::read(BinaryStream&)+0x46>
+  ca95e8:	f3bf 8f5b 	dmb	ish
+  ca95ec:	e002      	b.n	ca95f4 <ModalFormResponsePacket::read(BinaryStream&)+0x60>
+  ca95ee:	6811      	ldr	r1, [r2, #0]
+  ca95f0:	1e4b      	subs	r3, r1, #1
+  ca95f2:	6013      	str	r3, [r2, #0]
+  ca95f4:	2900      	cmp	r1, #0
+  ca95f6:	bfdc      	itt	le
+  ca95f8:	f10d 0108 	addle.w	r1, sp, #8
+  ca95fc:	f0e4 ef2a 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca9600:	e7e2      	b.n	ca95c8 <ModalFormResponsePacket::read(BinaryStream&)+0x34>
+  ca9602:	4a13      	ldr	r2, [pc, #76]	; (ca9650 <ModalFormResponsePacket::read(BinaryStream&)+0xbc>)
+  ca9604:	4604      	mov	r4, r0
+  ca9606:	9901      	ldr	r1, [sp, #4]
+  ca9608:	447a      	add	r2, pc
+  ca960a:	f1a1 000c 	sub.w	r0, r1, #12
+  ca960e:	6812      	ldr	r2, [r2, #0]
+  ca9610:	4290      	cmp	r0, r2
+  ca9612:	d015      	beq.n	ca9640 <ModalFormResponsePacket::read(BinaryStream&)+0xac>
+  ca9614:	4a0f      	ldr	r2, [pc, #60]	; (ca9654 <ModalFormResponsePacket::read(BinaryStream&)+0xc0>)
+  ca9616:	447a      	add	r2, pc
+  ca9618:	6813      	ldr	r3, [r2, #0]
+  ca961a:	1f0a      	subs	r2, r1, #4
+  ca961c:	b19b      	cbz	r3, ca9646 <ModalFormResponsePacket::read(BinaryStream&)+0xb2>
+  ca961e:	f3bf 8f5b 	dmb	ish
+  ca9622:	e852 1f00 	ldrex	r1, [r2]
+  ca9626:	1e4b      	subs	r3, r1, #1
+  ca9628:	e842 3600 	strex	r6, r3, [r2]
+  ca962c:	2e00      	cmp	r6, #0
+  ca962e:	d1f8      	bne.n	ca9622 <ModalFormResponsePacket::read(BinaryStream&)+0x8e>
+  ca9630:	f3bf 8f5b 	dmb	ish
+  ca9634:	2900      	cmp	r1, #0
+  ca9636:	bfdc      	itt	le
+  ca9638:	f10d 010c 	addle.w	r1, sp, #12
+  ca963c:	f0e4 ef0a 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca9640:	4620      	mov	r0, r4
+  ca9642:	f45c ed32 	blx	9060a8 <_Unwind_Resume@plt>
+  ca9646:	6811      	ldr	r1, [r2, #0]
+  ca9648:	1e4b      	subs	r3, r1, #1
+  ca964a:	6013      	str	r3, [r2, #0]
+  ca964c:	e7f2      	b.n	ca9634 <ModalFormResponsePacket::read(BinaryStream&)+0xa0>
+  ca964e:	bf00      	nop
+  ca9650:	b8c4      			; <UNDEFINED> instruction: 0xb8c4
+  ca9652:	01af      	lsls	r7, r5, #6
+  ca9654:	b8ba      			; <UNDEFINED> instruction: 0xb8ba
+  ca9656:	01af      	lsls	r7, r5, #6
+  ca9658:	b910      	cbnz	r0, ca9660 <ModalFormResponsePacket::handle(NetworkIdentifier const&, NetEventCallback&) const>
+  ca965a:	01af      	lsls	r7, r5, #6
+  ca965c:	b902      	cbnz	r2, ca9660 <ModalFormResponsePacket::handle(NetworkIdentifier const&, NetEventCallback&) const>
+  ca965e:	01af      	lsls	r7, r5, #6

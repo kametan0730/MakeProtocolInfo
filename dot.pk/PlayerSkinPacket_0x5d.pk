@@ -1,0 +1,441 @@
+  ca5aac:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+  ca5ab0:	b08a      	sub	sp, #40	; 0x28
+  ca5ab2:	4604      	mov	r4, r0
+  ca5ab4:	a806      	add	r0, sp, #24
+  ca5ab6:	4688      	mov	r8, r1
+  ca5ab8:	f46f e9ca 	blx	914e50 <mce::UUID ReadOnlyBinaryStream::getType<mce::UUID>()@plt>
+  ca5abc:	ab06      	add	r3, sp, #24
+  ca5abe:	ae05      	add	r6, sp, #20
+  ca5ac0:	cb0f      	ldmia	r3, {r0, r1, r2, r3}
+  ca5ac2:	f104 0c10 	add.w	ip, r4, #16
+  ca5ac6:	e88c 000f 	stmia.w	ip, {r0, r1, r2, r3}
+  ca5aca:	4630      	mov	r0, r6
+  ca5acc:	4641      	mov	r1, r8
+  ca5ace:	f461 ead2 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ca5ad2:	f104 0020 	add.w	r0, r4, #32
+  ca5ad6:	4631      	mov	r1, r6
+  ca5ad8:	f0e8 edcc 	blx	d8e674 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x4bc>
+  ca5adc:	f8df 0404 	ldr.w	r0, [pc, #1028]	; ca5ee4 <PlayerSkinPacket::read(BinaryStream&)+0x438>
+  ca5ae0:	9905      	ldr	r1, [sp, #20]
+  ca5ae2:	4478      	add	r0, pc
+  ca5ae4:	6802      	ldr	r2, [r0, #0]
+  ca5ae6:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5aea:	4290      	cmp	r0, r2
+  ca5aec:	f040 8094 	bne.w	ca5c18 <PlayerSkinPacket::read(BinaryStream&)+0x16c>
+  ca5af0:	ae04      	add	r6, sp, #16
+  ca5af2:	4641      	mov	r1, r8
+  ca5af4:	4630      	mov	r0, r6
+  ca5af6:	f461 eabe 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ca5afa:	f104 0038 	add.w	r0, r4, #56	; 0x38
+  ca5afe:	4631      	mov	r1, r6
+  ca5b00:	f0e8 edb8 	blx	d8e674 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x4bc>
+  ca5b04:	f8df 03ec 	ldr.w	r0, [pc, #1004]	; ca5ef4 <PlayerSkinPacket::read(BinaryStream&)+0x448>
+  ca5b08:	9904      	ldr	r1, [sp, #16]
+  ca5b0a:	4478      	add	r0, pc
+  ca5b0c:	6802      	ldr	r2, [r0, #0]
+  ca5b0e:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5b12:	4290      	cmp	r0, r2
+  ca5b14:	f040 8092 	bne.w	ca5c3c <PlayerSkinPacket::read(BinaryStream&)+0x190>
+  ca5b18:	ae03      	add	r6, sp, #12
+  ca5b1a:	4641      	mov	r1, r8
+  ca5b1c:	4630      	mov	r0, r6
+  ca5b1e:	f461 eaaa 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ca5b22:	f104 003c 	add.w	r0, r4, #60	; 0x3c
+  ca5b26:	4631      	mov	r1, r6
+  ca5b28:	f0e8 eda4 	blx	d8e674 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x4bc>
+  ca5b2c:	f8df 03d4 	ldr.w	r0, [pc, #980]	; ca5f04 <PlayerSkinPacket::read(BinaryStream&)+0x458>
+  ca5b30:	9903      	ldr	r1, [sp, #12]
+  ca5b32:	4478      	add	r0, pc
+  ca5b34:	6802      	ldr	r2, [r0, #0]
+  ca5b36:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5b3a:	4290      	cmp	r0, r2
+  ca5b3c:	f040 8090 	bne.w	ca5c60 <PlayerSkinPacket::read(BinaryStream&)+0x1b4>
+  ca5b40:	a802      	add	r0, sp, #8
+  ca5b42:	4641      	mov	r1, r8
+  ca5b44:	f461 ea96 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ca5b48:	9f02      	ldr	r7, [sp, #8]
+  ca5b4a:	f857 0c04 	ldr.w	r0, [r7, #-4]
+  ca5b4e:	f1b0 3fff 	cmp.w	r0, #4294967295
+  ca5b52:	dd0c      	ble.n	ca5b6e <PlayerSkinPacket::read(BinaryStream&)+0xc2>
+  ca5b54:	a802      	add	r0, sp, #8
+  ca5b56:	f0e8 ec9e 	blx	d8e494 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x2dc>
+  ca5b5a:	9f02      	ldr	r7, [sp, #8]
+  ca5b5c:	f857 0c04 	ldr.w	r0, [r7, #-4]
+  ca5b60:	2800      	cmp	r0, #0
+  ca5b62:	db06      	blt.n	ca5b72 <PlayerSkinPacket::read(BinaryStream&)+0xc6>
+  ca5b64:	a802      	add	r0, sp, #8
+  ca5b66:	f0e8 ec96 	blx	d8e494 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x2dc>
+  ca5b6a:	9802      	ldr	r0, [sp, #8]
+  ca5b6c:	e002      	b.n	ca5b74 <PlayerSkinPacket::read(BinaryStream&)+0xc8>
+  ca5b6e:	4638      	mov	r0, r7
+  ca5b70:	e000      	b.n	ca5b74 <PlayerSkinPacket::read(BinaryStream&)+0xc8>
+  ca5b72:	4638      	mov	r0, r7
+  ca5b74:	f850 1c0c 	ldr.w	r1, [r0, #-12]
+  ca5b78:	1845      	adds	r5, r0, r1
+  ca5b7a:	1bee      	subs	r6, r5, r7
+  ca5b7c:	d102      	bne.n	ca5b84 <PlayerSkinPacket::read(BinaryStream&)+0xd8>
+  ca5b7e:	2000      	movs	r0, #0
+  ca5b80:	2200      	movs	r2, #0
+  ca5b82:	e013      	b.n	ca5bac <PlayerSkinPacket::read(BinaryStream&)+0x100>
+  ca5b84:	4630      	mov	r0, r6
+  ca5b86:	f460 ea96 	blx	9060b4 <operator new(unsigned int)@plt>
+  ca5b8a:	1981      	adds	r1, r0, r6
+  ca5b8c:	2e01      	cmp	r6, #1
+  ca5b8e:	db0b      	blt.n	ca5ba8 <PlayerSkinPacket::read(BinaryStream&)+0xfc>
+  ca5b90:	1c6a      	adds	r2, r5, #1
+  ca5b92:	1bd3      	subs	r3, r2, r7
+  ca5b94:	4602      	mov	r2, r0
+  ca5b96:	f817 6b01 	ldrb.w	r6, [r7], #1
+  ca5b9a:	3b01      	subs	r3, #1
+  ca5b9c:	f802 6b01 	strb.w	r6, [r2], #1
+  ca5ba0:	2b01      	cmp	r3, #1
+  ca5ba2:	dcf8      	bgt.n	ca5b96 <PlayerSkinPacket::read(BinaryStream&)+0xea>
+  ca5ba4:	460e      	mov	r6, r1
+  ca5ba6:	e001      	b.n	ca5bac <PlayerSkinPacket::read(BinaryStream&)+0x100>
+  ca5ba8:	460e      	mov	r6, r1
+  ca5baa:	4602      	mov	r2, r0
+  ca5bac:	6a61      	ldr	r1, [r4, #36]	; 0x24
+  ca5bae:	f104 0324 	add.w	r3, r4, #36	; 0x24
+  ca5bb2:	c345      	stmia	r3!, {r0, r2, r6}
+  ca5bb4:	2900      	cmp	r1, #0
+  ca5bb6:	bf1c      	itt	ne
+  ca5bb8:	4608      	movne	r0, r1
+  ca5bba:	f460 ea70 	blxne	90609c <operator delete(void*)@plt>
+  ca5bbe:	a801      	add	r0, sp, #4
+  ca5bc0:	4641      	mov	r1, r8
+  ca5bc2:	f461 ea58 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ca5bc6:	f104 0030 	add.w	r0, r4, #48	; 0x30
+  ca5bca:	a901      	add	r1, sp, #4
+  ca5bcc:	f0e8 ed52 	blx	d8e674 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x4bc>
+  ca5bd0:	48d0      	ldr	r0, [pc, #832]	; (ca5f14 <PlayerSkinPacket::read(BinaryStream&)+0x468>)
+  ca5bd2:	9901      	ldr	r1, [sp, #4]
+  ca5bd4:	4478      	add	r0, pc
+  ca5bd6:	6802      	ldr	r2, [r0, #0]
+  ca5bd8:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5bdc:	4290      	cmp	r0, r2
+  ca5bde:	d151      	bne.n	ca5c84 <PlayerSkinPacket::read(BinaryStream&)+0x1d8>
+  ca5be0:	4668      	mov	r0, sp
+  ca5be2:	4641      	mov	r1, r8
+  ca5be4:	f461 ea46 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ca5be8:	f104 0034 	add.w	r0, r4, #52	; 0x34
+  ca5bec:	4669      	mov	r1, sp
+  ca5bee:	f0e8 ed42 	blx	d8e674 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x4bc>
+  ca5bf2:	48ce      	ldr	r0, [pc, #824]	; (ca5f2c <PlayerSkinPacket::read(BinaryStream&)+0x480>)
+  ca5bf4:	9900      	ldr	r1, [sp, #0]
+  ca5bf6:	4478      	add	r0, pc
+  ca5bf8:	6802      	ldr	r2, [r0, #0]
+  ca5bfa:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5bfe:	4290      	cmp	r0, r2
+  ca5c00:	d152      	bne.n	ca5ca8 <PlayerSkinPacket::read(BinaryStream&)+0x1fc>
+  ca5c02:	48cc      	ldr	r0, [pc, #816]	; (ca5f34 <PlayerSkinPacket::read(BinaryStream&)+0x488>)
+  ca5c04:	9902      	ldr	r1, [sp, #8]
+  ca5c06:	4478      	add	r0, pc
+  ca5c08:	6802      	ldr	r2, [r0, #0]
+  ca5c0a:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5c0e:	4290      	cmp	r0, r2
+  ca5c10:	d15c      	bne.n	ca5ccc <PlayerSkinPacket::read(BinaryStream&)+0x220>
+  ca5c12:	b00a      	add	sp, #40	; 0x28
+  ca5c14:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+  ca5c18:	4ab3      	ldr	r2, [pc, #716]	; (ca5ee8 <PlayerSkinPacket::read(BinaryStream&)+0x43c>)
+  ca5c1a:	447a      	add	r2, pc
+  ca5c1c:	6813      	ldr	r3, [r2, #0]
+  ca5c1e:	1f0a      	subs	r2, r1, #4
+  ca5c20:	2b00      	cmp	r3, #0
+  ca5c22:	d064      	beq.n	ca5cee <PlayerSkinPacket::read(BinaryStream&)+0x242>
+  ca5c24:	f3bf 8f5b 	dmb	ish
+  ca5c28:	e852 1f00 	ldrex	r1, [r2]
+  ca5c2c:	1e4b      	subs	r3, r1, #1
+  ca5c2e:	e842 3700 	strex	r7, r3, [r2]
+  ca5c32:	2f00      	cmp	r7, #0
+  ca5c34:	d1f8      	bne.n	ca5c28 <PlayerSkinPacket::read(BinaryStream&)+0x17c>
+  ca5c36:	f3bf 8f5b 	dmb	ish
+  ca5c3a:	e05b      	b.n	ca5cf4 <PlayerSkinPacket::read(BinaryStream&)+0x248>
+  ca5c3c:	4aae      	ldr	r2, [pc, #696]	; (ca5ef8 <PlayerSkinPacket::read(BinaryStream&)+0x44c>)
+  ca5c3e:	447a      	add	r2, pc
+  ca5c40:	6813      	ldr	r3, [r2, #0]
+  ca5c42:	1f0a      	subs	r2, r1, #4
+  ca5c44:	2b00      	cmp	r3, #0
+  ca5c46:	d05c      	beq.n	ca5d02 <PlayerSkinPacket::read(BinaryStream&)+0x256>
+  ca5c48:	f3bf 8f5b 	dmb	ish
+  ca5c4c:	e852 1f00 	ldrex	r1, [r2]
+  ca5c50:	1e4b      	subs	r3, r1, #1
+  ca5c52:	e842 3700 	strex	r7, r3, [r2]
+  ca5c56:	2f00      	cmp	r7, #0
+  ca5c58:	d1f8      	bne.n	ca5c4c <PlayerSkinPacket::read(BinaryStream&)+0x1a0>
+  ca5c5a:	f3bf 8f5b 	dmb	ish
+  ca5c5e:	e053      	b.n	ca5d08 <PlayerSkinPacket::read(BinaryStream&)+0x25c>
+  ca5c60:	4aa9      	ldr	r2, [pc, #676]	; (ca5f08 <PlayerSkinPacket::read(BinaryStream&)+0x45c>)
+  ca5c62:	447a      	add	r2, pc
+  ca5c64:	6813      	ldr	r3, [r2, #0]
+  ca5c66:	1f0a      	subs	r2, r1, #4
+  ca5c68:	2b00      	cmp	r3, #0
+  ca5c6a:	d054      	beq.n	ca5d16 <PlayerSkinPacket::read(BinaryStream&)+0x26a>
+  ca5c6c:	f3bf 8f5b 	dmb	ish
+  ca5c70:	e852 1f00 	ldrex	r1, [r2]
+  ca5c74:	1e4b      	subs	r3, r1, #1
+  ca5c76:	e842 3700 	strex	r7, r3, [r2]
+  ca5c7a:	2f00      	cmp	r7, #0
+  ca5c7c:	d1f8      	bne.n	ca5c70 <PlayerSkinPacket::read(BinaryStream&)+0x1c4>
+  ca5c7e:	f3bf 8f5b 	dmb	ish
+  ca5c82:	e04b      	b.n	ca5d1c <PlayerSkinPacket::read(BinaryStream&)+0x270>
+  ca5c84:	4aa4      	ldr	r2, [pc, #656]	; (ca5f18 <PlayerSkinPacket::read(BinaryStream&)+0x46c>)
+  ca5c86:	447a      	add	r2, pc
+  ca5c88:	6813      	ldr	r3, [r2, #0]
+  ca5c8a:	1f0a      	subs	r2, r1, #4
+  ca5c8c:	2b00      	cmp	r3, #0
+  ca5c8e:	d04c      	beq.n	ca5d2a <PlayerSkinPacket::read(BinaryStream&)+0x27e>
+  ca5c90:	f3bf 8f5b 	dmb	ish
+  ca5c94:	e852 1f00 	ldrex	r1, [r2]
+  ca5c98:	1e4b      	subs	r3, r1, #1
+  ca5c9a:	e842 3700 	strex	r7, r3, [r2]
+  ca5c9e:	2f00      	cmp	r7, #0
+  ca5ca0:	d1f8      	bne.n	ca5c94 <PlayerSkinPacket::read(BinaryStream&)+0x1e8>
+  ca5ca2:	f3bf 8f5b 	dmb	ish
+  ca5ca6:	e043      	b.n	ca5d30 <PlayerSkinPacket::read(BinaryStream&)+0x284>
+  ca5ca8:	4aa1      	ldr	r2, [pc, #644]	; (ca5f30 <PlayerSkinPacket::read(BinaryStream&)+0x484>)
+  ca5caa:	447a      	add	r2, pc
+  ca5cac:	6813      	ldr	r3, [r2, #0]
+  ca5cae:	1f0a      	subs	r2, r1, #4
+  ca5cb0:	2b00      	cmp	r3, #0
+  ca5cb2:	d044      	beq.n	ca5d3e <PlayerSkinPacket::read(BinaryStream&)+0x292>
+  ca5cb4:	f3bf 8f5b 	dmb	ish
+  ca5cb8:	e852 1f00 	ldrex	r1, [r2]
+  ca5cbc:	1e4b      	subs	r3, r1, #1
+  ca5cbe:	e842 3700 	strex	r7, r3, [r2]
+  ca5cc2:	2f00      	cmp	r7, #0
+  ca5cc4:	d1f8      	bne.n	ca5cb8 <PlayerSkinPacket::read(BinaryStream&)+0x20c>
+  ca5cc6:	f3bf 8f5b 	dmb	ish
+  ca5cca:	e03b      	b.n	ca5d44 <PlayerSkinPacket::read(BinaryStream&)+0x298>
+  ca5ccc:	4a9a      	ldr	r2, [pc, #616]	; (ca5f38 <PlayerSkinPacket::read(BinaryStream&)+0x48c>)
+  ca5cce:	447a      	add	r2, pc
+  ca5cd0:	6813      	ldr	r3, [r2, #0]
+  ca5cd2:	1f0a      	subs	r2, r1, #4
+  ca5cd4:	b3eb      	cbz	r3, ca5d52 <PlayerSkinPacket::read(BinaryStream&)+0x2a6>
+  ca5cd6:	f3bf 8f5b 	dmb	ish
+  ca5cda:	e852 1f00 	ldrex	r1, [r2]
+  ca5cde:	1e4b      	subs	r3, r1, #1
+  ca5ce0:	e842 3700 	strex	r7, r3, [r2]
+  ca5ce4:	2f00      	cmp	r7, #0
+  ca5ce6:	d1f8      	bne.n	ca5cda <PlayerSkinPacket::read(BinaryStream&)+0x22e>
+  ca5ce8:	f3bf 8f5b 	dmb	ish
+  ca5cec:	e034      	b.n	ca5d58 <PlayerSkinPacket::read(BinaryStream&)+0x2ac>
+  ca5cee:	6811      	ldr	r1, [r2, #0]
+  ca5cf0:	1e4b      	subs	r3, r1, #1
+  ca5cf2:	6013      	str	r3, [r2, #0]
+  ca5cf4:	2900      	cmp	r1, #0
+  ca5cf6:	bfdc      	itt	le
+  ca5cf8:	f10d 0118 	addle.w	r1, sp, #24
+  ca5cfc:	f0e8 ebaa 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca5d00:	e6f6      	b.n	ca5af0 <PlayerSkinPacket::read(BinaryStream&)+0x44>
+  ca5d02:	6811      	ldr	r1, [r2, #0]
+  ca5d04:	1e4b      	subs	r3, r1, #1
+  ca5d06:	6013      	str	r3, [r2, #0]
+  ca5d08:	2900      	cmp	r1, #0
+  ca5d0a:	bfdc      	itt	le
+  ca5d0c:	f10d 0118 	addle.w	r1, sp, #24
+  ca5d10:	f0e8 eba0 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca5d14:	e700      	b.n	ca5b18 <PlayerSkinPacket::read(BinaryStream&)+0x6c>
+  ca5d16:	6811      	ldr	r1, [r2, #0]
+  ca5d18:	1e4b      	subs	r3, r1, #1
+  ca5d1a:	6013      	str	r3, [r2, #0]
+  ca5d1c:	2900      	cmp	r1, #0
+  ca5d1e:	bfdc      	itt	le
+  ca5d20:	f10d 0118 	addle.w	r1, sp, #24
+  ca5d24:	f0e8 eb96 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca5d28:	e70a      	b.n	ca5b40 <PlayerSkinPacket::read(BinaryStream&)+0x94>
+  ca5d2a:	6811      	ldr	r1, [r2, #0]
+  ca5d2c:	1e4b      	subs	r3, r1, #1
+  ca5d2e:	6013      	str	r3, [r2, #0]
+  ca5d30:	2900      	cmp	r1, #0
+  ca5d32:	bfdc      	itt	le
+  ca5d34:	f10d 0118 	addle.w	r1, sp, #24
+  ca5d38:	f0e8 eb8c 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca5d3c:	e750      	b.n	ca5be0 <PlayerSkinPacket::read(BinaryStream&)+0x134>
+  ca5d3e:	6811      	ldr	r1, [r2, #0]
+  ca5d40:	1e4b      	subs	r3, r1, #1
+  ca5d42:	6013      	str	r3, [r2, #0]
+  ca5d44:	2900      	cmp	r1, #0
+  ca5d46:	bfdc      	itt	le
+  ca5d48:	f10d 0118 	addle.w	r1, sp, #24
+  ca5d4c:	f0e8 eb82 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca5d50:	e757      	b.n	ca5c02 <PlayerSkinPacket::read(BinaryStream&)+0x156>
+  ca5d52:	6811      	ldr	r1, [r2, #0]
+  ca5d54:	1e4b      	subs	r3, r1, #1
+  ca5d56:	6013      	str	r3, [r2, #0]
+  ca5d58:	2900      	cmp	r1, #0
+  ca5d5a:	bfdc      	itt	le
+  ca5d5c:	f10d 0118 	addle.w	r1, sp, #24
+  ca5d60:	f0e8 eb78 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca5d64:	e755      	b.n	ca5c12 <PlayerSkinPacket::read(BinaryStream&)+0x166>
+  ca5d66:	4604      	mov	r4, r0
+  ca5d68:	e093      	b.n	ca5e92 <PlayerSkinPacket::read(BinaryStream&)+0x3e6>
+  ca5d6a:	4a5c      	ldr	r2, [pc, #368]	; (ca5edc <PlayerSkinPacket::read(BinaryStream&)+0x430>)
+  ca5d6c:	4604      	mov	r4, r0
+  ca5d6e:	9905      	ldr	r1, [sp, #20]
+  ca5d70:	447a      	add	r2, pc
+  ca5d72:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5d76:	6812      	ldr	r2, [r2, #0]
+  ca5d78:	4290      	cmp	r0, r2
+  ca5d7a:	f000 80a8 	beq.w	ca5ece <PlayerSkinPacket::read(BinaryStream&)+0x422>
+  ca5d7e:	4a58      	ldr	r2, [pc, #352]	; (ca5ee0 <PlayerSkinPacket::read(BinaryStream&)+0x434>)
+  ca5d80:	447a      	add	r2, pc
+  ca5d82:	6813      	ldr	r3, [r2, #0]
+  ca5d84:	1f0a      	subs	r2, r1, #4
+  ca5d86:	2b00      	cmp	r3, #0
+  ca5d88:	f000 80a4 	beq.w	ca5ed4 <PlayerSkinPacket::read(BinaryStream&)+0x428>
+  ca5d8c:	f3bf 8f5b 	dmb	ish
+  ca5d90:	e852 1f00 	ldrex	r1, [r2]
+  ca5d94:	1e4b      	subs	r3, r1, #1
+  ca5d96:	e842 3700 	strex	r7, r3, [r2]
+  ca5d9a:	2f00      	cmp	r7, #0
+  ca5d9c:	d1f8      	bne.n	ca5d90 <PlayerSkinPacket::read(BinaryStream&)+0x2e4>
+  ca5d9e:	f3bf 8f5b 	dmb	ish
+  ca5da2:	e08e      	b.n	ca5ec2 <PlayerSkinPacket::read(BinaryStream&)+0x416>
+  ca5da4:	4a51      	ldr	r2, [pc, #324]	; (ca5eec <PlayerSkinPacket::read(BinaryStream&)+0x440>)
+  ca5da6:	4604      	mov	r4, r0
+  ca5da8:	9904      	ldr	r1, [sp, #16]
+  ca5daa:	447a      	add	r2, pc
+  ca5dac:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5db0:	6812      	ldr	r2, [r2, #0]
+  ca5db2:	4290      	cmp	r0, r2
+  ca5db4:	f000 808b 	beq.w	ca5ece <PlayerSkinPacket::read(BinaryStream&)+0x422>
+  ca5db8:	4a4d      	ldr	r2, [pc, #308]	; (ca5ef0 <PlayerSkinPacket::read(BinaryStream&)+0x444>)
+  ca5dba:	447a      	add	r2, pc
+  ca5dbc:	6813      	ldr	r3, [r2, #0]
+  ca5dbe:	1f0a      	subs	r2, r1, #4
+  ca5dc0:	2b00      	cmp	r3, #0
+  ca5dc2:	f000 8087 	beq.w	ca5ed4 <PlayerSkinPacket::read(BinaryStream&)+0x428>
+  ca5dc6:	f3bf 8f5b 	dmb	ish
+  ca5dca:	e852 1f00 	ldrex	r1, [r2]
+  ca5dce:	1e4b      	subs	r3, r1, #1
+  ca5dd0:	e842 3700 	strex	r7, r3, [r2]
+  ca5dd4:	2f00      	cmp	r7, #0
+  ca5dd6:	d1f8      	bne.n	ca5dca <PlayerSkinPacket::read(BinaryStream&)+0x31e>
+  ca5dd8:	f3bf 8f5b 	dmb	ish
+  ca5ddc:	e071      	b.n	ca5ec2 <PlayerSkinPacket::read(BinaryStream&)+0x416>
+  ca5dde:	4a47      	ldr	r2, [pc, #284]	; (ca5efc <PlayerSkinPacket::read(BinaryStream&)+0x450>)
+  ca5de0:	4604      	mov	r4, r0
+  ca5de2:	9903      	ldr	r1, [sp, #12]
+  ca5de4:	447a      	add	r2, pc
+  ca5de6:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5dea:	6812      	ldr	r2, [r2, #0]
+  ca5dec:	4290      	cmp	r0, r2
+  ca5dee:	d06e      	beq.n	ca5ece <PlayerSkinPacket::read(BinaryStream&)+0x422>
+  ca5df0:	4a43      	ldr	r2, [pc, #268]	; (ca5f00 <PlayerSkinPacket::read(BinaryStream&)+0x454>)
+  ca5df2:	447a      	add	r2, pc
+  ca5df4:	6813      	ldr	r3, [r2, #0]
+  ca5df6:	1f0a      	subs	r2, r1, #4
+  ca5df8:	2b00      	cmp	r3, #0
+  ca5dfa:	d06b      	beq.n	ca5ed4 <PlayerSkinPacket::read(BinaryStream&)+0x428>
+  ca5dfc:	f3bf 8f5b 	dmb	ish
+  ca5e00:	e852 1f00 	ldrex	r1, [r2]
+  ca5e04:	1e4b      	subs	r3, r1, #1
+  ca5e06:	e842 3700 	strex	r7, r3, [r2]
+  ca5e0a:	2f00      	cmp	r7, #0
+  ca5e0c:	d1f8      	bne.n	ca5e00 <PlayerSkinPacket::read(BinaryStream&)+0x354>
+  ca5e0e:	f3bf 8f5b 	dmb	ish
+  ca5e12:	e056      	b.n	ca5ec2 <PlayerSkinPacket::read(BinaryStream&)+0x416>
+  ca5e14:	4a3d      	ldr	r2, [pc, #244]	; (ca5f0c <PlayerSkinPacket::read(BinaryStream&)+0x460>)
+  ca5e16:	4604      	mov	r4, r0
+  ca5e18:	9901      	ldr	r1, [sp, #4]
+  ca5e1a:	447a      	add	r2, pc
+  ca5e1c:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5e20:	6812      	ldr	r2, [r2, #0]
+  ca5e22:	4290      	cmp	r0, r2
+  ca5e24:	d035      	beq.n	ca5e92 <PlayerSkinPacket::read(BinaryStream&)+0x3e6>
+  ca5e26:	4a3a      	ldr	r2, [pc, #232]	; (ca5f10 <PlayerSkinPacket::read(BinaryStream&)+0x464>)
+  ca5e28:	447a      	add	r2, pc
+  ca5e2a:	6813      	ldr	r3, [r2, #0]
+  ca5e2c:	1f0a      	subs	r2, r1, #4
+  ca5e2e:	b33b      	cbz	r3, ca5e80 <PlayerSkinPacket::read(BinaryStream&)+0x3d4>
+  ca5e30:	f3bf 8f5b 	dmb	ish
+  ca5e34:	e852 1f00 	ldrex	r1, [r2]
+  ca5e38:	1e4b      	subs	r3, r1, #1
+  ca5e3a:	e842 3700 	strex	r7, r3, [r2]
+  ca5e3e:	2f00      	cmp	r7, #0
+  ca5e40:	d1f8      	bne.n	ca5e34 <PlayerSkinPacket::read(BinaryStream&)+0x388>
+  ca5e42:	f3bf 8f5b 	dmb	ish
+  ca5e46:	e01e      	b.n	ca5e86 <PlayerSkinPacket::read(BinaryStream&)+0x3da>
+  ca5e48:	4a34      	ldr	r2, [pc, #208]	; (ca5f1c <PlayerSkinPacket::read(BinaryStream&)+0x470>)
+  ca5e4a:	4604      	mov	r4, r0
+  ca5e4c:	9900      	ldr	r1, [sp, #0]
+  ca5e4e:	447a      	add	r2, pc
+  ca5e50:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5e54:	6812      	ldr	r2, [r2, #0]
+  ca5e56:	4290      	cmp	r0, r2
+  ca5e58:	d01b      	beq.n	ca5e92 <PlayerSkinPacket::read(BinaryStream&)+0x3e6>
+  ca5e5a:	4a31      	ldr	r2, [pc, #196]	; (ca5f20 <PlayerSkinPacket::read(BinaryStream&)+0x474>)
+  ca5e5c:	447a      	add	r2, pc
+  ca5e5e:	6813      	ldr	r3, [r2, #0]
+  ca5e60:	1f0a      	subs	r2, r1, #4
+  ca5e62:	b16b      	cbz	r3, ca5e80 <PlayerSkinPacket::read(BinaryStream&)+0x3d4>
+  ca5e64:	f3bf 8f5b 	dmb	ish
+  ca5e68:	e852 1f00 	ldrex	r1, [r2]
+  ca5e6c:	1e4b      	subs	r3, r1, #1
+  ca5e6e:	e842 3700 	strex	r7, r3, [r2]
+  ca5e72:	2f00      	cmp	r7, #0
+  ca5e74:	d1f8      	bne.n	ca5e68 <PlayerSkinPacket::read(BinaryStream&)+0x3bc>
+  ca5e76:	f3bf 8f5b 	dmb	ish
+  ca5e7a:	e004      	b.n	ca5e86 <PlayerSkinPacket::read(BinaryStream&)+0x3da>
+  ca5e7c:	4604      	mov	r4, r0
+  ca5e7e:	e008      	b.n	ca5e92 <PlayerSkinPacket::read(BinaryStream&)+0x3e6>
+  ca5e80:	6811      	ldr	r1, [r2, #0]
+  ca5e82:	1e4b      	subs	r3, r1, #1
+  ca5e84:	6013      	str	r3, [r2, #0]
+  ca5e86:	2900      	cmp	r1, #0
+  ca5e88:	bfdc      	itt	le
+  ca5e8a:	f10d 0118 	addle.w	r1, sp, #24
+  ca5e8e:	f0e8 eae2 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca5e92:	4824      	ldr	r0, [pc, #144]	; (ca5f24 <PlayerSkinPacket::read(BinaryStream&)+0x478>)
+  ca5e94:	9902      	ldr	r1, [sp, #8]
+  ca5e96:	4478      	add	r0, pc
+  ca5e98:	6802      	ldr	r2, [r0, #0]
+  ca5e9a:	f1a1 000c 	sub.w	r0, r1, #12
+  ca5e9e:	4290      	cmp	r0, r2
+  ca5ea0:	d015      	beq.n	ca5ece <PlayerSkinPacket::read(BinaryStream&)+0x422>
+  ca5ea2:	4a21      	ldr	r2, [pc, #132]	; (ca5f28 <PlayerSkinPacket::read(BinaryStream&)+0x47c>)
+  ca5ea4:	447a      	add	r2, pc
+  ca5ea6:	6813      	ldr	r3, [r2, #0]
+  ca5ea8:	1f0a      	subs	r2, r1, #4
+  ca5eaa:	b19b      	cbz	r3, ca5ed4 <PlayerSkinPacket::read(BinaryStream&)+0x428>
+  ca5eac:	f3bf 8f5b 	dmb	ish
+  ca5eb0:	e852 1f00 	ldrex	r1, [r2]
+  ca5eb4:	1e4b      	subs	r3, r1, #1
+  ca5eb6:	e842 3700 	strex	r7, r3, [r2]
+  ca5eba:	2f00      	cmp	r7, #0
+  ca5ebc:	d1f8      	bne.n	ca5eb0 <PlayerSkinPacket::read(BinaryStream&)+0x404>
+  ca5ebe:	f3bf 8f5b 	dmb	ish
+  ca5ec2:	2900      	cmp	r1, #0
+  ca5ec4:	bfdc      	itt	le
+  ca5ec6:	f10d 0118 	addle.w	r1, sp, #24
+  ca5eca:	f0e8 eac4 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca5ece:	4620      	mov	r0, r4
+  ca5ed0:	f460 e8ea 	blx	9060a8 <_Unwind_Resume@plt>
+  ca5ed4:	6811      	ldr	r1, [r2, #0]
+  ca5ed6:	1e4b      	subs	r3, r1, #1
+  ca5ed8:	6013      	str	r3, [r2, #0]
+  ca5eda:	e7f2      	b.n	ca5ec2 <PlayerSkinPacket::read(BinaryStream&)+0x416>
+  ca5edc:	f15c 01af 	adcs.w	r1, ip, #175	; 0xaf
+  ca5ee0:	f150 01af 	adcs.w	r1, r0, #175	; 0xaf
+  ca5ee4:	f3ea 01af 			; <UNDEFINED> instruction: 0xf3ea01af
+  ca5ee8:	f2b6 01af 			; <UNDEFINED> instruction: 0xf2b601af
+  ca5eec:	f122 01af 			; <UNDEFINED> instruction: 0xf12201af
+  ca5ef0:	f116 01af 	adds.w	r1, r6, #175	; 0xaf
+  ca5ef4:	f3c2 01af 			; <UNDEFINED> instruction: 0xf3c201af
+  ca5ef8:	f292 01af 			; <UNDEFINED> instruction: 0xf29201af
+  ca5efc:	f0e8 01af 			; <UNDEFINED> instruction: 0xf0e801af
+  ca5f00:	f0de 01af 			; <UNDEFINED> instruction: 0xf0de01af
+  ca5f04:	f39a 01af 			; <UNDEFINED> instruction: 0xf39a01af
+  ca5f08:	f26e 01af 			; <UNDEFINED> instruction: 0xf26e01af
+  ca5f0c:	f0b2 01af 			; <UNDEFINED> instruction: 0xf0b201af
+  ca5f10:	f0a8 01af 			; <UNDEFINED> instruction: 0xf0a801af
+  ca5f14:	f2f8 01af 			; <UNDEFINED> instruction: 0xf2f801af
+  ca5f18:	f24a 01af 	movw	r1, #41135	; 0xa0af
+  ca5f1c:	f07e 01af 	orns	r1, lr, #175	; 0xaf
+  ca5f20:	f074 01af 	orns	r1, r4, #175	; 0xaf
+  ca5f24:	f036 01af 	bics.w	r1, r6, #175	; 0xaf
+  ca5f28:	f02c 01af 	bic.w	r1, ip, #175	; 0xaf
+  ca5f2c:	f2d6 01af 			; <UNDEFINED> instruction: 0xf2d601af
+  ca5f30:	f226 01af 			; <UNDEFINED> instruction: 0xf22601af
+  ca5f34:	f2c6 01af 	movt	r1, #24751	; 0x60af
+  ca5f38:	f202 01af 	addw	r1, r2, #175	; 0xaf

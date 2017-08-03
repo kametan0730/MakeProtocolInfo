@@ -1,0 +1,44 @@
+ 1489a84:	b5b0      	push	{r4, r5, r7, lr}
+ 1489a86:	b086      	sub	sp, #24
+ 1489a88:	4605      	mov	r5, r0
+ 1489a8a:	a804      	add	r0, sp, #16
+ 1489a8c:	460c      	mov	r4, r1
+ 1489a8e:	f495 cd38 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+ 1489a92:	e9dd 0104 	ldrd	r0, r1, [sp, #16]
+ 1489a96:	e9c5 0104 	strd	r0, r1, [r5, #16]
+ 1489a9a:	2001      	movs	r0, #1
+ 1489a9c:	f47c cb0a 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1489aa0:	4911      	ldr	r1, [pc, #68]	; (1489ae8 <UpdateAttributesPacket::read(BinaryStream&)+0x64>)
+ 1489aa2:	4a12      	ldr	r2, [pc, #72]	; (1489aec <UpdateAttributesPacket::read(BinaryStream&)+0x68>)
+ 1489aa4:	4479      	add	r1, pc
+ 1489aa6:	9000      	str	r0, [sp, #0]
+ 1489aa8:	447a      	add	r2, pc
+ 1489aaa:	e9cd 2102 	strd	r2, r1, [sp, #8]
+ 1489aae:	f105 0118 	add.w	r1, r5, #24
+ 1489ab2:	466a      	mov	r2, sp
+ 1489ab4:	4620      	mov	r0, r4
+ 1489ab6:	f4bf c958 	blx	948d68 <void ReadOnlyBinaryStream::readVectorList<UpdateAttributesPacket::AttributeData>(std::vector<UpdateAttributesPacket::AttributeData, std::allocator<UpdateAttributesPacket::AttributeData> >&, std::function<UpdateAttributesPacket::AttributeData (ReadOnlyBinaryStream&)>&&)@plt>
+ 1489aba:	9b02      	ldr	r3, [sp, #8]
+ 1489abc:	b11b      	cbz	r3, 1489ac6 <UpdateAttributesPacket::read(BinaryStream&)+0x42>
+ 1489abe:	4668      	mov	r0, sp
+ 1489ac0:	2203      	movs	r2, #3
+ 1489ac2:	4601      	mov	r1, r0
+ 1489ac4:	4798      	blx	r3
+ 1489ac6:	b006      	add	sp, #24
+ 1489ac8:	bdb0      	pop	{r4, r5, r7, pc}
+ 1489aca:	9b02      	ldr	r3, [sp, #8]
+ 1489acc:	4604      	mov	r4, r0
+ 1489ace:	b11b      	cbz	r3, 1489ad8 <UpdateAttributesPacket::read(BinaryStream&)+0x54>
+ 1489ad0:	4668      	mov	r0, sp
+ 1489ad2:	2203      	movs	r2, #3
+ 1489ad4:	4601      	mov	r1, r0
+ 1489ad6:	4798      	blx	r3
+ 1489ad8:	4620      	mov	r0, r4
+ 1489ada:	f47c cae6 	blx	9060a8 <_Unwind_Resume@plt>
+ 1489ade:	f654 de4b 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1489ae2:	f654 de49 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1489ae6:	bf00      	nop
+ 1489ae8:	08c5      	lsrs	r5, r0, #3
+ 1489aea:	0000      	movs	r0, r0
+ 1489aec:	0945      	lsrs	r5, r0, #5
+	...

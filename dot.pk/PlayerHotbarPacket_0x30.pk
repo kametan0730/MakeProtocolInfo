@@ -1,0 +1,47 @@
+  e1dc3c:	b5b0      	push	{r4, r5, r7, lr}
+  e1dc3e:	b084      	sub	sp, #16
+  e1dc40:	460c      	mov	r4, r1
+  e1dc42:	4605      	mov	r5, r0
+  e1dc44:	4620      	mov	r0, r4
+  e1dc46:	f6f7 e0ec 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  e1dc4a:	6128      	str	r0, [r5, #16]
+  e1dc4c:	4620      	mov	r0, r4
+  e1dc4e:	f6e9 e1d6 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+  e1dc52:	7528      	strb	r0, [r5, #20]
+  e1dc54:	2001      	movs	r0, #1
+  e1dc56:	f6e8 e22e 	blx	9060b4 <operator new(unsigned int)@plt>
+  e1dc5a:	4912      	ldr	r1, [pc, #72]	; (e1dca4 <PlayerHotbarPacket::read(BinaryStream&)+0x68>)
+  e1dc5c:	4a12      	ldr	r2, [pc, #72]	; (e1dca8 <PlayerHotbarPacket::read(BinaryStream&)+0x6c>)
+  e1dc5e:	4479      	add	r1, pc
+  e1dc60:	9000      	str	r0, [sp, #0]
+  e1dc62:	447a      	add	r2, pc
+  e1dc64:	6809      	ldr	r1, [r1, #0]
+  e1dc66:	6812      	ldr	r2, [r2, #0]
+  e1dc68:	e9cd 2102 	strd	r2, r1, [sp, #8]
+  e1dc6c:	f105 0118 	add.w	r1, r5, #24
+  e1dc70:	466a      	mov	r2, sp
+  e1dc72:	4620      	mov	r0, r4
+  e1dc74:	f701 e46e 	blx	91f554 <void ReadOnlyBinaryStream::readVectorList<unsigned int>(std::vector<unsigned int, std::allocator<unsigned int> >&, std::function<unsigned int (ReadOnlyBinaryStream&)>&&)@plt>
+  e1dc78:	9b02      	ldr	r3, [sp, #8]
+  e1dc7a:	b11b      	cbz	r3, e1dc84 <PlayerHotbarPacket::read(BinaryStream&)+0x48>
+  e1dc7c:	4668      	mov	r0, sp
+  e1dc7e:	2203      	movs	r2, #3
+  e1dc80:	4601      	mov	r1, r0
+  e1dc82:	4798      	blx	r3
+  e1dc84:	b004      	add	sp, #16
+  e1dc86:	bdb0      	pop	{r4, r5, r7, pc}
+  e1dc88:	9b02      	ldr	r3, [sp, #8]
+  e1dc8a:	4604      	mov	r4, r0
+  e1dc8c:	b11b      	cbz	r3, e1dc96 <PlayerHotbarPacket::read(BinaryStream&)+0x5a>
+  e1dc8e:	4668      	mov	r0, sp
+  e1dc90:	2203      	movs	r2, #3
+  e1dc92:	4601      	mov	r1, r0
+  e1dc94:	4798      	blx	r3
+  e1dc96:	4620      	mov	r0, r4
+  e1dc98:	f6e8 e206 	blx	9060a8 <_Unwind_Resume@plt>
+  e1dc9c:	f4c0 fd6c 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+  e1dca0:	f4c0 fd6a 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+  e1dca4:	b8e2      			; <UNDEFINED> instruction: 0xb8e2
+  e1dca6:	0198      	lsls	r0, r3, #6
+  e1dca8:	b8e2      			; <UNDEFINED> instruction: 0xb8e2
+  e1dcaa:	0198      	lsls	r0, r3, #6

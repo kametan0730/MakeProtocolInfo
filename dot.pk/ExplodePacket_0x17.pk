@@ -1,0 +1,67 @@
+ 147ba18:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+ 147ba1c:	b088      	sub	sp, #32
+ 147ba1e:	4605      	mov	r5, r0
+ 147ba20:	a805      	add	r0, sp, #20
+ 147ba22:	4688      	mov	r8, r1
+ 147ba24:	f4a3 cd84 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+ 147ba28:	ed9f 0b21 	vldr	d0, [pc, #132]	; 147bab0 <ExplodePacket::read(BinaryStream&)+0x98>
+ 147ba2c:	9805      	ldr	r0, [sp, #20]
+ 147ba2e:	ec53 2b10 	vmov	r2, r3, d0
+ 147ba32:	f845 0f10 	str.w	r0, [r5, #16]!
+ 147ba36:	9806      	ldr	r0, [sp, #24]
+ 147ba38:	6068      	str	r0, [r5, #4]
+ 147ba3a:	9807      	ldr	r0, [sp, #28]
+ 147ba3c:	60a8      	str	r0, [r5, #8]
+ 147ba3e:	4640      	mov	r0, r8
+ 147ba40:	f4cb cd02 	blx	947448 <ReadOnlyBinaryStream::getFixedFloat(double)@plt>
+ 147ba44:	60e8      	str	r0, [r5, #12]
+ 147ba46:	a805      	add	r0, sp, #20
+ 147ba48:	4629      	mov	r1, r5
+ 147ba4a:	f49a cf76 	blx	916938 <BlockPos::BlockPos(Vec3 const&)@plt>
+ 147ba4e:	200c      	movs	r0, #12
+ 147ba50:	e9dd 6705 	ldrd	r6, r7, [sp, #20]
+ 147ba54:	9c07      	ldr	r4, [sp, #28]
+ 147ba56:	f48a cb2e 	blx	9060b4 <operator new(unsigned int)@plt>
+ 147ba5a:	4917      	ldr	r1, [pc, #92]	; (147bab8 <ExplodePacket::read(BinaryStream&)+0xa0>)
+ 147ba5c:	4a17      	ldr	r2, [pc, #92]	; (147babc <ExplodePacket::read(BinaryStream&)+0xa4>)
+ 147ba5e:	4479      	add	r1, pc
+ 147ba60:	e9c0 6700 	strd	r6, r7, [r0]
+ 147ba64:	447a      	add	r2, pc
+ 147ba66:	6084      	str	r4, [r0, #8]
+ 147ba68:	6809      	ldr	r1, [r1, #0]
+ 147ba6a:	6812      	ldr	r2, [r2, #0]
+ 147ba6c:	9001      	str	r0, [sp, #4]
+ 147ba6e:	e9cd 2103 	strd	r2, r1, [sp, #12]
+ 147ba72:	f105 0110 	add.w	r1, r5, #16
+ 147ba76:	aa01      	add	r2, sp, #4
+ 147ba78:	4640      	mov	r0, r8
+ 147ba7a:	f4cb ccec 	blx	947454 <void ReadOnlyBinaryStream::readVectorList<BlockPos>(std::vector<BlockPos, std::allocator<BlockPos> >&, std::function<BlockPos (ReadOnlyBinaryStream&)>&&)@plt>
+ 147ba7e:	9b03      	ldr	r3, [sp, #12]
+ 147ba80:	b11b      	cbz	r3, 147ba8a <ExplodePacket::read(BinaryStream&)+0x72>
+ 147ba82:	a801      	add	r0, sp, #4
+ 147ba84:	2203      	movs	r2, #3
+ 147ba86:	4601      	mov	r1, r0
+ 147ba88:	4798      	blx	r3
+ 147ba8a:	b008      	add	sp, #32
+ 147ba8c:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+ 147ba90:	9b03      	ldr	r3, [sp, #12]
+ 147ba92:	4604      	mov	r4, r0
+ 147ba94:	b11b      	cbz	r3, 147ba9e <ExplodePacket::read(BinaryStream&)+0x86>
+ 147ba96:	a801      	add	r0, sp, #4
+ 147ba98:	2203      	movs	r2, #3
+ 147ba9a:	4601      	mov	r1, r0
+ 147ba9c:	4798      	blx	r3
+ 147ba9e:	4620      	mov	r0, r4
+ 147baa0:	f48a cb02 	blx	9060a8 <_Unwind_Resume@plt>
+ 147baa4:	f662 de68 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147baa8:	f662 de66 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147baac:	bf00      	nop
+ 147baae:	bf00      	nop
+ 147bab0:	0000      	movs	r0, r0
+ 147bab2:	0000      	movs	r0, r0
+ 147bab4:	0000      	movs	r0, r0
+ 147bab6:	4040      	eors	r0, r0
+ 147bab8:	035e      	lsls	r6, r3, #13
+ 147baba:	0133      	lsls	r3, r6, #4
+ 147babc:	035c      	lsls	r4, r3, #13
+ 147babe:	0133      	lsls	r3, r6, #4

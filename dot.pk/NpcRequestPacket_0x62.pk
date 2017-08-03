@@ -1,0 +1,90 @@
+ 147feb0:	b570      	push	{r4, r5, r6, lr}
+ 147feb2:	b086      	sub	sp, #24
+ 147feb4:	4604      	mov	r4, r0
+ 147feb6:	a802      	add	r0, sp, #8
+ 147feb8:	460d      	mov	r5, r1
+ 147feba:	f49f cb22 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+ 147febe:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+ 147fec2:	e9c4 0104 	strd	r0, r1, [r4, #16]
+ 147fec6:	4628      	mov	r0, r5
+ 147fec8:	f487 c898 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147fecc:	ae01      	add	r6, sp, #4
+ 147fece:	7620      	strb	r0, [r4, #24]
+ 147fed0:	4629      	mov	r1, r5
+ 147fed2:	4630      	mov	r0, r6
+ 147fed4:	f487 c8ce 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147fed8:	f104 001c 	add.w	r0, r4, #28
+ 147fedc:	4631      	mov	r1, r6
+ 147fede:	f172 d703 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147fee2:	482a      	ldr	r0, [pc, #168]	; (147ff8c <NpcRequestPacket::read(BinaryStream&)+0xdc>)
+ 147fee4:	9901      	ldr	r1, [sp, #4]
+ 147fee6:	4478      	add	r0, pc
+ 147fee8:	6802      	ldr	r2, [r0, #0]
+ 147feea:	f1a1 000c 	sub.w	r0, r1, #12
+ 147feee:	4290      	cmp	r0, r2
+ 147fef0:	d106      	bne.n	147ff00 <NpcRequestPacket::read(BinaryStream&)+0x50>
+ 147fef2:	4628      	mov	r0, r5
+ 147fef4:	f487 c882 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147fef8:	f884 0020 	strb.w	r0, [r4, #32]
+ 147fefc:	b006      	add	sp, #24
+ 147fefe:	bd70      	pop	{r4, r5, r6, pc}
+ 147ff00:	4a23      	ldr	r2, [pc, #140]	; (147ff90 <NpcRequestPacket::read(BinaryStream&)+0xe0>)
+ 147ff02:	447a      	add	r2, pc
+ 147ff04:	6813      	ldr	r3, [r2, #0]
+ 147ff06:	1f0a      	subs	r2, r1, #4
+ 147ff08:	b15b      	cbz	r3, 147ff22 <NpcRequestPacket::read(BinaryStream&)+0x72>
+ 147ff0a:	f3bf 8f5b 	dmb	ish
+ 147ff0e:	e852 1f00 	ldrex	r1, [r2]
+ 147ff12:	1e4b      	subs	r3, r1, #1
+ 147ff14:	e842 3600 	strex	r6, r3, [r2]
+ 147ff18:	2e00      	cmp	r6, #0
+ 147ff1a:	d1f8      	bne.n	147ff0e <NpcRequestPacket::read(BinaryStream&)+0x5e>
+ 147ff1c:	f3bf 8f5b 	dmb	ish
+ 147ff20:	e002      	b.n	147ff28 <NpcRequestPacket::read(BinaryStream&)+0x78>
+ 147ff22:	6811      	ldr	r1, [r2, #0]
+ 147ff24:	1e4b      	subs	r3, r1, #1
+ 147ff26:	6013      	str	r3, [r2, #0]
+ 147ff28:	2900      	cmp	r1, #0
+ 147ff2a:	bfdc      	itt	le
+ 147ff2c:	f10d 0110 	addle.w	r1, sp, #16
+ 147ff30:	f174 d0a6 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147ff34:	e7dd      	b.n	147fef2 <NpcRequestPacket::read(BinaryStream&)+0x42>
+ 147ff36:	4a13      	ldr	r2, [pc, #76]	; (147ff84 <NpcRequestPacket::read(BinaryStream&)+0xd4>)
+ 147ff38:	4604      	mov	r4, r0
+ 147ff3a:	9901      	ldr	r1, [sp, #4]
+ 147ff3c:	447a      	add	r2, pc
+ 147ff3e:	f1a1 000c 	sub.w	r0, r1, #12
+ 147ff42:	6812      	ldr	r2, [r2, #0]
+ 147ff44:	4290      	cmp	r0, r2
+ 147ff46:	d015      	beq.n	147ff74 <NpcRequestPacket::read(BinaryStream&)+0xc4>
+ 147ff48:	4a0f      	ldr	r2, [pc, #60]	; (147ff88 <NpcRequestPacket::read(BinaryStream&)+0xd8>)
+ 147ff4a:	447a      	add	r2, pc
+ 147ff4c:	6813      	ldr	r3, [r2, #0]
+ 147ff4e:	1f0a      	subs	r2, r1, #4
+ 147ff50:	b19b      	cbz	r3, 147ff7a <NpcRequestPacket::read(BinaryStream&)+0xca>
+ 147ff52:	f3bf 8f5b 	dmb	ish
+ 147ff56:	e852 1f00 	ldrex	r1, [r2]
+ 147ff5a:	1e4b      	subs	r3, r1, #1
+ 147ff5c:	e842 3600 	strex	r6, r3, [r2]
+ 147ff60:	2e00      	cmp	r6, #0
+ 147ff62:	d1f8      	bne.n	147ff56 <NpcRequestPacket::read(BinaryStream&)+0xa6>
+ 147ff64:	f3bf 8f5b 	dmb	ish
+ 147ff68:	2900      	cmp	r1, #0
+ 147ff6a:	bfdc      	itt	le
+ 147ff6c:	f10d 0114 	addle.w	r1, sp, #20
+ 147ff70:	f174 d086 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147ff74:	4620      	mov	r0, r4
+ 147ff76:	f486 c898 	blx	9060a8 <_Unwind_Resume@plt>
+ 147ff7a:	6811      	ldr	r1, [r2, #0]
+ 147ff7c:	1e4b      	subs	r3, r1, #1
+ 147ff7e:	6013      	str	r3, [r2, #0]
+ 147ff80:	e7f2      	b.n	147ff68 <NpcRequestPacket::read(BinaryStream&)+0xb8>
+ 147ff82:	bf00      	nop
+ 147ff84:	4f90      	ldr	r7, [pc, #576]	; (14801c8 <ModalFormRequestPacket::~ModalFormRequestPacket()+0x48>)
+ 147ff86:	0132      	lsls	r2, r6, #4
+ 147ff88:	4f86      	ldr	r7, [pc, #536]	; (14801a4 <ModalFormRequestPacket::~ModalFormRequestPacket()+0x24>)
+ 147ff8a:	0132      	lsls	r2, r6, #4
+ 147ff8c:	4fe6      	ldr	r7, [pc, #920]	; (1480328 <ModalFormRequestPacket::read(BinaryStream&)+0x8c>)
+ 147ff8e:	0132      	lsls	r2, r6, #4
+ 147ff90:	4fce      	ldr	r7, [pc, #824]	; (14802cc <ModalFormRequestPacket::read(BinaryStream&)+0x30>)
+ 147ff92:	0132      	lsls	r2, r6, #4

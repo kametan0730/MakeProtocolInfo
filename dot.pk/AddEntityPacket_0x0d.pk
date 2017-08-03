@@ -1,0 +1,113 @@
+ 147a43c:	b5b0      	push	{r4, r5, r7, lr}
+ 147a43e:	b08c      	sub	sp, #48	; 0x30
+ 147a440:	4605      	mov	r5, r0
+ 147a442:	a808      	add	r0, sp, #32
+ 147a444:	460c      	mov	r4, r1
+ 147a446:	f4c3 ce5c 	blx	93e100 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+ 147a44a:	e9dd 0108 	ldrd	r0, r1, [sp, #32]
+ 147a44e:	e9c5 010c 	strd	r0, r1, [r5, #48]	; 0x30
+ 147a452:	a808      	add	r0, sp, #32
+ 147a454:	4621      	mov	r1, r4
+ 147a456:	f4a5 c854 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+ 147a45a:	e9dd 0108 	ldrd	r0, r1, [sp, #32]
+ 147a45e:	e9c5 010e 	strd	r0, r1, [r5, #56]	; 0x38
+ 147a462:	4620      	mov	r0, r4
+ 147a464:	f49a ccdc 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 147a468:	6468      	str	r0, [r5, #68]	; 0x44
+ 147a46a:	a808      	add	r0, sp, #32
+ 147a46c:	4621      	mov	r1, r4
+ 147a46e:	f4a5 c860 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+ 147a472:	9808      	ldr	r0, [sp, #32]
+ 147a474:	4621      	mov	r1, r4
+ 147a476:	64a8      	str	r0, [r5, #72]	; 0x48
+ 147a478:	9809      	ldr	r0, [sp, #36]	; 0x24
+ 147a47a:	64e8      	str	r0, [r5, #76]	; 0x4c
+ 147a47c:	980a      	ldr	r0, [sp, #40]	; 0x28
+ 147a47e:	6528      	str	r0, [r5, #80]	; 0x50
+ 147a480:	a808      	add	r0, sp, #32
+ 147a482:	f4a5 c856 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+ 147a486:	9808      	ldr	r0, [sp, #32]
+ 147a488:	4621      	mov	r1, r4
+ 147a48a:	6568      	str	r0, [r5, #84]	; 0x54
+ 147a48c:	9809      	ldr	r0, [sp, #36]	; 0x24
+ 147a48e:	65a8      	str	r0, [r5, #88]	; 0x58
+ 147a490:	980a      	ldr	r0, [sp, #40]	; 0x28
+ 147a492:	65e8      	str	r0, [r5, #92]	; 0x5c
+ 147a494:	a808      	add	r0, sp, #32
+ 147a496:	f4a5 c852 	blx	91f53c <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+ 147a49a:	e9dd 0108 	ldrd	r0, r1, [sp, #32]
+ 147a49e:	e9c5 010a 	strd	r0, r1, [r5, #40]	; 0x28
+ 147a4a2:	2001      	movs	r0, #1
+ 147a4a4:	f48b ce06 	blx	9060b4 <operator new(unsigned int)@plt>
+ 147a4a8:	4926      	ldr	r1, [pc, #152]	; (147a544 <AddEntityPacket::read(BinaryStream&)+0x108>)
+ 147a4aa:	4a27      	ldr	r2, [pc, #156]	; (147a548 <AddEntityPacket::read(BinaryStream&)+0x10c>)
+ 147a4ac:	4479      	add	r1, pc
+ 147a4ae:	9004      	str	r0, [sp, #16]
+ 147a4b0:	447a      	add	r2, pc
+ 147a4b2:	6809      	ldr	r1, [r1, #0]
+ 147a4b4:	6812      	ldr	r2, [r2, #0]
+ 147a4b6:	e9cd 2106 	strd	r2, r1, [sp, #24]
+ 147a4ba:	f105 016c 	add.w	r1, r5, #108	; 0x6c
+ 147a4be:	aa04      	add	r2, sp, #16
+ 147a4c0:	4620      	mov	r0, r4
+ 147a4c2:	f4cc cf56 	blx	947370 <void ReadOnlyBinaryStream::readVectorList<SyncedAttribute>(std::vector<SyncedAttribute, std::allocator<SyncedAttribute> >&, std::function<SyncedAttribute (ReadOnlyBinaryStream&)>&&)@plt>
+ 147a4c6:	9b06      	ldr	r3, [sp, #24]
+ 147a4c8:	b11b      	cbz	r3, 147a4d2 <AddEntityPacket::read(BinaryStream&)+0x96>
+ 147a4ca:	a804      	add	r0, sp, #16
+ 147a4cc:	2203      	movs	r2, #3
+ 147a4ce:	4601      	mov	r1, r0
+ 147a4d0:	4798      	blx	r3
+ 147a4d2:	f105 011c 	add.w	r1, r5, #28
+ 147a4d6:	4620      	mov	r0, r4
+ 147a4d8:	f4cc cf50 	blx	94737c <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+ 147a4dc:	2001      	movs	r0, #1
+ 147a4de:	f48b cdea 	blx	9060b4 <operator new(unsigned int)@plt>
+ 147a4e2:	491a      	ldr	r1, [pc, #104]	; (147a54c <AddEntityPacket::read(BinaryStream&)+0x110>)
+ 147a4e4:	4a1a      	ldr	r2, [pc, #104]	; (147a550 <AddEntityPacket::read(BinaryStream&)+0x114>)
+ 147a4e6:	4479      	add	r1, pc
+ 147a4e8:	9000      	str	r0, [sp, #0]
+ 147a4ea:	447a      	add	r2, pc
+ 147a4ec:	6809      	ldr	r1, [r1, #0]
+ 147a4ee:	6812      	ldr	r2, [r2, #0]
+ 147a4f0:	e9cd 2102 	strd	r2, r1, [sp, #8]
+ 147a4f4:	f105 0110 	add.w	r1, r5, #16
+ 147a4f8:	466a      	mov	r2, sp
+ 147a4fa:	4620      	mov	r0, r4
+ 147a4fc:	f4cc cf44 	blx	947388 <void ReadOnlyBinaryStream::readVectorList<EntityLink>(std::vector<EntityLink, std::allocator<EntityLink> >&, std::function<EntityLink (ReadOnlyBinaryStream&)>&&)@plt>
+ 147a500:	9b02      	ldr	r3, [sp, #8]
+ 147a502:	b11b      	cbz	r3, 147a50c <AddEntityPacket::read(BinaryStream&)+0xd0>
+ 147a504:	4668      	mov	r0, sp
+ 147a506:	2203      	movs	r2, #3
+ 147a508:	4601      	mov	r1, r0
+ 147a50a:	4798      	blx	r3
+ 147a50c:	b00c      	add	sp, #48	; 0x30
+ 147a50e:	bdb0      	pop	{r4, r5, r7, pc}
+ 147a510:	9b06      	ldr	r3, [sp, #24]
+ 147a512:	4604      	mov	r4, r0
+ 147a514:	b16b      	cbz	r3, 147a532 <AddEntityPacket::read(BinaryStream&)+0xf6>
+ 147a516:	a804      	add	r0, sp, #16
+ 147a518:	2203      	movs	r2, #3
+ 147a51a:	4601      	mov	r1, r0
+ 147a51c:	4798      	blx	r3
+ 147a51e:	e008      	b.n	147a532 <AddEntityPacket::read(BinaryStream&)+0xf6>
+ 147a520:	f664 d92a 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147a524:	9b02      	ldr	r3, [sp, #8]
+ 147a526:	4604      	mov	r4, r0
+ 147a528:	b11b      	cbz	r3, 147a532 <AddEntityPacket::read(BinaryStream&)+0xf6>
+ 147a52a:	4668      	mov	r0, sp
+ 147a52c:	2203      	movs	r2, #3
+ 147a52e:	4601      	mov	r1, r0
+ 147a530:	4798      	blx	r3
+ 147a532:	4620      	mov	r0, r4
+ 147a534:	f48b cdb8 	blx	9060a8 <_Unwind_Resume@plt>
+ 147a538:	f664 d91e 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147a53c:	f664 d91c 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147a540:	f664 d91a 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147a544:	18f4      	adds	r4, r6, r3
+ 147a546:	0133      	lsls	r3, r6, #4
+ 147a548:	18f4      	adds	r4, r6, r3
+ 147a54a:	0133      	lsls	r3, r6, #4
+ 147a54c:	18c2      	adds	r2, r0, r3
+ 147a54e:	0133      	lsls	r3, r6, #4
+ 147a550:	18c2      	adds	r2, r0, r3
+ 147a552:	0133      	lsls	r3, r6, #4

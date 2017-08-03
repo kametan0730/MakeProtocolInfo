@@ -1,0 +1,4 @@
+ 147ed74:	f100 0210 	add.w	r2, r0, #16
+ 147ed78:	4608      	mov	r0, r1
+ 147ed7a:	4611      	mov	r1, r2
+ 147ed7c:	f0f8 bb78 	b.w	1577470 <CommandRegistry::Factorization::operator=(CommandRegistry::Factorization&&)+0x2868>

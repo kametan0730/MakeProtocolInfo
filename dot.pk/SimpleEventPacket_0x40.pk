@@ -1,0 +1,6 @@
+ 124b176:	b510      	push	{r4, lr}
+ 124b178:	4604      	mov	r4, r0
+ 124b17a:	4608      	mov	r0, r1
+ 124b17c:	f6c2 ce94 	blx	90dea8 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+ 124b180:	6120      	str	r0, [r4, #16]
+ 124b182:	bd10      	pop	{r4, pc}

@@ -1,0 +1,184 @@
+ 1482bd4:	b570      	push	{r4, r5, r6, lr}
+ 1482bd6:	b086      	sub	sp, #24
+ 1482bd8:	460d      	mov	r5, r1
+ 1482bda:	4604      	mov	r4, r0
+ 1482bdc:	4628      	mov	r0, r5
+ 1482bde:	f484 ca0e 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 1482be2:	6120      	str	r0, [r4, #16]
+ 1482be4:	4628      	mov	r0, r5
+ 1482be6:	f484 ca0a 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 1482bea:	6160      	str	r0, [r4, #20]
+ 1482bec:	6920      	ldr	r0, [r4, #16]
+ 1482bee:	2804      	cmp	r0, #4
+ 1482bf0:	d848      	bhi.n	1482c84 <BookEditPacket::read(BinaryStream&)+0xb0>
+ 1482bf2:	e8df f000 	tbb	[pc, r0]
+ 1482bf6:	0303      	lsls	r3, r0, #12
+ 1482bf8:	4943      	ldr	r1, [pc, #268]	; (1482d08 <BookEditPacket::read(BinaryStream&)+0x134>)
+ 1482bfa:	000e      	movs	r6, r1
+ 1482bfc:	4628      	mov	r0, r5
+ 1482bfe:	f484 c9fe 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 1482c02:	61a0      	str	r0, [r4, #24]
+ 1482c04:	4620      	mov	r0, r4
+ 1482c06:	4629      	mov	r1, r5
+ 1482c08:	b006      	add	sp, #24
+ 1482c0a:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
+ 1482c0e:	f0f4 bc4f 	b.w	15774b0 <CommandRegistry::Factorization::operator=(CommandRegistry::Factorization&&)+0x28a8>
+ 1482c12:	ae01      	add	r6, sp, #4
+ 1482c14:	4629      	mov	r1, r5
+ 1482c16:	4630      	mov	r0, r6
+ 1482c18:	f484 ca2c 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 1482c1c:	f104 0020 	add.w	r0, r4, #32
+ 1482c20:	4631      	mov	r1, r6
+ 1482c22:	f170 d061 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 1482c26:	4855      	ldr	r0, [pc, #340]	; (1482d7c <BookEditPacket::read(BinaryStream&)+0x1a8>)
+ 1482c28:	9901      	ldr	r1, [sp, #4]
+ 1482c2a:	4478      	add	r0, pc
+ 1482c2c:	6802      	ldr	r2, [r0, #0]
+ 1482c2e:	f1a1 000c 	sub.w	r0, r1, #12
+ 1482c32:	4290      	cmp	r0, r2
+ 1482c34:	d132      	bne.n	1482c9c <BookEditPacket::read(BinaryStream&)+0xc8>
+ 1482c36:	466e      	mov	r6, sp
+ 1482c38:	4629      	mov	r1, r5
+ 1482c3a:	4630      	mov	r0, r6
+ 1482c3c:	f484 ca1a 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 1482c40:	f104 0024 	add.w	r0, r4, #36	; 0x24
+ 1482c44:	4631      	mov	r1, r6
+ 1482c46:	f170 d04f 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 1482c4a:	4850      	ldr	r0, [pc, #320]	; (1482d8c <BookEditPacket::read(BinaryStream&)+0x1b8>)
+ 1482c4c:	9900      	ldr	r1, [sp, #0]
+ 1482c4e:	4478      	add	r0, pc
+ 1482c50:	6802      	ldr	r2, [r0, #0]
+ 1482c52:	f1a1 000c 	sub.w	r0, r1, #12
+ 1482c56:	4290      	cmp	r0, r2
+ 1482c58:	d014      	beq.n	1482c84 <BookEditPacket::read(BinaryStream&)+0xb0>
+ 1482c5a:	4a4d      	ldr	r2, [pc, #308]	; (1482d90 <BookEditPacket::read(BinaryStream&)+0x1bc>)
+ 1482c5c:	447a      	add	r2, pc
+ 1482c5e:	6813      	ldr	r3, [r2, #0]
+ 1482c60:	1f0a      	subs	r2, r1, #4
+ 1482c62:	b3b3      	cbz	r3, 1482cd2 <BookEditPacket::read(BinaryStream&)+0xfe>
+ 1482c64:	f3bf 8f5b 	dmb	ish
+ 1482c68:	e852 1f00 	ldrex	r1, [r2]
+ 1482c6c:	1e4b      	subs	r3, r1, #1
+ 1482c6e:	e842 3600 	strex	r6, r3, [r2]
+ 1482c72:	2e00      	cmp	r6, #0
+ 1482c74:	d1f8      	bne.n	1482c68 <BookEditPacket::read(BinaryStream&)+0x94>
+ 1482c76:	f3bf 8f5b 	dmb	ish
+ 1482c7a:	e02d      	b.n	1482cd8 <BookEditPacket::read(BinaryStream&)+0x104>
+ 1482c7c:	4628      	mov	r0, r5
+ 1482c7e:	f484 c9be 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 1482c82:	61a0      	str	r0, [r4, #24]
+ 1482c84:	b006      	add	sp, #24
+ 1482c86:	bd70      	pop	{r4, r5, r6, pc}
+ 1482c88:	4628      	mov	r0, r5
+ 1482c8a:	f484 c9b8 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 1482c8e:	61a0      	str	r0, [r4, #24]
+ 1482c90:	4628      	mov	r0, r5
+ 1482c92:	f484 c9b4 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 1482c96:	61e0      	str	r0, [r4, #28]
+ 1482c98:	b006      	add	sp, #24
+ 1482c9a:	bd70      	pop	{r4, r5, r6, pc}
+ 1482c9c:	4a38      	ldr	r2, [pc, #224]	; (1482d80 <BookEditPacket::read(BinaryStream&)+0x1ac>)
+ 1482c9e:	447a      	add	r2, pc
+ 1482ca0:	6813      	ldr	r3, [r2, #0]
+ 1482ca2:	1f0a      	subs	r2, r1, #4
+ 1482ca4:	b15b      	cbz	r3, 1482cbe <BookEditPacket::read(BinaryStream&)+0xea>
+ 1482ca6:	f3bf 8f5b 	dmb	ish
+ 1482caa:	e852 1f00 	ldrex	r1, [r2]
+ 1482cae:	1e4b      	subs	r3, r1, #1
+ 1482cb0:	e842 3600 	strex	r6, r3, [r2]
+ 1482cb4:	2e00      	cmp	r6, #0
+ 1482cb6:	d1f8      	bne.n	1482caa <BookEditPacket::read(BinaryStream&)+0xd6>
+ 1482cb8:	f3bf 8f5b 	dmb	ish
+ 1482cbc:	e002      	b.n	1482cc4 <BookEditPacket::read(BinaryStream&)+0xf0>
+ 1482cbe:	6811      	ldr	r1, [r2, #0]
+ 1482cc0:	1e4b      	subs	r3, r1, #1
+ 1482cc2:	6013      	str	r3, [r2, #0]
+ 1482cc4:	2900      	cmp	r1, #0
+ 1482cc6:	bfdc      	itt	le
+ 1482cc8:	f10d 0108 	addle.w	r1, sp, #8
+ 1482ccc:	f171 d1d8 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1482cd0:	e7b1      	b.n	1482c36 <BookEditPacket::read(BinaryStream&)+0x62>
+ 1482cd2:	6811      	ldr	r1, [r2, #0]
+ 1482cd4:	1e4b      	subs	r3, r1, #1
+ 1482cd6:	6013      	str	r3, [r2, #0]
+ 1482cd8:	2900      	cmp	r1, #0
+ 1482cda:	dcd3      	bgt.n	1482c84 <BookEditPacket::read(BinaryStream&)+0xb0>
+ 1482cdc:	a903      	add	r1, sp, #12
+ 1482cde:	f171 d1cf 	bl	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1482ce2:	b006      	add	sp, #24
+ 1482ce4:	bd70      	pop	{r4, r5, r6, pc}
+ 1482ce6:	4a23      	ldr	r2, [pc, #140]	; (1482d74 <BookEditPacket::read(BinaryStream&)+0x1a0>)
+ 1482ce8:	4604      	mov	r4, r0
+ 1482cea:	9901      	ldr	r1, [sp, #4]
+ 1482cec:	447a      	add	r2, pc
+ 1482cee:	f1a1 000c 	sub.w	r0, r1, #12
+ 1482cf2:	6812      	ldr	r2, [r2, #0]
+ 1482cf4:	4290      	cmp	r0, r2
+ 1482cf6:	d031      	beq.n	1482d5c <BookEditPacket::read(BinaryStream&)+0x188>
+ 1482cf8:	4a1f      	ldr	r2, [pc, #124]	; (1482d78 <BookEditPacket::read(BinaryStream&)+0x1a4>)
+ 1482cfa:	447a      	add	r2, pc
+ 1482cfc:	6813      	ldr	r3, [r2, #0]
+ 1482cfe:	1f0a      	subs	r2, r1, #4
+ 1482d00:	b37b      	cbz	r3, 1482d62 <BookEditPacket::read(BinaryStream&)+0x18e>
+ 1482d02:	f3bf 8f5b 	dmb	ish
+ 1482d06:	e852 1f00 	ldrex	r1, [r2]
+ 1482d0a:	1e4b      	subs	r3, r1, #1
+ 1482d0c:	e842 3600 	strex	r6, r3, [r2]
+ 1482d10:	2e00      	cmp	r6, #0
+ 1482d12:	d1f8      	bne.n	1482d06 <BookEditPacket::read(BinaryStream&)+0x132>
+ 1482d14:	f3bf 8f5b 	dmb	ish
+ 1482d18:	2900      	cmp	r1, #0
+ 1482d1a:	dc1f      	bgt.n	1482d5c <BookEditPacket::read(BinaryStream&)+0x188>
+ 1482d1c:	a904      	add	r1, sp, #16
+ 1482d1e:	e01b      	b.n	1482d58 <BookEditPacket::read(BinaryStream&)+0x184>
+ 1482d20:	4a18      	ldr	r2, [pc, #96]	; (1482d84 <BookEditPacket::read(BinaryStream&)+0x1b0>)
+ 1482d22:	4604      	mov	r4, r0
+ 1482d24:	9900      	ldr	r1, [sp, #0]
+ 1482d26:	447a      	add	r2, pc
+ 1482d28:	f1a1 000c 	sub.w	r0, r1, #12
+ 1482d2c:	6812      	ldr	r2, [r2, #0]
+ 1482d2e:	4290      	cmp	r0, r2
+ 1482d30:	d014      	beq.n	1482d5c <BookEditPacket::read(BinaryStream&)+0x188>
+ 1482d32:	4a15      	ldr	r2, [pc, #84]	; (1482d88 <BookEditPacket::read(BinaryStream&)+0x1b4>)
+ 1482d34:	447a      	add	r2, pc
+ 1482d36:	6813      	ldr	r3, [r2, #0]
+ 1482d38:	1f0a      	subs	r2, r1, #4
+ 1482d3a:	b1b3      	cbz	r3, 1482d6a <BookEditPacket::read(BinaryStream&)+0x196>
+ 1482d3c:	f3bf 8f5b 	dmb	ish
+ 1482d40:	e852 1f00 	ldrex	r1, [r2]
+ 1482d44:	1e4b      	subs	r3, r1, #1
+ 1482d46:	e842 3600 	strex	r6, r3, [r2]
+ 1482d4a:	2e00      	cmp	r6, #0
+ 1482d4c:	d1f8      	bne.n	1482d40 <BookEditPacket::read(BinaryStream&)+0x16c>
+ 1482d4e:	f3bf 8f5b 	dmb	ish
+ 1482d52:	2900      	cmp	r1, #0
+ 1482d54:	dc02      	bgt.n	1482d5c <BookEditPacket::read(BinaryStream&)+0x188>
+ 1482d56:	a905      	add	r1, sp, #20
+ 1482d58:	f171 d192 	bl	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1482d5c:	4620      	mov	r0, r4
+ 1482d5e:	f483 c9a4 	blx	9060a8 <_Unwind_Resume@plt>
+ 1482d62:	6811      	ldr	r1, [r2, #0]
+ 1482d64:	1e4b      	subs	r3, r1, #1
+ 1482d66:	6013      	str	r3, [r2, #0]
+ 1482d68:	e7d6      	b.n	1482d18 <BookEditPacket::read(BinaryStream&)+0x144>
+ 1482d6a:	6811      	ldr	r1, [r2, #0]
+ 1482d6c:	1e4b      	subs	r3, r1, #1
+ 1482d6e:	6013      	str	r3, [r2, #0]
+ 1482d70:	e7ef      	b.n	1482d52 <BookEditPacket::read(BinaryStream&)+0x17e>
+ 1482d72:	bf00      	nop
+ 1482d74:	21e0      	movs	r1, #224	; 0xe0
+ 1482d76:	0132      	lsls	r2, r6, #4
+ 1482d78:	21d6      	movs	r1, #214	; 0xd6
+ 1482d7a:	0132      	lsls	r2, r6, #4
+ 1482d7c:	22a2      	movs	r2, #162	; 0xa2
+ 1482d7e:	0132      	lsls	r2, r6, #4
+ 1482d80:	2232      	movs	r2, #50	; 0x32
+ 1482d82:	0132      	lsls	r2, r6, #4
+ 1482d84:	21a6      	movs	r1, #166	; 0xa6
+ 1482d86:	0132      	lsls	r2, r6, #4
+ 1482d88:	219c      	movs	r1, #156	; 0x9c
+ 1482d8a:	0132      	lsls	r2, r6, #4
+ 1482d8c:	227e      	movs	r2, #126	; 0x7e
+ 1482d8e:	0132      	lsls	r2, r6, #4
+ 1482d90:	2274      	movs	r2, #116	; 0x74
+ 1482d92:	0132      	lsls	r2, r6, #4

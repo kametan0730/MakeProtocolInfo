@@ -1,0 +1,171 @@
+ 1483a84:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 1483a86:	b093      	sub	sp, #76	; 0x4c
+ 1483a88:	4605      	mov	r5, r0
+ 1483a8a:	a810      	add	r0, sp, #64	; 0x40
+ 1483a8c:	462e      	mov	r6, r5
+ 1483a8e:	460c      	mov	r4, r1
+ 1483a90:	f856 7f10 	ldr.w	r7, [r6, #16]!
+ 1483a94:	f4ba cb34 	blx	93e100 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+ 1483a98:	e9dd 0110 	ldrd	r0, r1, [sp, #64]	; 0x40
+ 1483a9c:	e9c7 0100 	strd	r0, r1, [r7]
+ 1483aa0:	4620      	mov	r0, r4
+ 1483aa2:	f491 c9be 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 1483aa6:	63b0      	str	r0, [r6, #56]	; 0x38
+ 1483aa8:	f010 0f08 	tst.w	r0, #8
+ 1483aac:	d014      	beq.n	1483ad8 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x54>
+ 1483aae:	2001      	movs	r0, #1
+ 1483ab0:	f482 cb00 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1483ab4:	4954      	ldr	r1, [pc, #336]	; (1483c08 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x184>)
+ 1483ab6:	4a55      	ldr	r2, [pc, #340]	; (1483c0c <ClientboundMapItemDataPacket::read(BinaryStream&)+0x188>)
+ 1483ab8:	4479      	add	r1, pc
+ 1483aba:	900c      	str	r0, [sp, #48]	; 0x30
+ 1483abc:	447a      	add	r2, pc
+ 1483abe:	e9cd 210e 	strd	r2, r1, [sp, #56]	; 0x38
+ 1483ac2:	aa0c      	add	r2, sp, #48	; 0x30
+ 1483ac4:	4620      	mov	r0, r4
+ 1483ac6:	4631      	mov	r1, r6
+ 1483ac8:	f4c4 ce96 	blx	9487f8 <void ReadOnlyBinaryStream::readVectorList<EntityUniqueID>(std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >&, std::function<EntityUniqueID (ReadOnlyBinaryStream&)>&&)@plt>
+ 1483acc:	9b0e      	ldr	r3, [sp, #56]	; 0x38
+ 1483ace:	b11b      	cbz	r3, 1483ad8 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x54>
+ 1483ad0:	a80c      	add	r0, sp, #48	; 0x30
+ 1483ad2:	2203      	movs	r2, #3
+ 1483ad4:	4601      	mov	r1, r0
+ 1483ad6:	4798      	blx	r3
+ 1483ad8:	6ca8      	ldr	r0, [r5, #72]	; 0x48
+ 1483ada:	f010 0f06 	tst.w	r0, #6
+ 1483ade:	d004      	beq.n	1483aea <ClientboundMapItemDataPacket::read(BinaryStream&)+0x66>
+ 1483ae0:	4620      	mov	r0, r4
+ 1483ae2:	f483 ca8c 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 1483ae6:	7728      	strb	r0, [r5, #28]
+ 1483ae8:	6ca8      	ldr	r0, [r5, #72]	; 0x48
+ 1483aea:	f010 0f04 	tst.w	r0, #4
+ 1483aee:	d02b      	beq.n	1483b48 <ClientboundMapItemDataPacket::read(BinaryStream&)+0xc4>
+ 1483af0:	2001      	movs	r0, #1
+ 1483af2:	f482 cae0 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1483af6:	4946      	ldr	r1, [pc, #280]	; (1483c10 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x18c>)
+ 1483af8:	4a46      	ldr	r2, [pc, #280]	; (1483c14 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x190>)
+ 1483afa:	4479      	add	r1, pc
+ 1483afc:	9008      	str	r0, [sp, #32]
+ 1483afe:	447a      	add	r2, pc
+ 1483b00:	e9cd 210a 	strd	r2, r1, [sp, #40]	; 0x28
+ 1483b04:	f105 012c 	add.w	r1, r5, #44	; 0x2c
+ 1483b08:	aa08      	add	r2, sp, #32
+ 1483b0a:	4620      	mov	r0, r4
+ 1483b0c:	f4c4 ce74 	blx	9487f8 <void ReadOnlyBinaryStream::readVectorList<EntityUniqueID>(std::vector<EntityUniqueID, std::allocator<EntityUniqueID> >&, std::function<EntityUniqueID (ReadOnlyBinaryStream&)>&&)@plt>
+ 1483b10:	9b0a      	ldr	r3, [sp, #40]	; 0x28
+ 1483b12:	b11b      	cbz	r3, 1483b1c <ClientboundMapItemDataPacket::read(BinaryStream&)+0x98>
+ 1483b14:	a808      	add	r0, sp, #32
+ 1483b16:	2203      	movs	r2, #3
+ 1483b18:	4601      	mov	r1, r0
+ 1483b1a:	4798      	blx	r3
+ 1483b1c:	2001      	movs	r0, #1
+ 1483b1e:	f482 caca 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1483b22:	493d      	ldr	r1, [pc, #244]	; (1483c18 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x194>)
+ 1483b24:	4a3d      	ldr	r2, [pc, #244]	; (1483c1c <ClientboundMapItemDataPacket::read(BinaryStream&)+0x198>)
+ 1483b26:	4479      	add	r1, pc
+ 1483b28:	9004      	str	r0, [sp, #16]
+ 1483b2a:	447a      	add	r2, pc
+ 1483b2c:	e9cd 2106 	strd	r2, r1, [sp, #24]
+ 1483b30:	f105 0120 	add.w	r1, r5, #32
+ 1483b34:	aa04      	add	r2, sp, #16
+ 1483b36:	4620      	mov	r0, r4
+ 1483b38:	f4c4 ce64 	blx	948804 <void ReadOnlyBinaryStream::readVectorList<std::shared_ptr<MapDecoration> >(std::vector<std::shared_ptr<MapDecoration>, std::allocator<std::shared_ptr<MapDecoration> > >&, std::function<std::shared_ptr<MapDecoration> (ReadOnlyBinaryStream&)>&&)@plt>
+ 1483b3c:	9b06      	ldr	r3, [sp, #24]
+ 1483b3e:	b11b      	cbz	r3, 1483b48 <ClientboundMapItemDataPacket::read(BinaryStream&)+0xc4>
+ 1483b40:	a804      	add	r0, sp, #16
+ 1483b42:	2203      	movs	r2, #3
+ 1483b44:	4601      	mov	r1, r0
+ 1483b46:	4798      	blx	r3
+ 1483b48:	f895 0048 	ldrb.w	r0, [r5, #72]	; 0x48
+ 1483b4c:	f010 0f02 	tst.w	r0, #2
+ 1483b50:	d025      	beq.n	1483b9e <ClientboundMapItemDataPacket::read(BinaryStream&)+0x11a>
+ 1483b52:	4620      	mov	r0, r4
+ 1483b54:	f483 caa6 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 1483b58:	6428      	str	r0, [r5, #64]	; 0x40
+ 1483b5a:	4620      	mov	r0, r4
+ 1483b5c:	f483 caa2 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 1483b60:	6468      	str	r0, [r5, #68]	; 0x44
+ 1483b62:	4620      	mov	r0, r4
+ 1483b64:	f483 ca9e 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 1483b68:	63a8      	str	r0, [r5, #56]	; 0x38
+ 1483b6a:	4620      	mov	r0, r4
+ 1483b6c:	f483 ca9a 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 1483b70:	63e8      	str	r0, [r5, #60]	; 0x3c
+ 1483b72:	2001      	movs	r0, #1
+ 1483b74:	f482 ca9e 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1483b78:	4929      	ldr	r1, [pc, #164]	; (1483c20 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x19c>)
+ 1483b7a:	4a2a      	ldr	r2, [pc, #168]	; (1483c24 <ClientboundMapItemDataPacket::read(BinaryStream&)+0x1a0>)
+ 1483b7c:	4479      	add	r1, pc
+ 1483b7e:	9000      	str	r0, [sp, #0]
+ 1483b80:	447a      	add	r2, pc
+ 1483b82:	e9cd 2102 	strd	r2, r1, [sp, #8]
+ 1483b86:	f105 014c 	add.w	r1, r5, #76	; 0x4c
+ 1483b8a:	466a      	mov	r2, sp
+ 1483b8c:	4620      	mov	r0, r4
+ 1483b8e:	f49b cce2 	blx	91f554 <void ReadOnlyBinaryStream::readVectorList<unsigned int>(std::vector<unsigned int, std::allocator<unsigned int> >&, std::function<unsigned int (ReadOnlyBinaryStream&)>&&)@plt>
+ 1483b92:	9b02      	ldr	r3, [sp, #8]
+ 1483b94:	b11b      	cbz	r3, 1483b9e <ClientboundMapItemDataPacket::read(BinaryStream&)+0x11a>
+ 1483b96:	4668      	mov	r0, sp
+ 1483b98:	2203      	movs	r2, #3
+ 1483b9a:	4601      	mov	r1, r0
+ 1483b9c:	4798      	blx	r3
+ 1483b9e:	b013      	add	sp, #76	; 0x4c
+ 1483ba0:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 1483ba2:	9b0e      	ldr	r3, [sp, #56]	; 0x38
+ 1483ba4:	4604      	mov	r4, r0
+ 1483ba6:	b30b      	cbz	r3, 1483bec <ClientboundMapItemDataPacket::read(BinaryStream&)+0x168>
+ 1483ba8:	a80c      	add	r0, sp, #48	; 0x30
+ 1483baa:	2203      	movs	r2, #3
+ 1483bac:	4601      	mov	r1, r0
+ 1483bae:	4798      	blx	r3
+ 1483bb0:	e01c      	b.n	1483bec <ClientboundMapItemDataPacket::read(BinaryStream&)+0x168>
+ 1483bb2:	f65a dde1 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1483bb6:	9b0a      	ldr	r3, [sp, #40]	; 0x28
+ 1483bb8:	4604      	mov	r4, r0
+ 1483bba:	b1bb      	cbz	r3, 1483bec <ClientboundMapItemDataPacket::read(BinaryStream&)+0x168>
+ 1483bbc:	a808      	add	r0, sp, #32
+ 1483bbe:	2203      	movs	r2, #3
+ 1483bc0:	4601      	mov	r1, r0
+ 1483bc2:	4798      	blx	r3
+ 1483bc4:	e012      	b.n	1483bec <ClientboundMapItemDataPacket::read(BinaryStream&)+0x168>
+ 1483bc6:	f65a ddd7 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1483bca:	9b06      	ldr	r3, [sp, #24]
+ 1483bcc:	4604      	mov	r4, r0
+ 1483bce:	b16b      	cbz	r3, 1483bec <ClientboundMapItemDataPacket::read(BinaryStream&)+0x168>
+ 1483bd0:	a804      	add	r0, sp, #16
+ 1483bd2:	2203      	movs	r2, #3
+ 1483bd4:	4601      	mov	r1, r0
+ 1483bd6:	4798      	blx	r3
+ 1483bd8:	e008      	b.n	1483bec <ClientboundMapItemDataPacket::read(BinaryStream&)+0x168>
+ 1483bda:	f65a ddcd 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1483bde:	9b02      	ldr	r3, [sp, #8]
+ 1483be0:	4604      	mov	r4, r0
+ 1483be2:	b11b      	cbz	r3, 1483bec <ClientboundMapItemDataPacket::read(BinaryStream&)+0x168>
+ 1483be4:	4668      	mov	r0, sp
+ 1483be6:	2203      	movs	r2, #3
+ 1483be8:	4601      	mov	r1, r0
+ 1483bea:	4798      	blx	r3
+ 1483bec:	4620      	mov	r0, r4
+ 1483bee:	f482 ca5c 	blx	9060a8 <_Unwind_Resume@plt>
+ 1483bf2:	f65a ddc1 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1483bf6:	f65a ddbf 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1483bfa:	f65a ddbd 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1483bfe:	f65a ddbb 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1483c02:	f65a ddb9 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1483c06:	bf00      	nop
+ 1483c08:	0ef3      	lsrs	r3, r6, #27
+ 1483c0a:	0000      	movs	r0, r0
+ 1483c0c:	0ef9      	lsrs	r1, r7, #27
+ 1483c0e:	0000      	movs	r0, r0
+ 1483c10:	0ee9      	lsrs	r1, r5, #27
+ 1483c12:	0000      	movs	r0, r0
+ 1483c14:	0eef      	lsrs	r7, r5, #27
+ 1483c16:	0000      	movs	r0, r0
+ 1483c18:	1037      	asrs	r7, r6, #32
+ 1483c1a:	0000      	movs	r0, r0
+ 1483c1c:	10f3      	asrs	r3, r6, #3
+ 1483c1e:	0000      	movs	r0, r0
+ 1483c20:	1331      	asrs	r1, r6, #12
+ 1483c22:	0000      	movs	r0, r0
+ 1483c24:	1333      	asrs	r3, r6, #12
+	...

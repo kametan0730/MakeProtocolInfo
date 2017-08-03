@@ -1,0 +1,13 @@
+ 147c7c2:	b5b0      	push	{r4, r5, r7, lr}
+ 147c7c4:	460c      	mov	r4, r1
+ 147c7c6:	4605      	mov	r5, r0
+ 147c7c8:	4620      	mov	r0, r4
+ 147c7ca:	f48a cc18 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147c7ce:	7628      	strb	r0, [r5, #24]
+ 147c7d0:	4620      	mov	r0, r4
+ 147c7d2:	f48a cc68 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147c7d6:	6128      	str	r0, [r5, #16]
+ 147c7d8:	4620      	mov	r0, r4
+ 147c7da:	f48a cc64 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147c7de:	6168      	str	r0, [r5, #20]
+ 147c7e0:	bdb0      	pop	{r4, r5, r7, pc}

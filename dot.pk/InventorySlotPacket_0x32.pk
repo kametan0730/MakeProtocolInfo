@@ -1,0 +1,13 @@
+ 147caf6:	b5b0      	push	{r4, r5, r7, lr}
+ 147caf8:	460c      	mov	r4, r1
+ 147cafa:	4605      	mov	r5, r0
+ 147cafc:	4620      	mov	r0, r4
+ 147cafe:	f498 c990 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 147cb02:	7368      	strb	r0, [r5, #13]
+ 147cb04:	4620      	mov	r0, r4
+ 147cb06:	f498 c98c 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 147cb0a:	6128      	str	r0, [r5, #16]
+ 147cb0c:	f105 0118 	add.w	r1, r5, #24
+ 147cb10:	4620      	mov	r0, r4
+ 147cb12:	e8bd 40b0 	ldmia.w	sp!, {r4, r5, r7, lr}
+ 147cb16:	f0fa bc9b 	b.w	1577450 <CommandRegistry::Factorization::operator=(CommandRegistry::Factorization&&)+0x2848>

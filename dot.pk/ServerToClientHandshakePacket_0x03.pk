@@ -1,0 +1,78 @@
+ 1477944:	b5b0      	push	{r4, r5, r7, lr}
+ 1477946:	b084      	sub	sp, #16
+ 1477948:	ad01      	add	r5, sp, #4
+ 147794a:	4604      	mov	r4, r0
+ 147794c:	4628      	mov	r0, r5
+ 147794e:	f48f cb92 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 1477952:	f104 0010 	add.w	r0, r4, #16
+ 1477956:	4629      	mov	r1, r5
+ 1477958:	f17b d1c6 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147795c:	4827      	ldr	r0, [pc, #156]	; (14779fc <ServerToClientHandshakePacket::read(BinaryStream&)+0xb8>)
+ 147795e:	9901      	ldr	r1, [sp, #4]
+ 1477960:	4478      	add	r0, pc
+ 1477962:	6802      	ldr	r2, [r0, #0]
+ 1477964:	f1a1 000c 	sub.w	r0, r1, #12
+ 1477968:	4290      	cmp	r0, r2
+ 147796a:	d101      	bne.n	1477970 <ServerToClientHandshakePacket::read(BinaryStream&)+0x2c>
+ 147796c:	b004      	add	sp, #16
+ 147796e:	bdb0      	pop	{r4, r5, r7, pc}
+ 1477970:	4a23      	ldr	r2, [pc, #140]	; (1477a00 <ServerToClientHandshakePacket::read(BinaryStream&)+0xbc>)
+ 1477972:	447a      	add	r2, pc
+ 1477974:	6813      	ldr	r3, [r2, #0]
+ 1477976:	1f0a      	subs	r2, r1, #4
+ 1477978:	b15b      	cbz	r3, 1477992 <ServerToClientHandshakePacket::read(BinaryStream&)+0x4e>
+ 147797a:	f3bf 8f5b 	dmb	ish
+ 147797e:	e852 1f00 	ldrex	r1, [r2]
+ 1477982:	1e4b      	subs	r3, r1, #1
+ 1477984:	e842 3500 	strex	r5, r3, [r2]
+ 1477988:	2d00      	cmp	r5, #0
+ 147798a:	d1f8      	bne.n	147797e <ServerToClientHandshakePacket::read(BinaryStream&)+0x3a>
+ 147798c:	f3bf 8f5b 	dmb	ish
+ 1477990:	e002      	b.n	1477998 <ServerToClientHandshakePacket::read(BinaryStream&)+0x54>
+ 1477992:	6811      	ldr	r1, [r2, #0]
+ 1477994:	1e4b      	subs	r3, r1, #1
+ 1477996:	6013      	str	r3, [r2, #0]
+ 1477998:	2900      	cmp	r1, #0
+ 147799a:	bfdc      	itt	le
+ 147799c:	f10d 0108 	addle.w	r1, sp, #8
+ 14779a0:	f17c d36e 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 14779a4:	e7e2      	b.n	147796c <ServerToClientHandshakePacket::read(BinaryStream&)+0x28>
+ 14779a6:	4a13      	ldr	r2, [pc, #76]	; (14779f4 <ServerToClientHandshakePacket::read(BinaryStream&)+0xb0>)
+ 14779a8:	4604      	mov	r4, r0
+ 14779aa:	9901      	ldr	r1, [sp, #4]
+ 14779ac:	447a      	add	r2, pc
+ 14779ae:	f1a1 000c 	sub.w	r0, r1, #12
+ 14779b2:	6812      	ldr	r2, [r2, #0]
+ 14779b4:	4290      	cmp	r0, r2
+ 14779b6:	d015      	beq.n	14779e4 <ServerToClientHandshakePacket::read(BinaryStream&)+0xa0>
+ 14779b8:	4a0f      	ldr	r2, [pc, #60]	; (14779f8 <ServerToClientHandshakePacket::read(BinaryStream&)+0xb4>)
+ 14779ba:	447a      	add	r2, pc
+ 14779bc:	6813      	ldr	r3, [r2, #0]
+ 14779be:	1f0a      	subs	r2, r1, #4
+ 14779c0:	b19b      	cbz	r3, 14779ea <ServerToClientHandshakePacket::read(BinaryStream&)+0xa6>
+ 14779c2:	f3bf 8f5b 	dmb	ish
+ 14779c6:	e852 1f00 	ldrex	r1, [r2]
+ 14779ca:	1e4b      	subs	r3, r1, #1
+ 14779cc:	e842 3500 	strex	r5, r3, [r2]
+ 14779d0:	2d00      	cmp	r5, #0
+ 14779d2:	d1f8      	bne.n	14779c6 <ServerToClientHandshakePacket::read(BinaryStream&)+0x82>
+ 14779d4:	f3bf 8f5b 	dmb	ish
+ 14779d8:	2900      	cmp	r1, #0
+ 14779da:	bfdc      	itt	le
+ 14779dc:	f10d 010c 	addle.w	r1, sp, #12
+ 14779e0:	f17c d34e 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 14779e4:	4620      	mov	r0, r4
+ 14779e6:	f48e cb60 	blx	9060a8 <_Unwind_Resume@plt>
+ 14779ea:	6811      	ldr	r1, [r2, #0]
+ 14779ec:	1e4b      	subs	r3, r1, #1
+ 14779ee:	6013      	str	r3, [r2, #0]
+ 14779f0:	e7f2      	b.n	14779d8 <ServerToClientHandshakePacket::read(BinaryStream&)+0x94>
+ 14779f2:	bf00      	nop
+ 14779f4:	d520      	bpl.n	1477a38 <ResourcePacksInfoPacket::~ResourcePacksInfoPacket()+0x28>
+ 14779f6:	0132      	lsls	r2, r6, #4
+ 14779f8:	d516      	bpl.n	1477a28 <ResourcePacksInfoPacket::~ResourcePacksInfoPacket()+0x18>
+ 14779fa:	0132      	lsls	r2, r6, #4
+ 14779fc:	d56c      	bpl.n	1477ad8 <ResourcePacksInfoPacket::write(BinaryStream&) const+0x8>
+ 14779fe:	0132      	lsls	r2, r6, #4
+ 1477a00:	d55e      	bpl.n	1477ac0 <ResourcePacksInfoPacket::getName() const+0x8>
+ 1477a02:	0132      	lsls	r2, r6, #4

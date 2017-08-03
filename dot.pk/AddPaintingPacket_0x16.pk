@@ -1,0 +1,100 @@
+ 147d010:	b570      	push	{r4, r5, r6, lr}
+ 147d012:	b086      	sub	sp, #24
+ 147d014:	4604      	mov	r4, r0
+ 147d016:	a802      	add	r0, sp, #8
+ 147d018:	460d      	mov	r5, r1
+ 147d01a:	f4c1 c872 	blx	93e100 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+ 147d01e:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+ 147d022:	e9c4 0104 	strd	r0, r1, [r4, #16]
+ 147d026:	a802      	add	r0, sp, #8
+ 147d028:	4629      	mov	r1, r5
+ 147d02a:	f4a2 ca6a 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+ 147d02e:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+ 147d032:	e9c4 0106 	strd	r0, r1, [r4, #24]
+ 147d036:	a802      	add	r0, sp, #8
+ 147d038:	4629      	mov	r1, r5
+ 147d03a:	f4a2 cab0 	blx	91f59c <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+ 147d03e:	9802      	ldr	r0, [sp, #8]
+ 147d040:	6220      	str	r0, [r4, #32]
+ 147d042:	9803      	ldr	r0, [sp, #12]
+ 147d044:	6260      	str	r0, [r4, #36]	; 0x24
+ 147d046:	9804      	ldr	r0, [sp, #16]
+ 147d048:	62a0      	str	r0, [r4, #40]	; 0x28
+ 147d04a:	4628      	mov	r0, r5
+ 147d04c:	f48a c82a 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147d050:	ae01      	add	r6, sp, #4
+ 147d052:	62e0      	str	r0, [r4, #44]	; 0x2c
+ 147d054:	4629      	mov	r1, r5
+ 147d056:	4630      	mov	r0, r6
+ 147d058:	f48a c80c 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147d05c:	f104 0030 	add.w	r0, r4, #48	; 0x30
+ 147d060:	4631      	mov	r1, r6
+ 147d062:	f175 d641 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147d066:	4827      	ldr	r0, [pc, #156]	; (147d104 <AddPaintingPacket::read(BinaryStream&)+0xf4>)
+ 147d068:	9901      	ldr	r1, [sp, #4]
+ 147d06a:	4478      	add	r0, pc
+ 147d06c:	6802      	ldr	r2, [r0, #0]
+ 147d06e:	f1a1 000c 	sub.w	r0, r1, #12
+ 147d072:	4290      	cmp	r0, r2
+ 147d074:	d101      	bne.n	147d07a <AddPaintingPacket::read(BinaryStream&)+0x6a>
+ 147d076:	b006      	add	sp, #24
+ 147d078:	bd70      	pop	{r4, r5, r6, pc}
+ 147d07a:	4a23      	ldr	r2, [pc, #140]	; (147d108 <AddPaintingPacket::read(BinaryStream&)+0xf8>)
+ 147d07c:	447a      	add	r2, pc
+ 147d07e:	6813      	ldr	r3, [r2, #0]
+ 147d080:	1f0a      	subs	r2, r1, #4
+ 147d082:	b15b      	cbz	r3, 147d09c <AddPaintingPacket::read(BinaryStream&)+0x8c>
+ 147d084:	f3bf 8f5b 	dmb	ish
+ 147d088:	e852 1f00 	ldrex	r1, [r2]
+ 147d08c:	1e4b      	subs	r3, r1, #1
+ 147d08e:	e842 3600 	strex	r6, r3, [r2]
+ 147d092:	2e00      	cmp	r6, #0
+ 147d094:	d1f8      	bne.n	147d088 <AddPaintingPacket::read(BinaryStream&)+0x78>
+ 147d096:	f3bf 8f5b 	dmb	ish
+ 147d09a:	e002      	b.n	147d0a2 <AddPaintingPacket::read(BinaryStream&)+0x92>
+ 147d09c:	6811      	ldr	r1, [r2, #0]
+ 147d09e:	1e4b      	subs	r3, r1, #1
+ 147d0a0:	6013      	str	r3, [r2, #0]
+ 147d0a2:	2900      	cmp	r1, #0
+ 147d0a4:	bfdc      	itt	le
+ 147d0a6:	f10d 0108 	addle.w	r1, sp, #8
+ 147d0aa:	f176 d7e9 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147d0ae:	e7e2      	b.n	147d076 <AddPaintingPacket::read(BinaryStream&)+0x66>
+ 147d0b0:	4a12      	ldr	r2, [pc, #72]	; (147d0fc <AddPaintingPacket::read(BinaryStream&)+0xec>)
+ 147d0b2:	4604      	mov	r4, r0
+ 147d0b4:	9901      	ldr	r1, [sp, #4]
+ 147d0b6:	447a      	add	r2, pc
+ 147d0b8:	f1a1 000c 	sub.w	r0, r1, #12
+ 147d0bc:	6812      	ldr	r2, [r2, #0]
+ 147d0be:	4290      	cmp	r0, r2
+ 147d0c0:	d015      	beq.n	147d0ee <AddPaintingPacket::read(BinaryStream&)+0xde>
+ 147d0c2:	4a0f      	ldr	r2, [pc, #60]	; (147d100 <AddPaintingPacket::read(BinaryStream&)+0xf0>)
+ 147d0c4:	447a      	add	r2, pc
+ 147d0c6:	6813      	ldr	r3, [r2, #0]
+ 147d0c8:	1f0a      	subs	r2, r1, #4
+ 147d0ca:	b19b      	cbz	r3, 147d0f4 <AddPaintingPacket::read(BinaryStream&)+0xe4>
+ 147d0cc:	f3bf 8f5b 	dmb	ish
+ 147d0d0:	e852 1f00 	ldrex	r1, [r2]
+ 147d0d4:	1e4b      	subs	r3, r1, #1
+ 147d0d6:	e842 3600 	strex	r6, r3, [r2]
+ 147d0da:	2e00      	cmp	r6, #0
+ 147d0dc:	d1f8      	bne.n	147d0d0 <AddPaintingPacket::read(BinaryStream&)+0xc0>
+ 147d0de:	f3bf 8f5b 	dmb	ish
+ 147d0e2:	2900      	cmp	r1, #0
+ 147d0e4:	bfdc      	itt	le
+ 147d0e6:	f10d 0108 	addle.w	r1, sp, #8
+ 147d0ea:	f176 d7c9 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147d0ee:	4620      	mov	r0, r4
+ 147d0f0:	f488 cfda 	blx	9060a8 <_Unwind_Resume@plt>
+ 147d0f4:	6811      	ldr	r1, [r2, #0]
+ 147d0f6:	1e4b      	subs	r3, r1, #1
+ 147d0f8:	6013      	str	r3, [r2, #0]
+ 147d0fa:	e7f2      	b.n	147d0e2 <AddPaintingPacket::read(BinaryStream&)+0xd2>
+ 147d0fc:	7e16      	ldrb	r6, [r2, #24]
+ 147d0fe:	0132      	lsls	r2, r6, #4
+ 147d100:	7e0c      	ldrb	r4, [r1, #24]
+ 147d102:	0132      	lsls	r2, r6, #4
+ 147d104:	7e62      	ldrb	r2, [r4, #25]
+ 147d106:	0132      	lsls	r2, r6, #4
+ 147d108:	7e54      	ldrb	r4, [r2, #25]
+ 147d10a:	0132      	lsls	r2, r6, #4

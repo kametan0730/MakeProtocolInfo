@@ -1,0 +1,211 @@
+ 14809e4:	b5b0      	push	{r4, r5, r7, lr}
+ 14809e6:	b0a0      	sub	sp, #128	; 0x80
+ 14809e8:	4605      	mov	r5, r0
+ 14809ea:	2001      	movs	r0, #1
+ 14809ec:	460c      	mov	r4, r1
+ 14809ee:	f485 cb62 	blx	9060b4 <operator new(unsigned int)@plt>
+ 14809f2:	4968      	ldr	r1, [pc, #416]	; (1480b94 <AvailableCommandsPacket::read(BinaryStream&)+0x1b0>)
+ 14809f4:	4a68      	ldr	r2, [pc, #416]	; (1480b98 <AvailableCommandsPacket::read(BinaryStream&)+0x1b4>)
+ 14809f6:	4479      	add	r1, pc
+ 14809f8:	9010      	str	r0, [sp, #64]	; 0x40
+ 14809fa:	447a      	add	r2, pc
+ 14809fc:	e9cd 2112 	strd	r2, r1, [sp, #72]	; 0x48
+ 1480a00:	f105 0110 	add.w	r1, r5, #16
+ 1480a04:	aa10      	add	r2, sp, #64	; 0x40
+ 1480a06:	4620      	mov	r0, r4
+ 1480a08:	f494 ca04 	blx	914e14 <void ReadOnlyBinaryStream::readVectorList<std::string>(std::vector<std::string, std::allocator<std::string> >&, std::function<std::string (ReadOnlyBinaryStream&)>&&)@plt>
+ 1480a0c:	9b12      	ldr	r3, [sp, #72]	; 0x48
+ 1480a0e:	b11b      	cbz	r3, 1480a18 <AvailableCommandsPacket::read(BinaryStream&)+0x34>
+ 1480a10:	a810      	add	r0, sp, #64	; 0x40
+ 1480a12:	2203      	movs	r2, #3
+ 1480a14:	4601      	mov	r1, r0
+ 1480a16:	4798      	blx	r3
+ 1480a18:	2001      	movs	r0, #1
+ 1480a1a:	f485 cb4c 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1480a1e:	495f      	ldr	r1, [pc, #380]	; (1480b9c <AvailableCommandsPacket::read(BinaryStream&)+0x1b8>)
+ 1480a20:	4a5f      	ldr	r2, [pc, #380]	; (1480ba0 <AvailableCommandsPacket::read(BinaryStream&)+0x1bc>)
+ 1480a22:	4479      	add	r1, pc
+ 1480a24:	900c      	str	r0, [sp, #48]	; 0x30
+ 1480a26:	447a      	add	r2, pc
+ 1480a28:	e9cd 210e 	strd	r2, r1, [sp, #56]	; 0x38
+ 1480a2c:	f105 011c 	add.w	r1, r5, #28
+ 1480a30:	aa0c      	add	r2, sp, #48	; 0x30
+ 1480a32:	4620      	mov	r0, r4
+ 1480a34:	f494 c9ee 	blx	914e14 <void ReadOnlyBinaryStream::readVectorList<std::string>(std::vector<std::string, std::allocator<std::string> >&, std::function<std::string (ReadOnlyBinaryStream&)>&&)@plt>
+ 1480a38:	9b0e      	ldr	r3, [sp, #56]	; 0x38
+ 1480a3a:	b11b      	cbz	r3, 1480a44 <AvailableCommandsPacket::read(BinaryStream&)+0x60>
+ 1480a3c:	a80c      	add	r0, sp, #48	; 0x30
+ 1480a3e:	2203      	movs	r2, #3
+ 1480a40:	4601      	mov	r1, r0
+ 1480a42:	4798      	blx	r3
+ 1480a44:	e9d5 0104 	ldrd	r0, r1, [r5, #16]
+ 1480a48:	2200      	movs	r2, #0
+ 1480a4a:	920a      	str	r2, [sp, #40]	; 0x28
+ 1480a4c:	1a08      	subs	r0, r1, r0
+ 1480a4e:	1080      	asrs	r0, r0, #2
+ 1480a50:	f5b0 7f80 	cmp.w	r0, #256	; 0x100
+ 1480a54:	d809      	bhi.n	1480a6a <AvailableCommandsPacket::read(BinaryStream&)+0x86>
+ 1480a56:	2001      	movs	r0, #1
+ 1480a58:	f485 cb2c 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1480a5c:	4a55      	ldr	r2, [pc, #340]	; (1480bb4 <AvailableCommandsPacket::read(BinaryStream&)+0x1d0>)
+ 1480a5e:	4b56      	ldr	r3, [pc, #344]	; (1480bb8 <AvailableCommandsPacket::read(BinaryStream&)+0x1d4>)
+ 1480a60:	9014      	str	r0, [sp, #80]	; 0x50
+ 1480a62:	447a      	add	r2, pc
+ 1480a64:	9915      	ldr	r1, [sp, #84]	; 0x54
+ 1480a66:	447b      	add	r3, pc
+ 1480a68:	e015      	b.n	1480a96 <AvailableCommandsPacket::read(BinaryStream&)+0xb2>
+ 1480a6a:	f5b0 3f80 	cmp.w	r0, #65536	; 0x10000
+ 1480a6e:	d809      	bhi.n	1480a84 <AvailableCommandsPacket::read(BinaryStream&)+0xa0>
+ 1480a70:	2001      	movs	r0, #1
+ 1480a72:	f485 cb20 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1480a76:	4a4d      	ldr	r2, [pc, #308]	; (1480bac <AvailableCommandsPacket::read(BinaryStream&)+0x1c8>)
+ 1480a78:	4b4d      	ldr	r3, [pc, #308]	; (1480bb0 <AvailableCommandsPacket::read(BinaryStream&)+0x1cc>)
+ 1480a7a:	9018      	str	r0, [sp, #96]	; 0x60
+ 1480a7c:	447a      	add	r2, pc
+ 1480a7e:	9919      	ldr	r1, [sp, #100]	; 0x64
+ 1480a80:	447b      	add	r3, pc
+ 1480a82:	e008      	b.n	1480a96 <AvailableCommandsPacket::read(BinaryStream&)+0xb2>
+ 1480a84:	2001      	movs	r0, #1
+ 1480a86:	f485 cb16 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1480a8a:	4a46      	ldr	r2, [pc, #280]	; (1480ba4 <AvailableCommandsPacket::read(BinaryStream&)+0x1c0>)
+ 1480a8c:	4b46      	ldr	r3, [pc, #280]	; (1480ba8 <AvailableCommandsPacket::read(BinaryStream&)+0x1c4>)
+ 1480a8e:	901c      	str	r0, [sp, #112]	; 0x70
+ 1480a90:	447a      	add	r2, pc
+ 1480a92:	991d      	ldr	r1, [sp, #116]	; 0x74
+ 1480a94:	447b      	add	r3, pc
+ 1480a96:	9109      	str	r1, [sp, #36]	; 0x24
+ 1480a98:	9008      	str	r0, [sp, #32]
+ 1480a9a:	2000      	movs	r0, #0
+ 1480a9c:	920a      	str	r2, [sp, #40]	; 0x28
+ 1480a9e:	930b      	str	r3, [sp, #44]	; 0x2c
+ 1480aa0:	9006      	str	r0, [sp, #24]
+ 1480aa2:	2004      	movs	r0, #4
+ 1480aa4:	f485 cb06 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1480aa8:	4944      	ldr	r1, [pc, #272]	; (1480bbc <AvailableCommandsPacket::read(BinaryStream&)+0x1d8>)
+ 1480aaa:	ab08      	add	r3, sp, #32
+ 1480aac:	4a44      	ldr	r2, [pc, #272]	; (1480bc0 <AvailableCommandsPacket::read(BinaryStream&)+0x1dc>)
+ 1480aae:	4479      	add	r1, pc
+ 1480ab0:	6003      	str	r3, [r0, #0]
+ 1480ab2:	447a      	add	r2, pc
+ 1480ab4:	9004      	str	r0, [sp, #16]
+ 1480ab6:	e9cd 2106 	strd	r2, r1, [sp, #24]
+ 1480aba:	f105 0128 	add.w	r1, r5, #40	; 0x28
+ 1480abe:	aa04      	add	r2, sp, #16
+ 1480ac0:	4620      	mov	r0, r4
+ 1480ac2:	f4c7 cdc8 	blx	948654 <void ReadOnlyBinaryStream::readVectorList<AvailableCommandsPacket::EnumData>(std::vector<AvailableCommandsPacket::EnumData, std::allocator<AvailableCommandsPacket::EnumData> >&, std::function<AvailableCommandsPacket::EnumData (ReadOnlyBinaryStream&)>&&)@plt>
+ 1480ac6:	9b06      	ldr	r3, [sp, #24]
+ 1480ac8:	b11b      	cbz	r3, 1480ad2 <AvailableCommandsPacket::read(BinaryStream&)+0xee>
+ 1480aca:	a804      	add	r0, sp, #16
+ 1480acc:	2203      	movs	r2, #3
+ 1480ace:	4601      	mov	r1, r0
+ 1480ad0:	4798      	blx	r3
+ 1480ad2:	2000      	movs	r0, #0
+ 1480ad4:	9002      	str	r0, [sp, #8]
+ 1480ad6:	2001      	movs	r0, #1
+ 1480ad8:	f485 caec 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1480adc:	4939      	ldr	r1, [pc, #228]	; (1480bc4 <AvailableCommandsPacket::read(BinaryStream&)+0x1e0>)
+ 1480ade:	4a3a      	ldr	r2, [pc, #232]	; (1480bc8 <AvailableCommandsPacket::read(BinaryStream&)+0x1e4>)
+ 1480ae0:	4479      	add	r1, pc
+ 1480ae2:	9000      	str	r0, [sp, #0]
+ 1480ae4:	447a      	add	r2, pc
+ 1480ae6:	e9cd 1202 	strd	r1, r2, [sp, #8]
+ 1480aea:	f105 0134 	add.w	r1, r5, #52	; 0x34
+ 1480aee:	466a      	mov	r2, sp
+ 1480af0:	4620      	mov	r0, r4
+ 1480af2:	f4c7 cdb6 	blx	948660 <void ReadOnlyBinaryStream::readVectorList<AvailableCommandsPacket::CommandData>(std::vector<AvailableCommandsPacket::CommandData, std::allocator<AvailableCommandsPacket::CommandData> >&, std::function<AvailableCommandsPacket::CommandData (ReadOnlyBinaryStream&)>&&)@plt>
+ 1480af6:	9b02      	ldr	r3, [sp, #8]
+ 1480af8:	b11b      	cbz	r3, 1480b02 <AvailableCommandsPacket::read(BinaryStream&)+0x11e>
+ 1480afa:	4668      	mov	r0, sp
+ 1480afc:	2203      	movs	r2, #3
+ 1480afe:	4601      	mov	r1, r0
+ 1480b00:	4798      	blx	r3
+ 1480b02:	9b0a      	ldr	r3, [sp, #40]	; 0x28
+ 1480b04:	b11b      	cbz	r3, 1480b0e <AvailableCommandsPacket::read(BinaryStream&)+0x12a>
+ 1480b06:	a808      	add	r0, sp, #32
+ 1480b08:	2203      	movs	r2, #3
+ 1480b0a:	4601      	mov	r1, r0
+ 1480b0c:	4798      	blx	r3
+ 1480b0e:	b020      	add	sp, #128	; 0x80
+ 1480b10:	bdb0      	pop	{r4, r5, r7, pc}
+ 1480b12:	4604      	mov	r4, r0
+ 1480b14:	9b0a      	ldr	r3, [sp, #40]	; 0x28
+ 1480b16:	b1bb      	cbz	r3, 1480b48 <AvailableCommandsPacket::read(BinaryStream&)+0x164>
+ 1480b18:	a808      	add	r0, sp, #32
+ 1480b1a:	2203      	movs	r2, #3
+ 1480b1c:	4601      	mov	r1, r0
+ 1480b1e:	4798      	blx	r3
+ 1480b20:	e012      	b.n	1480b48 <AvailableCommandsPacket::read(BinaryStream&)+0x164>
+ 1480b22:	f65d de29 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b26:	9b12      	ldr	r3, [sp, #72]	; 0x48
+ 1480b28:	4604      	mov	r4, r0
+ 1480b2a:	b16b      	cbz	r3, 1480b48 <AvailableCommandsPacket::read(BinaryStream&)+0x164>
+ 1480b2c:	a810      	add	r0, sp, #64	; 0x40
+ 1480b2e:	2203      	movs	r2, #3
+ 1480b30:	4601      	mov	r1, r0
+ 1480b32:	4798      	blx	r3
+ 1480b34:	e008      	b.n	1480b48 <AvailableCommandsPacket::read(BinaryStream&)+0x164>
+ 1480b36:	f65d de1f 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b3a:	9b0e      	ldr	r3, [sp, #56]	; 0x38
+ 1480b3c:	4604      	mov	r4, r0
+ 1480b3e:	b11b      	cbz	r3, 1480b48 <AvailableCommandsPacket::read(BinaryStream&)+0x164>
+ 1480b40:	a80c      	add	r0, sp, #48	; 0x30
+ 1480b42:	2203      	movs	r2, #3
+ 1480b44:	4601      	mov	r1, r0
+ 1480b46:	4798      	blx	r3
+ 1480b48:	4620      	mov	r0, r4
+ 1480b4a:	f485 caae 	blx	9060a8 <_Unwind_Resume@plt>
+ 1480b4e:	9b06      	ldr	r3, [sp, #24]
+ 1480b50:	4604      	mov	r4, r0
+ 1480b52:	2b00      	cmp	r3, #0
+ 1480b54:	d0de      	beq.n	1480b14 <AvailableCommandsPacket::read(BinaryStream&)+0x130>
+ 1480b56:	a804      	add	r0, sp, #16
+ 1480b58:	2203      	movs	r2, #3
+ 1480b5a:	4601      	mov	r1, r0
+ 1480b5c:	4798      	blx	r3
+ 1480b5e:	e7d9      	b.n	1480b14 <AvailableCommandsPacket::read(BinaryStream&)+0x130>
+ 1480b60:	f65d de0a 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b64:	9b02      	ldr	r3, [sp, #8]
+ 1480b66:	4604      	mov	r4, r0
+ 1480b68:	2b00      	cmp	r3, #0
+ 1480b6a:	d0d3      	beq.n	1480b14 <AvailableCommandsPacket::read(BinaryStream&)+0x130>
+ 1480b6c:	4668      	mov	r0, sp
+ 1480b6e:	2203      	movs	r2, #3
+ 1480b70:	4601      	mov	r1, r0
+ 1480b72:	4798      	blx	r3
+ 1480b74:	e7ce      	b.n	1480b14 <AvailableCommandsPacket::read(BinaryStream&)+0x130>
+ 1480b76:	f65d ddff 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b7a:	f65d ddfd 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b7e:	f65d ddfb 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b82:	f65d ddf9 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b86:	f65d ddf7 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b8a:	f65d ddf5 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b8e:	f65d ddf3 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 1480b92:	bf00      	nop
+ 1480b94:	0ba9      	lsrs	r1, r5, #14
+ 1480b96:	0000      	movs	r0, r0
+ 1480b98:	0baf      	lsrs	r7, r5, #14
+ 1480b9a:	0000      	movs	r0, r0
+ 1480b9c:	0b7d      	lsrs	r5, r7, #13
+ 1480b9e:	0000      	movs	r0, r0
+ 1480ba0:	0b83      	lsrs	r3, r0, #14
+ 1480ba2:	0000      	movs	r0, r0
+ 1480ba4:	0bbd      	lsrs	r5, r7, #14
+ 1480ba6:	0000      	movs	r0, r0
+ 1480ba8:	0bb3      	lsrs	r3, r6, #14
+ 1480baa:	0000      	movs	r0, r0
+ 1480bac:	0b9d      	lsrs	r5, r3, #14
+ 1480bae:	0000      	movs	r0, r0
+ 1480bb0:	0b8f      	lsrs	r7, r1, #14
+ 1480bb2:	0000      	movs	r0, r0
+ 1480bb4:	0b7f      	lsrs	r7, r7, #13
+ 1480bb6:	0000      	movs	r0, r0
+ 1480bb8:	0b71      	lsrs	r1, r6, #13
+ 1480bba:	0000      	movs	r0, r0
+ 1480bbc:	0e5b      	lsrs	r3, r3, #25
+ 1480bbe:	0000      	movs	r0, r0
+ 1480bc0:	0f8b      	lsrs	r3, r1, #30
+ 1480bc2:	0000      	movs	r0, r0
+ 1480bc4:	1399      	asrs	r1, r3, #14
+ 1480bc6:	0000      	movs	r0, r0
+ 1480bc8:	11b1      	asrs	r1, r6, #6
+	...

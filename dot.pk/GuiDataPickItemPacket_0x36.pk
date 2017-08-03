@@ -1,0 +1,6 @@
+ 147bf86:	b510      	push	{r4, lr}
+ 147bf88:	4604      	mov	r4, r0
+ 147bf8a:	4608      	mov	r0, r1
+ 147bf8c:	f4a3 cadc 	blx	91f548 <ReadOnlyBinaryStream::getSignedInt()@plt>
+ 147bf90:	6120      	str	r0, [r4, #16]
+ 147bf92:	bd10      	pop	{r4, pc}

@@ -1,0 +1,214 @@
+ 148554c:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 148554e:	b0b1      	sub	sp, #196	; 0xc4
+ 1485550:	ad2c      	add	r5, sp, #176	; 0xb0
+ 1485552:	4604      	mov	r4, r0
+ 1485554:	460f      	mov	r7, r1
+ 1485556:	4628      	mov	r0, r5
+ 1485558:	f4c3 ca0e 	blx	948978 <CommandOriginData ReadOnlyBinaryStream::getType<CommandOriginData>()@plt>
+ 148555c:	f104 0010 	add.w	r0, r4, #16
+ 1485560:	4629      	mov	r1, r5
+ 1485562:	f4c3 ca10 	blx	948984 <CommandOriginData::operator=(CommandOriginData const&)@plt>
+ 1485566:	a82c      	add	r0, sp, #176	; 0xb0
+ 1485568:	f4c1 c9e0 	blx	94692c <CommandOriginData::~CommandOriginData()@plt>
+ 148556c:	4638      	mov	r0, r7
+ 148556e:	f481 cd46 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 1485572:	4605      	mov	r5, r0
+ 1485574:	4638      	mov	r0, r7
+ 1485576:	f48f cc54 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 148557a:	4606      	mov	r6, r0
+ 148557c:	2001      	movs	r0, #1
+ 148557e:	f480 cd9a 	blx	9060b4 <operator new(unsigned int)@plt>
+ 1485582:	4974      	ldr	r1, [pc, #464]	; (1485754 <CommandOutputPacket::read(BinaryStream&)+0x208>)
+ 1485584:	4a74      	ldr	r2, [pc, #464]	; (1485758 <CommandOutputPacket::read(BinaryStream&)+0x20c>)
+ 1485586:	4479      	add	r1, pc
+ 1485588:	9025      	str	r0, [sp, #148]	; 0x94
+ 148558a:	2000      	movs	r0, #0
+ 148558c:	447a      	add	r2, pc
+ 148558e:	e9cd 2127 	strd	r2, r1, [sp, #156]	; 0x9c
+ 1485592:	e9cd 0029 	strd	r0, r0, [sp, #164]	; 0xa4
+ 1485596:	902b      	str	r0, [sp, #172]	; 0xac
+ 1485598:	a929      	add	r1, sp, #164	; 0xa4
+ 148559a:	aa25      	add	r2, sp, #148	; 0x94
+ 148559c:	4638      	mov	r0, r7
+ 148559e:	f4c3 c9f8 	blx	948990 <void ReadOnlyBinaryStream::readVectorList<CommandOutputMessage>(std::vector<CommandOutputMessage, std::allocator<CommandOutputMessage> >&, std::function<CommandOutputMessage (ReadOnlyBinaryStream&)>&&)@plt>
+ 14855a2:	9b27      	ldr	r3, [sp, #156]	; 0x9c
+ 14855a4:	b11b      	cbz	r3, 14855ae <CommandOutputPacket::read(BinaryStream&)+0x62>
+ 14855a6:	a825      	add	r0, sp, #148	; 0x94
+ 14855a8:	2203      	movs	r2, #3
+ 14855aa:	4601      	mov	r1, r0
+ 14855ac:	4798      	blx	r3
+ 14855ae:	2000      	movs	r0, #0
+ 14855b0:	2d04      	cmp	r5, #4
+ 14855b2:	9024      	str	r0, [sp, #144]	; 0x90
+ 14855b4:	d133      	bne.n	148561e <CommandOutputPacket::read(BinaryStream&)+0xd2>
+ 14855b6:	f4c3 c9f2 	blx	94899c <Json::Features::strictMode()@plt>
+ 14855ba:	f8ad 001e 	strh.w	r0, [sp, #30]
+ 14855be:	a808      	add	r0, sp, #32
+ 14855c0:	f10d 011e 	add.w	r1, sp, #30
+ 14855c4:	f4c3 c9f0 	blx	9489a8 <Json::Reader::Reader(Json::Features const&)@plt>
+ 14855c8:	a802      	add	r0, sp, #8
+ 14855ca:	2100      	movs	r1, #0
+ 14855cc:	f480 cdba 	blx	906144 <Json::Value::Value(Json::ValueType)@plt>
+ 14855d0:	a801      	add	r0, sp, #4
+ 14855d2:	4639      	mov	r1, r7
+ 14855d4:	f481 cd4e 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 14855d8:	a808      	add	r0, sp, #32
+ 14855da:	a901      	add	r1, sp, #4
+ 14855dc:	aa02      	add	r2, sp, #8
+ 14855de:	2300      	movs	r3, #0
+ 14855e0:	f480 cdbc 	blx	90615c <Json::Reader::parse(std::string const&, Json::Value&, bool)@plt>
+ 14855e4:	485f      	ldr	r0, [pc, #380]	; (1485764 <CommandOutputPacket::read(BinaryStream&)+0x218>)
+ 14855e6:	9901      	ldr	r1, [sp, #4]
+ 14855e8:	4478      	add	r0, pc
+ 14855ea:	6802      	ldr	r2, [r0, #0]
+ 14855ec:	f1a1 000c 	sub.w	r0, r1, #12
+ 14855f0:	4290      	cmp	r0, r2
+ 14855f2:	d12e      	bne.n	1485652 <CommandOutputPacket::read(BinaryStream&)+0x106>
+ 14855f4:	2020      	movs	r0, #32
+ 14855f6:	f480 cd5e 	blx	9060b4 <operator new(unsigned int)@plt>
+ 14855fa:	4607      	mov	r7, r0
+ 14855fc:	a902      	add	r1, sp, #8
+ 14855fe:	4638      	mov	r0, r7
+ 1485600:	f4c3 c9d8 	blx	9489b4 <CommandPropertyBag::CommandPropertyBag(Json::Value const&)@plt>
+ 1485604:	9824      	ldr	r0, [sp, #144]	; 0x90
+ 1485606:	9724      	str	r7, [sp, #144]	; 0x90
+ 1485608:	2800      	cmp	r0, #0
+ 148560a:	bf1e      	ittt	ne
+ 148560c:	6801      	ldrne	r1, [r0, #0]
+ 148560e:	6849      	ldrne	r1, [r1, #4]
+ 1485610:	4788      	blxne	r1
+ 1485612:	a802      	add	r0, sp, #8
+ 1485614:	f480 cdba 	blx	90618c <Json::Value::~Value()@plt>
+ 1485618:	a808      	add	r0, sp, #32
+ 148561a:	f480 cdbe 	blx	906198 <Json::Reader::~Reader()@plt>
+ 148561e:	a824      	add	r0, sp, #144	; 0x90
+ 1485620:	9000      	str	r0, [sp, #0]
+ 1485622:	f104 0020 	add.w	r0, r4, #32
+ 1485626:	ab29      	add	r3, sp, #164	; 0xa4
+ 1485628:	4629      	mov	r1, r5
+ 148562a:	4632      	mov	r2, r6
+ 148562c:	f4c3 c9c8 	blx	9489c0 <CommandOutput::load(CommandOutputType, int, std::vector<CommandOutputMessage, std::allocator<CommandOutputMessage> >&&, std::unique_ptr<CommandPropertyBag, std::default_delete<CommandPropertyBag> >&&)@plt>
+ 1485630:	9824      	ldr	r0, [sp, #144]	; 0x90
+ 1485632:	2800      	cmp	r0, #0
+ 1485634:	bf1e      	ittt	ne
+ 1485636:	6801      	ldrne	r1, [r0, #0]
+ 1485638:	6849      	ldrne	r1, [r1, #4]
+ 148563a:	4788      	blxne	r1
+ 148563c:	e9dd 0129 	ldrd	r0, r1, [sp, #164]	; 0xa4
+ 1485640:	f4c3 c9c4 	blx	9489cc <void std::_Destroy_aux<false>::__destroy<CommandOutputMessage*>(CommandOutputMessage*, CommandOutputMessage*)@plt>
+ 1485644:	9829      	ldr	r0, [sp, #164]	; 0xa4
+ 1485646:	2800      	cmp	r0, #0
+ 1485648:	bf18      	it	ne
+ 148564a:	f480 cd28 	blxne	90609c <operator delete(void*)@plt>
+ 148564e:	b031      	add	sp, #196	; 0xc4
+ 1485650:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 1485652:	4a45      	ldr	r2, [pc, #276]	; (1485768 <CommandOutputPacket::read(BinaryStream&)+0x21c>)
+ 1485654:	447a      	add	r2, pc
+ 1485656:	6813      	ldr	r3, [r2, #0]
+ 1485658:	1f0a      	subs	r2, r1, #4
+ 148565a:	b15b      	cbz	r3, 1485674 <CommandOutputPacket::read(BinaryStream&)+0x128>
+ 148565c:	f3bf 8f5b 	dmb	ish
+ 1485660:	e852 1f00 	ldrex	r1, [r2]
+ 1485664:	1e4b      	subs	r3, r1, #1
+ 1485666:	e842 3700 	strex	r7, r3, [r2]
+ 148566a:	2f00      	cmp	r7, #0
+ 148566c:	d1f8      	bne.n	1485660 <CommandOutputPacket::read(BinaryStream&)+0x114>
+ 148566e:	f3bf 8f5b 	dmb	ish
+ 1485672:	e002      	b.n	148567a <CommandOutputPacket::read(BinaryStream&)+0x12e>
+ 1485674:	6811      	ldr	r1, [r2, #0]
+ 1485676:	1e4b      	subs	r3, r1, #1
+ 1485678:	6013      	str	r3, [r2, #0]
+ 148567a:	2900      	cmp	r1, #0
+ 148567c:	bfdc      	itt	le
+ 148567e:	f10d 01c0 	addle.w	r1, sp, #192	; 0xc0
+ 1485682:	f16e d4fd 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1485686:	e7b5      	b.n	14855f4 <CommandOutputPacket::read(BinaryStream&)+0xa8>
+ 1485688:	4604      	mov	r4, r0
+ 148568a:	e04b      	b.n	1485724 <CommandOutputPacket::read(BinaryStream&)+0x1d8>
+ 148568c:	4604      	mov	r4, r0
+ 148568e:	a82c      	add	r0, sp, #176	; 0xb0
+ 1485690:	f4c1 c94c 	blx	94692c <CommandOriginData::~CommandOriginData()@plt>
+ 1485694:	4620      	mov	r0, r4
+ 1485696:	f480 cd08 	blx	9060a8 <_Unwind_Resume@plt>
+ 148569a:	e9dd 5129 	ldrd	r5, r1, [sp, #164]	; 0xa4
+ 148569e:	4604      	mov	r4, r0
+ 14856a0:	4628      	mov	r0, r5
+ 14856a2:	f4c3 c994 	blx	9489cc <void std::_Destroy_aux<false>::__destroy<CommandOutputMessage*>(CommandOutputMessage*, CommandOutputMessage*)@plt>
+ 14856a6:	2d00      	cmp	r5, #0
+ 14856a8:	bf1c      	itt	ne
+ 14856aa:	4628      	movne	r0, r5
+ 14856ac:	f480 ccf6 	blxne	90609c <operator delete(void*)@plt>
+ 14856b0:	9b27      	ldr	r3, [sp, #156]	; 0x9c
+ 14856b2:	2b00      	cmp	r3, #0
+ 14856b4:	d046      	beq.n	1485744 <CommandOutputPacket::read(BinaryStream&)+0x1f8>
+ 14856b6:	a825      	add	r0, sp, #148	; 0x94
+ 14856b8:	2203      	movs	r2, #3
+ 14856ba:	4601      	mov	r1, r0
+ 14856bc:	4798      	blx	r3
+ 14856be:	e041      	b.n	1485744 <CommandOutputPacket::read(BinaryStream&)+0x1f8>
+ 14856c0:	f659 d85a 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 14856c4:	4604      	mov	r4, r0
+ 14856c6:	e027      	b.n	1485718 <CommandOutputPacket::read(BinaryStream&)+0x1cc>
+ 14856c8:	f659 d856 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 14856cc:	4604      	mov	r4, r0
+ 14856ce:	e026      	b.n	148571e <CommandOutputPacket::read(BinaryStream&)+0x1d2>
+ 14856d0:	4a22      	ldr	r2, [pc, #136]	; (148575c <CommandOutputPacket::read(BinaryStream&)+0x210>)
+ 14856d2:	4604      	mov	r4, r0
+ 14856d4:	9901      	ldr	r1, [sp, #4]
+ 14856d6:	447a      	add	r2, pc
+ 14856d8:	f1a1 000c 	sub.w	r0, r1, #12
+ 14856dc:	6812      	ldr	r2, [r2, #0]
+ 14856de:	4290      	cmp	r0, r2
+ 14856e0:	d01a      	beq.n	1485718 <CommandOutputPacket::read(BinaryStream&)+0x1cc>
+ 14856e2:	4a1f      	ldr	r2, [pc, #124]	; (1485760 <CommandOutputPacket::read(BinaryStream&)+0x214>)
+ 14856e4:	447a      	add	r2, pc
+ 14856e6:	6813      	ldr	r3, [r2, #0]
+ 14856e8:	1f0a      	subs	r2, r1, #4
+ 14856ea:	b373      	cbz	r3, 148574a <CommandOutputPacket::read(BinaryStream&)+0x1fe>
+ 14856ec:	f3bf 8f5b 	dmb	ish
+ 14856f0:	e852 1f00 	ldrex	r1, [r2]
+ 14856f4:	1e4b      	subs	r3, r1, #1
+ 14856f6:	e842 3700 	strex	r7, r3, [r2]
+ 14856fa:	2f00      	cmp	r7, #0
+ 14856fc:	d1f8      	bne.n	14856f0 <CommandOutputPacket::read(BinaryStream&)+0x1a4>
+ 14856fe:	f3bf 8f5b 	dmb	ish
+ 1485702:	2900      	cmp	r1, #0
+ 1485704:	bfdc      	itt	le
+ 1485706:	f10d 01c0 	addle.w	r1, sp, #192	; 0xc0
+ 148570a:	f16e d4b9 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 148570e:	e003      	b.n	1485718 <CommandOutputPacket::read(BinaryStream&)+0x1cc>
+ 1485710:	4604      	mov	r4, r0
+ 1485712:	4638      	mov	r0, r7
+ 1485714:	f480 ccc2 	blx	90609c <operator delete(void*)@plt>
+ 1485718:	a802      	add	r0, sp, #8
+ 148571a:	f480 cd38 	blx	90618c <Json::Value::~Value()@plt>
+ 148571e:	a808      	add	r0, sp, #32
+ 1485720:	f480 cd3a 	blx	906198 <Json::Reader::~Reader()@plt>
+ 1485724:	9824      	ldr	r0, [sp, #144]	; 0x90
+ 1485726:	b110      	cbz	r0, 148572e <CommandOutputPacket::read(BinaryStream&)+0x1e2>
+ 1485728:	6801      	ldr	r1, [r0, #0]
+ 148572a:	6849      	ldr	r1, [r1, #4]
+ 148572c:	4788      	blx	r1
+ 148572e:	2000      	movs	r0, #0
+ 1485730:	9024      	str	r0, [sp, #144]	; 0x90
+ 1485732:	e9dd 0129 	ldrd	r0, r1, [sp, #164]	; 0xa4
+ 1485736:	f4c3 c94a 	blx	9489cc <void std::_Destroy_aux<false>::__destroy<CommandOutputMessage*>(CommandOutputMessage*, CommandOutputMessage*)@plt>
+ 148573a:	9829      	ldr	r0, [sp, #164]	; 0xa4
+ 148573c:	2800      	cmp	r0, #0
+ 148573e:	bf18      	it	ne
+ 1485740:	f480 ccac 	blxne	90609c <operator delete(void*)@plt>
+ 1485744:	4620      	mov	r0, r4
+ 1485746:	f480 ccb0 	blx	9060a8 <_Unwind_Resume@plt>
+ 148574a:	6811      	ldr	r1, [r2, #0]
+ 148574c:	1e4b      	subs	r3, r1, #1
+ 148574e:	6013      	str	r3, [r2, #0]
+ 1485750:	e7d7      	b.n	1485702 <CommandOutputPacket::read(BinaryStream&)+0x1b6>
+ 1485752:	bf00      	nop
+ 1485754:	0a23      	lsrs	r3, r4, #8
+ 1485756:	0000      	movs	r0, r0
+ 1485758:	0c99      	lsrs	r1, r3, #18
+ 148575a:	0000      	movs	r0, r0
+ 148575c:	f7f6 0131 			; <UNDEFINED> instruction: 0xf7f60131
+ 1485760:	f7ec 0131 			; <UNDEFINED> instruction: 0xf7ec0131
+ 1485764:	f8e4 0131 	str??.w	r0, [r4, #305]	; 0x131
+ 1485768:	f87c 0131 	ldr??.w	r0, [ip, <undefined>]

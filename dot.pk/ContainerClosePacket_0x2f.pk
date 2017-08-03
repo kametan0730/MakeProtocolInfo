@@ -1,0 +1,6 @@
+  e1e2da:	b510      	push	{r4, lr}
+  e1e2dc:	4604      	mov	r4, r0
+  e1e2de:	4608      	mov	r0, r1
+  e1e2e0:	f6e8 e68c 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+  e1e2e4:	7360      	strb	r0, [r4, #13]
+  e1e2e6:	bd10      	pop	{r4, pc}

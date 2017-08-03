@@ -1,0 +1,83 @@
+  bcc888:	b570      	push	{r4, r5, r6, lr}
+  bcc88a:	b084      	sub	sp, #16
+  bcc88c:	460d      	mov	r5, r1
+  bcc88e:	4604      	mov	r4, r0
+  bcc890:	4628      	mov	r0, r5
+  bcc892:	f53f ea18 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+  bcc896:	7360      	strb	r0, [r4, #13]
+  bcc898:	b988      	cbnz	r0, bcc8be <DisconnectPacket::read(BinaryStream&)+0x36>
+  bcc89a:	ae01      	add	r6, sp, #4
+  bcc89c:	4629      	mov	r1, r5
+  bcc89e:	4630      	mov	r0, r6
+  bcc8a0:	f53a ebe8 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  bcc8a4:	f104 0010 	add.w	r0, r4, #16
+  bcc8a8:	4631      	mov	r1, r6
+  bcc8aa:	f1c1 eee4 	blx	d8e674 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x4bc>
+  bcc8ae:	4827      	ldr	r0, [pc, #156]	; (bcc94c <DisconnectPacket::read(BinaryStream&)+0xc4>)
+  bcc8b0:	9901      	ldr	r1, [sp, #4]
+  bcc8b2:	4478      	add	r0, pc
+  bcc8b4:	6802      	ldr	r2, [r0, #0]
+  bcc8b6:	f1a1 000c 	sub.w	r0, r1, #12
+  bcc8ba:	4290      	cmp	r0, r2
+  bcc8bc:	d101      	bne.n	bcc8c2 <DisconnectPacket::read(BinaryStream&)+0x3a>
+  bcc8be:	b004      	add	sp, #16
+  bcc8c0:	bd70      	pop	{r4, r5, r6, pc}
+  bcc8c2:	4a23      	ldr	r2, [pc, #140]	; (bcc950 <DisconnectPacket::read(BinaryStream&)+0xc8>)
+  bcc8c4:	447a      	add	r2, pc
+  bcc8c6:	6813      	ldr	r3, [r2, #0]
+  bcc8c8:	1f0a      	subs	r2, r1, #4
+  bcc8ca:	b15b      	cbz	r3, bcc8e4 <DisconnectPacket::read(BinaryStream&)+0x5c>
+  bcc8cc:	f3bf 8f5b 	dmb	ish
+  bcc8d0:	e852 1f00 	ldrex	r1, [r2]
+  bcc8d4:	1e4b      	subs	r3, r1, #1
+  bcc8d6:	e842 3600 	strex	r6, r3, [r2]
+  bcc8da:	2e00      	cmp	r6, #0
+  bcc8dc:	d1f8      	bne.n	bcc8d0 <DisconnectPacket::read(BinaryStream&)+0x48>
+  bcc8de:	f3bf 8f5b 	dmb	ish
+  bcc8e2:	e002      	b.n	bcc8ea <DisconnectPacket::read(BinaryStream&)+0x62>
+  bcc8e4:	6811      	ldr	r1, [r2, #0]
+  bcc8e6:	1e4b      	subs	r3, r1, #1
+  bcc8e8:	6013      	str	r3, [r2, #0]
+  bcc8ea:	2900      	cmp	r1, #0
+  bcc8ec:	bfdc      	itt	le
+  bcc8ee:	f10d 0108 	addle.w	r1, sp, #8
+  bcc8f2:	f1c1 edb0 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  bcc8f6:	e7e2      	b.n	bcc8be <DisconnectPacket::read(BinaryStream&)+0x36>
+  bcc8f8:	4a12      	ldr	r2, [pc, #72]	; (bcc944 <DisconnectPacket::read(BinaryStream&)+0xbc>)
+  bcc8fa:	4604      	mov	r4, r0
+  bcc8fc:	9901      	ldr	r1, [sp, #4]
+  bcc8fe:	447a      	add	r2, pc
+  bcc900:	f1a1 000c 	sub.w	r0, r1, #12
+  bcc904:	6812      	ldr	r2, [r2, #0]
+  bcc906:	4290      	cmp	r0, r2
+  bcc908:	d015      	beq.n	bcc936 <DisconnectPacket::read(BinaryStream&)+0xae>
+  bcc90a:	4a0f      	ldr	r2, [pc, #60]	; (bcc948 <DisconnectPacket::read(BinaryStream&)+0xc0>)
+  bcc90c:	447a      	add	r2, pc
+  bcc90e:	6813      	ldr	r3, [r2, #0]
+  bcc910:	1f0a      	subs	r2, r1, #4
+  bcc912:	b19b      	cbz	r3, bcc93c <DisconnectPacket::read(BinaryStream&)+0xb4>
+  bcc914:	f3bf 8f5b 	dmb	ish
+  bcc918:	e852 1f00 	ldrex	r1, [r2]
+  bcc91c:	1e4b      	subs	r3, r1, #1
+  bcc91e:	e842 3600 	strex	r6, r3, [r2]
+  bcc922:	2e00      	cmp	r6, #0
+  bcc924:	d1f8      	bne.n	bcc918 <DisconnectPacket::read(BinaryStream&)+0x90>
+  bcc926:	f3bf 8f5b 	dmb	ish
+  bcc92a:	2900      	cmp	r1, #0
+  bcc92c:	bfdc      	itt	le
+  bcc92e:	f10d 010c 	addle.w	r1, sp, #12
+  bcc932:	f1c1 ed90 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  bcc936:	4620      	mov	r0, r4
+  bcc938:	f539 ebb6 	blx	9060a8 <_Unwind_Resume@plt>
+  bcc93c:	6811      	ldr	r1, [r2, #0]
+  bcc93e:	1e4b      	subs	r3, r1, #1
+  bcc940:	6013      	str	r3, [r2, #0]
+  bcc942:	e7f2      	b.n	bcc92a <DisconnectPacket::read(BinaryStream&)+0xa2>
+  bcc944:	85ce      	strh	r6, [r1, #46]	; 0x2e
+  bcc946:	01bd      	lsls	r5, r7, #6
+  bcc948:	85c4      	strh	r4, [r0, #46]	; 0x2e
+  bcc94a:	01bd      	lsls	r5, r7, #6
+  bcc94c:	861a      	strh	r2, [r3, #48]	; 0x30
+  bcc94e:	01bd      	lsls	r5, r7, #6
+  bcc950:	860c      	strh	r4, [r1, #48]	; 0x30
+  bcc952:	01bd      	lsls	r5, r7, #6

@@ -1,0 +1,13 @@
+ 147c6b8:	b510      	push	{r4, lr}
+ 147c6ba:	b084      	sub	sp, #16
+ 147c6bc:	4604      	mov	r4, r0
+ 147c6be:	a801      	add	r0, sp, #4
+ 147c6c0:	f4a2 cf6c 	blx	91f59c <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+ 147c6c4:	9801      	ldr	r0, [sp, #4]
+ 147c6c6:	6120      	str	r0, [r4, #16]
+ 147c6c8:	9802      	ldr	r0, [sp, #8]
+ 147c6ca:	6160      	str	r0, [r4, #20]
+ 147c6cc:	9803      	ldr	r0, [sp, #12]
+ 147c6ce:	61a0      	str	r0, [r4, #24]
+ 147c6d0:	b004      	add	sp, #16
+ 147c6d2:	bd10      	pop	{r4, pc}

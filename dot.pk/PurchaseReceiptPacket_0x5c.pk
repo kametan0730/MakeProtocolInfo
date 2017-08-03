@@ -1,0 +1,147 @@
+  ca5394:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  ca5398:	b085      	sub	sp, #20
+  ca539a:	4681      	mov	r9, r0
+  ca539c:	468a      	mov	sl, r1
+  ca539e:	46c8      	mov	r8, r9
+  ca53a0:	f858 ef10 	ldr.w	lr, [r8, #16]!
+  ca53a4:	f8d8 b004 	ldr.w	fp, [r8, #4]
+  ca53a8:	45f3      	cmp	fp, lr
+  ca53aa:	d031      	beq.n	ca5410 <PurchaseReceiptPacket::read(BinaryStream&)+0x7c>
+  ca53ac:	4853      	ldr	r0, [pc, #332]	; (ca54fc <PurchaseReceiptPacket::read(BinaryStream&)+0x168>)
+  ca53ae:	a902      	add	r1, sp, #8
+  ca53b0:	4674      	mov	r4, lr
+  ca53b2:	4478      	add	r0, pc
+  ca53b4:	6806      	ldr	r6, [r0, #0]
+  ca53b6:	4852      	ldr	r0, [pc, #328]	; (ca5500 <PurchaseReceiptPacket::read(BinaryStream&)+0x16c>)
+  ca53b8:	4478      	add	r0, pc
+  ca53ba:	f8d0 c000 	ldr.w	ip, [r0]
+  ca53be:	e01f      	b.n	ca5400 <PurchaseReceiptPacket::read(BinaryStream&)+0x6c>
+  ca53c0:	3a04      	subs	r2, #4
+  ca53c2:	f1bc 0f00 	cmp.w	ip, #0
+  ca53c6:	d00b      	beq.n	ca53e0 <PurchaseReceiptPacket::read(BinaryStream&)+0x4c>
+  ca53c8:	f3bf 8f5b 	dmb	ish
+  ca53cc:	e852 7f00 	ldrex	r7, [r2]
+  ca53d0:	1e7b      	subs	r3, r7, #1
+  ca53d2:	e842 3500 	strex	r5, r3, [r2]
+  ca53d6:	2d00      	cmp	r5, #0
+  ca53d8:	d1f8      	bne.n	ca53cc <PurchaseReceiptPacket::read(BinaryStream&)+0x38>
+  ca53da:	f3bf 8f5b 	dmb	ish
+  ca53de:	e002      	b.n	ca53e6 <PurchaseReceiptPacket::read(BinaryStream&)+0x52>
+  ca53e0:	6817      	ldr	r7, [r2, #0]
+  ca53e2:	1e7b      	subs	r3, r7, #1
+  ca53e4:	6013      	str	r3, [r2, #0]
+  ca53e6:	2f00      	cmp	r7, #0
+  ca53e8:	dc0f      	bgt.n	ca540a <PurchaseReceiptPacket::read(BinaryStream&)+0x76>
+  ca53ea:	4665      	mov	r5, ip
+  ca53ec:	460f      	mov	r7, r1
+  ca53ee:	f8cd e000 	str.w	lr, [sp]
+  ca53f2:	f0e9 e830 	blx	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca53f6:	f8dd e000 	ldr.w	lr, [sp]
+  ca53fa:	4639      	mov	r1, r7
+  ca53fc:	46ac      	mov	ip, r5
+  ca53fe:	e004      	b.n	ca540a <PurchaseReceiptPacket::read(BinaryStream&)+0x76>
+  ca5400:	6822      	ldr	r2, [r4, #0]
+  ca5402:	f1a2 000c 	sub.w	r0, r2, #12
+  ca5406:	42b0      	cmp	r0, r6
+  ca5408:	d1da      	bne.n	ca53c0 <PurchaseReceiptPacket::read(BinaryStream&)+0x2c>
+  ca540a:	3404      	adds	r4, #4
+  ca540c:	455c      	cmp	r4, fp
+  ca540e:	d1f7      	bne.n	ca5400 <PurchaseReceiptPacket::read(BinaryStream&)+0x6c>
+  ca5410:	4650      	mov	r0, sl
+  ca5412:	f8c9 e014 	str.w	lr, [r9, #20]
+  ca5416:	f46f ed04 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ca541a:	4607      	mov	r7, r0
+  ca541c:	4640      	mov	r0, r8
+  ca541e:	4639      	mov	r1, r7
+  ca5420:	f46f e926 	blx	914670 <std::vector<std::string, std::allocator<std::string> >::reserve(unsigned int)@plt>
+  ca5424:	2f00      	cmp	r7, #0
+  ca5426:	d040      	beq.n	ca54aa <PurchaseReceiptPacket::read(BinaryStream&)+0x116>
+  ca5428:	4838      	ldr	r0, [pc, #224]	; (ca550c <PurchaseReceiptPacket::read(BinaryStream&)+0x178>)
+  ca542a:	f10d 0b04 	add.w	fp, sp, #4
+  ca542e:	2400      	movs	r4, #0
+  ca5430:	4478      	add	r0, pc
+  ca5432:	6806      	ldr	r6, [r0, #0]
+  ca5434:	4836      	ldr	r0, [pc, #216]	; (ca5510 <PurchaseReceiptPacket::read(BinaryStream&)+0x17c>)
+  ca5436:	4478      	add	r0, pc
+  ca5438:	6805      	ldr	r5, [r0, #0]
+  ca543a:	e019      	b.n	ca5470 <PurchaseReceiptPacket::read(BinaryStream&)+0xdc>
+  ca543c:	1f0a      	subs	r2, r1, #4
+  ca543e:	b16d      	cbz	r5, ca545c <PurchaseReceiptPacket::read(BinaryStream&)+0xc8>
+  ca5440:	46ac      	mov	ip, r5
+  ca5442:	f3bf 8f5b 	dmb	ish
+  ca5446:	e852 1f00 	ldrex	r1, [r2]
+  ca544a:	1e4b      	subs	r3, r1, #1
+  ca544c:	e842 3500 	strex	r5, r3, [r2]
+  ca5450:	2d00      	cmp	r5, #0
+  ca5452:	d1f8      	bne.n	ca5446 <PurchaseReceiptPacket::read(BinaryStream&)+0xb2>
+  ca5454:	f3bf 8f5b 	dmb	ish
+  ca5458:	4665      	mov	r5, ip
+  ca545a:	e002      	b.n	ca5462 <PurchaseReceiptPacket::read(BinaryStream&)+0xce>
+  ca545c:	6811      	ldr	r1, [r2, #0]
+  ca545e:	1e4b      	subs	r3, r1, #1
+  ca5460:	6013      	str	r3, [r2, #0]
+  ca5462:	2900      	cmp	r1, #0
+  ca5464:	bfdc      	itt	le
+  ca5466:	f10d 010c 	addle.w	r1, sp, #12
+  ca546a:	f0e8 eff4 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca546e:	e019      	b.n	ca54a4 <PurchaseReceiptPacket::read(BinaryStream&)+0x110>
+  ca5470:	4658      	mov	r0, fp
+  ca5472:	4651      	mov	r1, sl
+  ca5474:	f461 edfe 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  ca5478:	e9d9 0105 	ldrd	r0, r1, [r9, #20]
+  ca547c:	4288      	cmp	r0, r1
+  ca547e:	d008      	beq.n	ca5492 <PurchaseReceiptPacket::read(BinaryStream&)+0xfe>
+  ca5480:	9901      	ldr	r1, [sp, #4]
+  ca5482:	f840 1b04 	str.w	r1, [r0], #4
+  ca5486:	f106 010c 	add.w	r1, r6, #12
+  ca548a:	9101      	str	r1, [sp, #4]
+  ca548c:	f8c9 0014 	str.w	r0, [r9, #20]
+  ca5490:	e004      	b.n	ca549c <PurchaseReceiptPacket::read(BinaryStream&)+0x108>
+  ca5492:	4640      	mov	r0, r8
+  ca5494:	4659      	mov	r1, fp
+  ca5496:	f462 eaaa 	blx	9079ec <void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<std::string>(std::string&&)@plt>
+  ca549a:	9901      	ldr	r1, [sp, #4]
+  ca549c:	f1a1 000c 	sub.w	r0, r1, #12
+  ca54a0:	42b0      	cmp	r0, r6
+  ca54a2:	d1cb      	bne.n	ca543c <PurchaseReceiptPacket::read(BinaryStream&)+0xa8>
+  ca54a4:	3401      	adds	r4, #1
+  ca54a6:	42bc      	cmp	r4, r7
+  ca54a8:	d3e2      	bcc.n	ca5470 <PurchaseReceiptPacket::read(BinaryStream&)+0xdc>
+  ca54aa:	b005      	add	sp, #20
+  ca54ac:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  ca54b0:	4a14      	ldr	r2, [pc, #80]	; (ca5504 <PurchaseReceiptPacket::read(BinaryStream&)+0x170>)
+  ca54b2:	4604      	mov	r4, r0
+  ca54b4:	9901      	ldr	r1, [sp, #4]
+  ca54b6:	447a      	add	r2, pc
+  ca54b8:	f1a1 000c 	sub.w	r0, r1, #12
+  ca54bc:	6812      	ldr	r2, [r2, #0]
+  ca54be:	4290      	cmp	r0, r2
+  ca54c0:	d015      	beq.n	ca54ee <PurchaseReceiptPacket::read(BinaryStream&)+0x15a>
+  ca54c2:	4a11      	ldr	r2, [pc, #68]	; (ca5508 <PurchaseReceiptPacket::read(BinaryStream&)+0x174>)
+  ca54c4:	447a      	add	r2, pc
+  ca54c6:	6813      	ldr	r3, [r2, #0]
+  ca54c8:	1f0a      	subs	r2, r1, #4
+  ca54ca:	b19b      	cbz	r3, ca54f4 <PurchaseReceiptPacket::read(BinaryStream&)+0x160>
+  ca54cc:	f3bf 8f5b 	dmb	ish
+  ca54d0:	e852 1f00 	ldrex	r1, [r2]
+  ca54d4:	1e4b      	subs	r3, r1, #1
+  ca54d6:	e842 3700 	strex	r7, r3, [r2]
+  ca54da:	2f00      	cmp	r7, #0
+  ca54dc:	d1f8      	bne.n	ca54d0 <PurchaseReceiptPacket::read(BinaryStream&)+0x13c>
+  ca54de:	f3bf 8f5b 	dmb	ish
+  ca54e2:	2900      	cmp	r1, #0
+  ca54e4:	bfdc      	itt	le
+  ca54e6:	f10d 0110 	addle.w	r1, sp, #16
+  ca54ea:	f0e8 efb4 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  ca54ee:	4620      	mov	r0, r4
+  ca54f0:	f460 edda 	blx	9060a8 <_Unwind_Resume@plt>
+  ca54f4:	6811      	ldr	r1, [r2, #0]
+  ca54f6:	1e4b      	subs	r3, r1, #1
+  ca54f8:	6013      	str	r3, [r2, #0]
+  ca54fa:	e7f2      	b.n	ca54e2 <PurchaseReceiptPacket::read(BinaryStream&)+0x14e>
+  ca54fc:	fb1a 01af 			; <UNDEFINED> instruction: 0xfb1a01af
+  ca5500:	fb18 01af 			; <UNDEFINED> instruction: 0xfb1801af
+  ca5504:	fa16 01af 			; <UNDEFINED> instruction: 0xfa1601af
+  ca5508:	fa0c 01af 			; <UNDEFINED> instruction: 0xfa0c01af
+  ca550c:	fa9c 01af 			; <UNDEFINED> instruction: 0xfa9c01af
+  ca5510:	fa9a 01af 			; <UNDEFINED> instruction: 0xfa9a01af

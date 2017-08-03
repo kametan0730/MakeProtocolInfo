@@ -1,0 +1,160 @@
+ 124e8f8:	b570      	push	{r4, r5, r6, lr}
+ 124e8fa:	b09a      	sub	sp, #104	; 0x68
+ 124e8fc:	4604      	mov	r4, r0
+ 124e8fe:	4668      	mov	r0, sp
+ 124e900:	460d      	mov	r5, r1
+ 124e902:	f6d0 ce4c 	blx	91f59c <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+ 124e906:	9800      	ldr	r0, [sp, #0]
+ 124e908:	6120      	str	r0, [r4, #16]
+ 124e90a:	9801      	ldr	r0, [sp, #4]
+ 124e90c:	6160      	str	r0, [r4, #20]
+ 124e90e:	9802      	ldr	r0, [sp, #8]
+ 124e910:	61a0      	str	r0, [r4, #24]
+ 124e912:	4628      	mov	r0, r5
+ 124e914:	f6c6 ca84 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 124e918:	466e      	mov	r6, sp
+ 124e91a:	61e0      	str	r0, [r4, #28]
+ 124e91c:	4630      	mov	r0, r6
+ 124e91e:	4629      	mov	r1, r5
+ 124e920:	f6ec c9ba 	blx	93ac98 <StructureEditorData ReadOnlyBinaryStream::getType<StructureEditorData>()@plt>
+ 124e924:	f104 0020 	add.w	r0, r4, #32
+ 124e928:	4631      	mov	r1, r6
+ 124e92a:	f6ec c9bc 	blx	93aca4 <StructureEditorData::operator=(StructureEditorData const&)@plt>
+ 124e92e:	4851      	ldr	r0, [pc, #324]	; (124ea74 <StructureBlockUpdatePacket::read(BinaryStream&)+0x17c>)
+ 124e930:	9901      	ldr	r1, [sp, #4]
+ 124e932:	4478      	add	r0, pc
+ 124e934:	6802      	ldr	r2, [r0, #0]
+ 124e936:	f1a1 000c 	sub.w	r0, r1, #12
+ 124e93a:	4290      	cmp	r0, r2
+ 124e93c:	d113      	bne.n	124e966 <StructureBlockUpdatePacket::read(BinaryStream&)+0x6e>
+ 124e93e:	484f      	ldr	r0, [pc, #316]	; (124ea7c <StructureBlockUpdatePacket::read(BinaryStream&)+0x184>)
+ 124e940:	9900      	ldr	r1, [sp, #0]
+ 124e942:	4478      	add	r0, pc
+ 124e944:	6802      	ldr	r2, [r0, #0]
+ 124e946:	f1a1 000c 	sub.w	r0, r1, #12
+ 124e94a:	4290      	cmp	r0, r2
+ 124e94c:	d11c      	bne.n	124e988 <StructureBlockUpdatePacket::read(BinaryStream&)+0x90>
+ 124e94e:	4628      	mov	r0, r5
+ 124e950:	f6bd c9b8 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+ 124e954:	f884 0080 	strb.w	r0, [r4, #128]	; 0x80
+ 124e958:	4628      	mov	r0, r5
+ 124e95a:	f6bd c9b4 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+ 124e95e:	f884 0081 	strb.w	r0, [r4, #129]	; 0x81
+ 124e962:	b01a      	add	sp, #104	; 0x68
+ 124e964:	bd70      	pop	{r4, r5, r6, pc}
+ 124e966:	4a44      	ldr	r2, [pc, #272]	; (124ea78 <StructureBlockUpdatePacket::read(BinaryStream&)+0x180>)
+ 124e968:	447a      	add	r2, pc
+ 124e96a:	6813      	ldr	r3, [r2, #0]
+ 124e96c:	1f0a      	subs	r2, r1, #4
+ 124e96e:	b1e3      	cbz	r3, 124e9aa <StructureBlockUpdatePacket::read(BinaryStream&)+0xb2>
+ 124e970:	f3bf 8f5b 	dmb	ish
+ 124e974:	e852 1f00 	ldrex	r1, [r2]
+ 124e978:	1e4b      	subs	r3, r1, #1
+ 124e97a:	e842 3600 	strex	r6, r3, [r2]
+ 124e97e:	2e00      	cmp	r6, #0
+ 124e980:	d1f8      	bne.n	124e974 <StructureBlockUpdatePacket::read(BinaryStream&)+0x7c>
+ 124e982:	f3bf 8f5b 	dmb	ish
+ 124e986:	e013      	b.n	124e9b0 <StructureBlockUpdatePacket::read(BinaryStream&)+0xb8>
+ 124e988:	4a3d      	ldr	r2, [pc, #244]	; (124ea80 <StructureBlockUpdatePacket::read(BinaryStream&)+0x188>)
+ 124e98a:	447a      	add	r2, pc
+ 124e98c:	6813      	ldr	r3, [r2, #0]
+ 124e98e:	1f0a      	subs	r2, r1, #4
+ 124e990:	b1ab      	cbz	r3, 124e9be <StructureBlockUpdatePacket::read(BinaryStream&)+0xc6>
+ 124e992:	f3bf 8f5b 	dmb	ish
+ 124e996:	e852 1f00 	ldrex	r1, [r2]
+ 124e99a:	1e4b      	subs	r3, r1, #1
+ 124e99c:	e842 3600 	strex	r6, r3, [r2]
+ 124e9a0:	2e00      	cmp	r6, #0
+ 124e9a2:	d1f8      	bne.n	124e996 <StructureBlockUpdatePacket::read(BinaryStream&)+0x9e>
+ 124e9a4:	f3bf 8f5b 	dmb	ish
+ 124e9a8:	e00c      	b.n	124e9c4 <StructureBlockUpdatePacket::read(BinaryStream&)+0xcc>
+ 124e9aa:	6811      	ldr	r1, [r2, #0]
+ 124e9ac:	1e4b      	subs	r3, r1, #1
+ 124e9ae:	6013      	str	r3, [r2, #0]
+ 124e9b0:	2900      	cmp	r1, #0
+ 124e9b2:	bfdc      	itt	le
+ 124e9b4:	f10d 0164 	addle.w	r1, sp, #100	; 0x64
+ 124e9b8:	f3a5 d362 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 124e9bc:	e7bf      	b.n	124e93e <StructureBlockUpdatePacket::read(BinaryStream&)+0x46>
+ 124e9be:	6811      	ldr	r1, [r2, #0]
+ 124e9c0:	1e4b      	subs	r3, r1, #1
+ 124e9c2:	6013      	str	r3, [r2, #0]
+ 124e9c4:	2900      	cmp	r1, #0
+ 124e9c6:	bfdc      	itt	le
+ 124e9c8:	f10d 0164 	addle.w	r1, sp, #100	; 0x64
+ 124e9cc:	f3a5 d358 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 124e9d0:	e7bd      	b.n	124e94e <StructureBlockUpdatePacket::read(BinaryStream&)+0x56>
+ 124e9d2:	4a24      	ldr	r2, [pc, #144]	; (124ea64 <StructureBlockUpdatePacket::read(BinaryStream&)+0x16c>)
+ 124e9d4:	4604      	mov	r4, r0
+ 124e9d6:	9901      	ldr	r1, [sp, #4]
+ 124e9d8:	447a      	add	r2, pc
+ 124e9da:	f1a1 000c 	sub.w	r0, r1, #12
+ 124e9de:	6812      	ldr	r2, [r2, #0]
+ 124e9e0:	4290      	cmp	r0, r2
+ 124e9e2:	d120      	bne.n	124ea26 <StructureBlockUpdatePacket::read(BinaryStream&)+0x12e>
+ 124e9e4:	4821      	ldr	r0, [pc, #132]	; (124ea6c <StructureBlockUpdatePacket::read(BinaryStream&)+0x174>)
+ 124e9e6:	9900      	ldr	r1, [sp, #0]
+ 124e9e8:	4478      	add	r0, pc
+ 124e9ea:	6802      	ldr	r2, [r0, #0]
+ 124e9ec:	f1a1 000c 	sub.w	r0, r1, #12
+ 124e9f0:	4290      	cmp	r0, r2
+ 124e9f2:	d015      	beq.n	124ea20 <StructureBlockUpdatePacket::read(BinaryStream&)+0x128>
+ 124e9f4:	4a1e      	ldr	r2, [pc, #120]	; (124ea70 <StructureBlockUpdatePacket::read(BinaryStream&)+0x178>)
+ 124e9f6:	447a      	add	r2, pc
+ 124e9f8:	6813      	ldr	r3, [r2, #0]
+ 124e9fa:	1f0a      	subs	r2, r1, #4
+ 124e9fc:	b373      	cbz	r3, 124ea5c <StructureBlockUpdatePacket::read(BinaryStream&)+0x164>
+ 124e9fe:	f3bf 8f5b 	dmb	ish
+ 124ea02:	e852 1f00 	ldrex	r1, [r2]
+ 124ea06:	1e4b      	subs	r3, r1, #1
+ 124ea08:	e842 3600 	strex	r6, r3, [r2]
+ 124ea0c:	2e00      	cmp	r6, #0
+ 124ea0e:	d1f8      	bne.n	124ea02 <StructureBlockUpdatePacket::read(BinaryStream&)+0x10a>
+ 124ea10:	f3bf 8f5b 	dmb	ish
+ 124ea14:	2900      	cmp	r1, #0
+ 124ea16:	bfdc      	itt	le
+ 124ea18:	f10d 0164 	addle.w	r1, sp, #100	; 0x64
+ 124ea1c:	f3a5 d330 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 124ea20:	4620      	mov	r0, r4
+ 124ea22:	f6b7 cb42 	blx	9060a8 <_Unwind_Resume@plt>
+ 124ea26:	4a10      	ldr	r2, [pc, #64]	; (124ea68 <StructureBlockUpdatePacket::read(BinaryStream&)+0x170>)
+ 124ea28:	447a      	add	r2, pc
+ 124ea2a:	6813      	ldr	r3, [r2, #0]
+ 124ea2c:	1f0a      	subs	r2, r1, #4
+ 124ea2e:	b15b      	cbz	r3, 124ea48 <StructureBlockUpdatePacket::read(BinaryStream&)+0x150>
+ 124ea30:	f3bf 8f5b 	dmb	ish
+ 124ea34:	e852 1f00 	ldrex	r1, [r2]
+ 124ea38:	1e4b      	subs	r3, r1, #1
+ 124ea3a:	e842 3600 	strex	r6, r3, [r2]
+ 124ea3e:	2e00      	cmp	r6, #0
+ 124ea40:	d1f8      	bne.n	124ea34 <StructureBlockUpdatePacket::read(BinaryStream&)+0x13c>
+ 124ea42:	f3bf 8f5b 	dmb	ish
+ 124ea46:	e002      	b.n	124ea4e <StructureBlockUpdatePacket::read(BinaryStream&)+0x156>
+ 124ea48:	6811      	ldr	r1, [r2, #0]
+ 124ea4a:	1e4b      	subs	r3, r1, #1
+ 124ea4c:	6013      	str	r3, [r2, #0]
+ 124ea4e:	2900      	cmp	r1, #0
+ 124ea50:	bfdc      	itt	le
+ 124ea52:	f10d 0164 	addle.w	r1, sp, #100	; 0x64
+ 124ea56:	f3a5 d313 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 124ea5a:	e7c3      	b.n	124e9e4 <StructureBlockUpdatePacket::read(BinaryStream&)+0xec>
+ 124ea5c:	6811      	ldr	r1, [r2, #0]
+ 124ea5e:	1e4b      	subs	r3, r1, #1
+ 124ea60:	6013      	str	r3, [r2, #0]
+ 124ea62:	e7d7      	b.n	124ea14 <StructureBlockUpdatePacket::read(BinaryStream&)+0x11c>
+ 124ea64:	64f4      	str	r4, [r6, #76]	; 0x4c
+ 124ea66:	0155      	lsls	r5, r2, #5
+ 124ea68:	64a8      	str	r0, [r5, #72]	; 0x48
+ 124ea6a:	0155      	lsls	r5, r2, #5
+ 124ea6c:	64e4      	str	r4, [r4, #76]	; 0x4c
+ 124ea6e:	0155      	lsls	r5, r2, #5
+ 124ea70:	64da      	str	r2, [r3, #76]	; 0x4c
+ 124ea72:	0155      	lsls	r5, r2, #5
+ 124ea74:	659a      	str	r2, [r3, #88]	; 0x58
+ 124ea76:	0155      	lsls	r5, r2, #5
+ 124ea78:	6568      	str	r0, [r5, #84]	; 0x54
+ 124ea7a:	0155      	lsls	r5, r2, #5
+ 124ea7c:	658a      	str	r2, [r1, #88]	; 0x58
+ 124ea7e:	0155      	lsls	r5, r2, #5
+ 124ea80:	6546      	str	r6, [r0, #84]	; 0x54
+ 124ea82:	0155      	lsls	r5, r2, #5

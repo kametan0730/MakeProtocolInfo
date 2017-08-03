@@ -1,0 +1,158 @@
+ 12ccc78:	b570      	push	{r4, r5, r6, lr}
+ 12ccc7a:	b086      	sub	sp, #24
+ 12ccc7c:	ae01      	add	r6, sp, #4
+ 12ccc7e:	4604      	mov	r4, r0
+ 12ccc80:	460d      	mov	r5, r1
+ 12ccc82:	4630      	mov	r0, r6
+ 12ccc84:	f63a c9f6 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 12ccc88:	f104 0010 	add.w	r0, r4, #16
+ 12ccc8c:	4631      	mov	r1, r6
+ 12ccc8e:	f326 d02b 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 12ccc92:	4854      	ldr	r0, [pc, #336]	; (12ccde4 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x16c>)
+ 12ccc94:	9901      	ldr	r1, [sp, #4]
+ 12ccc96:	4478      	add	r0, pc
+ 12ccc98:	6802      	ldr	r2, [r0, #0]
+ 12ccc9a:	f1a1 000c 	sub.w	r0, r1, #12
+ 12ccc9e:	4290      	cmp	r0, r2
+ 12ccca0:	d120      	bne.n	12ccce4 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x6c>
+ 12ccca2:	4628      	mov	r0, r5
+ 12ccca4:	f671 ca1a 	blx	93e0dc <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+ 12ccca8:	6160      	str	r0, [r4, #20]
+ 12cccaa:	4628      	mov	r0, r5
+ 12cccac:	f671 ca16 	blx	93e0dc <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+ 12cccb0:	61a0      	str	r0, [r4, #24]
+ 12cccb2:	4628      	mov	r0, r5
+ 12cccb4:	f671 ca18 	blx	93e0e8 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+ 12cccb8:	466e      	mov	r6, sp
+ 12cccba:	e9c4 0108 	strd	r0, r1, [r4, #32]
+ 12cccbe:	4630      	mov	r0, r6
+ 12cccc0:	4629      	mov	r1, r5
+ 12cccc2:	f63a c9d8 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 12cccc6:	f104 0028 	add.w	r0, r4, #40	; 0x28
+ 12cccca:	4631      	mov	r1, r6
+ 12ccccc:	f326 d00c 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 12cccd0:	4848      	ldr	r0, [pc, #288]	; (12ccdf4 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x17c>)
+ 12cccd2:	9900      	ldr	r1, [sp, #0]
+ 12cccd4:	4478      	add	r0, pc
+ 12cccd6:	6802      	ldr	r2, [r0, #0]
+ 12cccd8:	f1a1 000c 	sub.w	r0, r1, #12
+ 12cccdc:	4290      	cmp	r0, r2
+ 12cccde:	d112      	bne.n	12ccd06 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x8e>
+ 12ccce0:	b006      	add	sp, #24
+ 12ccce2:	bd70      	pop	{r4, r5, r6, pc}
+ 12ccce4:	4a40      	ldr	r2, [pc, #256]	; (12ccde8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x170>)
+ 12ccce6:	447a      	add	r2, pc
+ 12ccce8:	6813      	ldr	r3, [r2, #0]
+ 12cccea:	1f0a      	subs	r2, r1, #4
+ 12cccec:	b1e3      	cbz	r3, 12ccd28 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xb0>
+ 12cccee:	f3bf 8f5b 	dmb	ish
+ 12cccf2:	e852 1f00 	ldrex	r1, [r2]
+ 12cccf6:	1e4b      	subs	r3, r1, #1
+ 12cccf8:	e842 3600 	strex	r6, r3, [r2]
+ 12cccfc:	2e00      	cmp	r6, #0
+ 12cccfe:	d1f8      	bne.n	12cccf2 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x7a>
+ 12ccd00:	f3bf 8f5b 	dmb	ish
+ 12ccd04:	e013      	b.n	12ccd2e <ResourcePackDataInfoPacket::read(BinaryStream&)+0xb6>
+ 12ccd06:	4a3c      	ldr	r2, [pc, #240]	; (12ccdf8 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x180>)
+ 12ccd08:	447a      	add	r2, pc
+ 12ccd0a:	6813      	ldr	r3, [r2, #0]
+ 12ccd0c:	1f0a      	subs	r2, r1, #4
+ 12ccd0e:	b1ab      	cbz	r3, 12ccd3c <ResourcePackDataInfoPacket::read(BinaryStream&)+0xc4>
+ 12ccd10:	f3bf 8f5b 	dmb	ish
+ 12ccd14:	e852 1f00 	ldrex	r1, [r2]
+ 12ccd18:	1e4b      	subs	r3, r1, #1
+ 12ccd1a:	e842 3600 	strex	r6, r3, [r2]
+ 12ccd1e:	2e00      	cmp	r6, #0
+ 12ccd20:	d1f8      	bne.n	12ccd14 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x9c>
+ 12ccd22:	f3bf 8f5b 	dmb	ish
+ 12ccd26:	e00c      	b.n	12ccd42 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xca>
+ 12ccd28:	6811      	ldr	r1, [r2, #0]
+ 12ccd2a:	1e4b      	subs	r3, r1, #1
+ 12ccd2c:	6013      	str	r3, [r2, #0]
+ 12ccd2e:	2900      	cmp	r1, #0
+ 12ccd30:	bfdc      	itt	le
+ 12ccd32:	f10d 0108 	addle.w	r1, sp, #8
+ 12ccd36:	f327 d1a3 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 12ccd3a:	e7b2      	b.n	12ccca2 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x2a>
+ 12ccd3c:	6811      	ldr	r1, [r2, #0]
+ 12ccd3e:	1e4b      	subs	r3, r1, #1
+ 12ccd40:	6013      	str	r3, [r2, #0]
+ 12ccd42:	2900      	cmp	r1, #0
+ 12ccd44:	bfdc      	itt	le
+ 12ccd46:	f10d 010c 	addle.w	r1, sp, #12
+ 12ccd4a:	f327 d199 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 12ccd4e:	e7c7      	b.n	12ccce0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x68>
+ 12ccd50:	4a22      	ldr	r2, [pc, #136]	; (12ccddc <ResourcePackDataInfoPacket::read(BinaryStream&)+0x164>)
+ 12ccd52:	4604      	mov	r4, r0
+ 12ccd54:	9901      	ldr	r1, [sp, #4]
+ 12ccd56:	447a      	add	r2, pc
+ 12ccd58:	f1a1 000c 	sub.w	r0, r1, #12
+ 12ccd5c:	6812      	ldr	r2, [r2, #0]
+ 12ccd5e:	4290      	cmp	r0, r2
+ 12ccd60:	d031      	beq.n	12ccdc6 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x14e>
+ 12ccd62:	4a1f      	ldr	r2, [pc, #124]	; (12ccde0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x168>)
+ 12ccd64:	447a      	add	r2, pc
+ 12ccd66:	6813      	ldr	r3, [r2, #0]
+ 12ccd68:	1f0a      	subs	r2, r1, #4
+ 12ccd6a:	b37b      	cbz	r3, 12ccdcc <ResourcePackDataInfoPacket::read(BinaryStream&)+0x154>
+ 12ccd6c:	f3bf 8f5b 	dmb	ish
+ 12ccd70:	e852 1f00 	ldrex	r1, [r2]
+ 12ccd74:	1e4b      	subs	r3, r1, #1
+ 12ccd76:	e842 3600 	strex	r6, r3, [r2]
+ 12ccd7a:	2e00      	cmp	r6, #0
+ 12ccd7c:	d1f8      	bne.n	12ccd70 <ResourcePackDataInfoPacket::read(BinaryStream&)+0xf8>
+ 12ccd7e:	f3bf 8f5b 	dmb	ish
+ 12ccd82:	2900      	cmp	r1, #0
+ 12ccd84:	dc1f      	bgt.n	12ccdc6 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x14e>
+ 12ccd86:	a904      	add	r1, sp, #16
+ 12ccd88:	e01b      	b.n	12ccdc2 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x14a>
+ 12ccd8a:	4a18      	ldr	r2, [pc, #96]	; (12ccdec <ResourcePackDataInfoPacket::read(BinaryStream&)+0x174>)
+ 12ccd8c:	4604      	mov	r4, r0
+ 12ccd8e:	9900      	ldr	r1, [sp, #0]
+ 12ccd90:	447a      	add	r2, pc
+ 12ccd92:	f1a1 000c 	sub.w	r0, r1, #12
+ 12ccd96:	6812      	ldr	r2, [r2, #0]
+ 12ccd98:	4290      	cmp	r0, r2
+ 12ccd9a:	d014      	beq.n	12ccdc6 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x14e>
+ 12ccd9c:	4a14      	ldr	r2, [pc, #80]	; (12ccdf0 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x178>)
+ 12ccd9e:	447a      	add	r2, pc
+ 12ccda0:	6813      	ldr	r3, [r2, #0]
+ 12ccda2:	1f0a      	subs	r2, r1, #4
+ 12ccda4:	b1b3      	cbz	r3, 12ccdd4 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x15c>
+ 12ccda6:	f3bf 8f5b 	dmb	ish
+ 12ccdaa:	e852 1f00 	ldrex	r1, [r2]
+ 12ccdae:	1e4b      	subs	r3, r1, #1
+ 12ccdb0:	e842 3600 	strex	r6, r3, [r2]
+ 12ccdb4:	2e00      	cmp	r6, #0
+ 12ccdb6:	d1f8      	bne.n	12ccdaa <ResourcePackDataInfoPacket::read(BinaryStream&)+0x132>
+ 12ccdb8:	f3bf 8f5b 	dmb	ish
+ 12ccdbc:	2900      	cmp	r1, #0
+ 12ccdbe:	dc02      	bgt.n	12ccdc6 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x14e>
+ 12ccdc0:	a905      	add	r1, sp, #20
+ 12ccdc2:	f327 d15d 	bl	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 12ccdc6:	4620      	mov	r0, r4
+ 12ccdc8:	f639 c96e 	blx	9060a8 <_Unwind_Resume@plt>
+ 12ccdcc:	6811      	ldr	r1, [r2, #0]
+ 12ccdce:	1e4b      	subs	r3, r1, #1
+ 12ccdd0:	6013      	str	r3, [r2, #0]
+ 12ccdd2:	e7d6      	b.n	12ccd82 <ResourcePackDataInfoPacket::read(BinaryStream&)+0x10a>
+ 12ccdd4:	6811      	ldr	r1, [r2, #0]
+ 12ccdd6:	1e4b      	subs	r3, r1, #1
+ 12ccdd8:	6013      	str	r3, [r2, #0]
+ 12ccdda:	e7ef      	b.n	12ccdbc <ResourcePackDataInfoPacket::read(BinaryStream&)+0x144>
+ 12ccddc:	8176      	strh	r6, [r6, #10]
+ 12ccdde:	014d      	lsls	r5, r1, #5
+ 12ccde0:	816c      	strh	r4, [r5, #10]
+ 12ccde2:	014d      	lsls	r5, r1, #5
+ 12ccde4:	8236      	strh	r6, [r6, #16]
+ 12ccde6:	014d      	lsls	r5, r1, #5
+ 12ccde8:	81ea      	strh	r2, [r5, #14]
+ 12ccdea:	014d      	lsls	r5, r1, #5
+ 12ccdec:	813c      	strh	r4, [r7, #8]
+ 12ccdee:	014d      	lsls	r5, r1, #5
+ 12ccdf0:	8132      	strh	r2, [r6, #8]
+ 12ccdf2:	014d      	lsls	r5, r1, #5
+ 12ccdf4:	81f8      	strh	r0, [r7, #14]
+ 12ccdf6:	014d      	lsls	r5, r1, #5
+ 12ccdf8:	81c8      	strh	r0, [r1, #14]
+ 12ccdfa:	014d      	lsls	r5, r1, #5

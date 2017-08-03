@@ -1,0 +1,93 @@
+ 147f85c:	b570      	push	{r4, r5, r6, lr}
+ 147f85e:	b084      	sub	sp, #16
+ 147f860:	466e      	mov	r6, sp
+ 147f862:	4604      	mov	r4, r0
+ 147f864:	4630      	mov	r0, r6
+ 147f866:	460d      	mov	r5, r1
+ 147f868:	f487 cc04 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147f86c:	f104 0010 	add.w	r0, r4, #16
+ 147f870:	4631      	mov	r1, r6
+ 147f872:	f173 d239 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147f876:	4830      	ldr	r0, [pc, #192]	; (147f938 <PlaySoundPacket::read(BinaryStream&)+0xdc>)
+ 147f878:	9900      	ldr	r1, [sp, #0]
+ 147f87a:	4478      	add	r0, pc
+ 147f87c:	6802      	ldr	r2, [r0, #0]
+ 147f87e:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f882:	4290      	cmp	r0, r2
+ 147f884:	d113      	bne.n	147f8ae <PlaySoundPacket::read(BinaryStream&)+0x52>
+ 147f886:	a801      	add	r0, sp, #4
+ 147f888:	4629      	mov	r1, r5
+ 147f88a:	f49f ce88 	blx	91f59c <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+ 147f88e:	9801      	ldr	r0, [sp, #4]
+ 147f890:	6160      	str	r0, [r4, #20]
+ 147f892:	9802      	ldr	r0, [sp, #8]
+ 147f894:	61a0      	str	r0, [r4, #24]
+ 147f896:	9803      	ldr	r0, [sp, #12]
+ 147f898:	61e0      	str	r0, [r4, #28]
+ 147f89a:	4628      	mov	r0, r5
+ 147f89c:	f487 cbf0 	blx	907080 <ReadOnlyBinaryStream::getFloat()@plt>
+ 147f8a0:	6220      	str	r0, [r4, #32]
+ 147f8a2:	4628      	mov	r0, r5
+ 147f8a4:	f487 cbec 	blx	907080 <ReadOnlyBinaryStream::getFloat()@plt>
+ 147f8a8:	6260      	str	r0, [r4, #36]	; 0x24
+ 147f8aa:	b004      	add	sp, #16
+ 147f8ac:	bd70      	pop	{r4, r5, r6, pc}
+ 147f8ae:	4a23      	ldr	r2, [pc, #140]	; (147f93c <PlaySoundPacket::read(BinaryStream&)+0xe0>)
+ 147f8b0:	447a      	add	r2, pc
+ 147f8b2:	6813      	ldr	r3, [r2, #0]
+ 147f8b4:	1f0a      	subs	r2, r1, #4
+ 147f8b6:	b15b      	cbz	r3, 147f8d0 <PlaySoundPacket::read(BinaryStream&)+0x74>
+ 147f8b8:	f3bf 8f5b 	dmb	ish
+ 147f8bc:	e852 1f00 	ldrex	r1, [r2]
+ 147f8c0:	1e4b      	subs	r3, r1, #1
+ 147f8c2:	e842 3600 	strex	r6, r3, [r2]
+ 147f8c6:	2e00      	cmp	r6, #0
+ 147f8c8:	d1f8      	bne.n	147f8bc <PlaySoundPacket::read(BinaryStream&)+0x60>
+ 147f8ca:	f3bf 8f5b 	dmb	ish
+ 147f8ce:	e002      	b.n	147f8d6 <PlaySoundPacket::read(BinaryStream&)+0x7a>
+ 147f8d0:	6811      	ldr	r1, [r2, #0]
+ 147f8d2:	1e4b      	subs	r3, r1, #1
+ 147f8d4:	6013      	str	r3, [r2, #0]
+ 147f8d6:	2900      	cmp	r1, #0
+ 147f8d8:	bfdc      	itt	le
+ 147f8da:	f10d 0104 	addle.w	r1, sp, #4
+ 147f8de:	f174 d3cf 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f8e2:	e7d0      	b.n	147f886 <PlaySoundPacket::read(BinaryStream&)+0x2a>
+ 147f8e4:	4a12      	ldr	r2, [pc, #72]	; (147f930 <PlaySoundPacket::read(BinaryStream&)+0xd4>)
+ 147f8e6:	4604      	mov	r4, r0
+ 147f8e8:	9900      	ldr	r1, [sp, #0]
+ 147f8ea:	447a      	add	r2, pc
+ 147f8ec:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f8f0:	6812      	ldr	r2, [r2, #0]
+ 147f8f2:	4290      	cmp	r0, r2
+ 147f8f4:	d015      	beq.n	147f922 <PlaySoundPacket::read(BinaryStream&)+0xc6>
+ 147f8f6:	4a0f      	ldr	r2, [pc, #60]	; (147f934 <PlaySoundPacket::read(BinaryStream&)+0xd8>)
+ 147f8f8:	447a      	add	r2, pc
+ 147f8fa:	6813      	ldr	r3, [r2, #0]
+ 147f8fc:	1f0a      	subs	r2, r1, #4
+ 147f8fe:	b19b      	cbz	r3, 147f928 <PlaySoundPacket::read(BinaryStream&)+0xcc>
+ 147f900:	f3bf 8f5b 	dmb	ish
+ 147f904:	e852 1f00 	ldrex	r1, [r2]
+ 147f908:	1e4b      	subs	r3, r1, #1
+ 147f90a:	e842 3600 	strex	r6, r3, [r2]
+ 147f90e:	2e00      	cmp	r6, #0
+ 147f910:	d1f8      	bne.n	147f904 <PlaySoundPacket::read(BinaryStream&)+0xa8>
+ 147f912:	f3bf 8f5b 	dmb	ish
+ 147f916:	2900      	cmp	r1, #0
+ 147f918:	bfdc      	itt	le
+ 147f91a:	f10d 0104 	addle.w	r1, sp, #4
+ 147f91e:	f174 d3af 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f922:	4620      	mov	r0, r4
+ 147f924:	f486 cbc0 	blx	9060a8 <_Unwind_Resume@plt>
+ 147f928:	6811      	ldr	r1, [r2, #0]
+ 147f92a:	1e4b      	subs	r3, r1, #1
+ 147f92c:	6013      	str	r3, [r2, #0]
+ 147f92e:	e7f2      	b.n	147f916 <PlaySoundPacket::read(BinaryStream&)+0xba>
+ 147f930:	55e2      	strb	r2, [r4, r7]
+ 147f932:	0132      	lsls	r2, r6, #4
+ 147f934:	55d8      	strb	r0, [r3, r7]
+ 147f936:	0132      	lsls	r2, r6, #4
+ 147f938:	5652      	ldrsb	r2, [r2, r1]
+ 147f93a:	0132      	lsls	r2, r6, #4
+ 147f93c:	5620      	ldrsb	r0, [r4, r0]
+ 147f93e:	0132      	lsls	r2, r6, #4

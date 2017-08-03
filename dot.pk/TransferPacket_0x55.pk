@@ -1,0 +1,81 @@
+ 147f42c:	b570      	push	{r4, r5, r6, lr}
+ 147f42e:	b084      	sub	sp, #16
+ 147f430:	ae01      	add	r6, sp, #4
+ 147f432:	4604      	mov	r4, r0
+ 147f434:	460d      	mov	r5, r1
+ 147f436:	4630      	mov	r0, r6
+ 147f438:	f487 ce1c 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147f43c:	f104 0010 	add.w	r0, r4, #16
+ 147f440:	4631      	mov	r1, r6
+ 147f442:	f173 d451 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147f446:	4829      	ldr	r0, [pc, #164]	; (147f4ec <TransferPacket::read(BinaryStream&)+0xc0>)
+ 147f448:	9901      	ldr	r1, [sp, #4]
+ 147f44a:	4478      	add	r0, pc
+ 147f44c:	6802      	ldr	r2, [r0, #0]
+ 147f44e:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f452:	4290      	cmp	r0, r2
+ 147f454:	d105      	bne.n	147f462 <TransferPacket::read(BinaryStream&)+0x36>
+ 147f456:	4628      	mov	r0, r5
+ 147f458:	f48e cd26 	blx	90dea8 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+ 147f45c:	6160      	str	r0, [r4, #20]
+ 147f45e:	b004      	add	sp, #16
+ 147f460:	bd70      	pop	{r4, r5, r6, pc}
+ 147f462:	4a23      	ldr	r2, [pc, #140]	; (147f4f0 <TransferPacket::read(BinaryStream&)+0xc4>)
+ 147f464:	447a      	add	r2, pc
+ 147f466:	6813      	ldr	r3, [r2, #0]
+ 147f468:	1f0a      	subs	r2, r1, #4
+ 147f46a:	b15b      	cbz	r3, 147f484 <TransferPacket::read(BinaryStream&)+0x58>
+ 147f46c:	f3bf 8f5b 	dmb	ish
+ 147f470:	e852 1f00 	ldrex	r1, [r2]
+ 147f474:	1e4b      	subs	r3, r1, #1
+ 147f476:	e842 3600 	strex	r6, r3, [r2]
+ 147f47a:	2e00      	cmp	r6, #0
+ 147f47c:	d1f8      	bne.n	147f470 <TransferPacket::read(BinaryStream&)+0x44>
+ 147f47e:	f3bf 8f5b 	dmb	ish
+ 147f482:	e002      	b.n	147f48a <TransferPacket::read(BinaryStream&)+0x5e>
+ 147f484:	6811      	ldr	r1, [r2, #0]
+ 147f486:	1e4b      	subs	r3, r1, #1
+ 147f488:	6013      	str	r3, [r2, #0]
+ 147f48a:	2900      	cmp	r1, #0
+ 147f48c:	bfdc      	itt	le
+ 147f48e:	f10d 0108 	addle.w	r1, sp, #8
+ 147f492:	f174 d5f5 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f496:	e7de      	b.n	147f456 <TransferPacket::read(BinaryStream&)+0x2a>
+ 147f498:	4a12      	ldr	r2, [pc, #72]	; (147f4e4 <TransferPacket::read(BinaryStream&)+0xb8>)
+ 147f49a:	4604      	mov	r4, r0
+ 147f49c:	9901      	ldr	r1, [sp, #4]
+ 147f49e:	447a      	add	r2, pc
+ 147f4a0:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f4a4:	6812      	ldr	r2, [r2, #0]
+ 147f4a6:	4290      	cmp	r0, r2
+ 147f4a8:	d015      	beq.n	147f4d6 <TransferPacket::read(BinaryStream&)+0xaa>
+ 147f4aa:	4a0f      	ldr	r2, [pc, #60]	; (147f4e8 <TransferPacket::read(BinaryStream&)+0xbc>)
+ 147f4ac:	447a      	add	r2, pc
+ 147f4ae:	6813      	ldr	r3, [r2, #0]
+ 147f4b0:	1f0a      	subs	r2, r1, #4
+ 147f4b2:	b19b      	cbz	r3, 147f4dc <TransferPacket::read(BinaryStream&)+0xb0>
+ 147f4b4:	f3bf 8f5b 	dmb	ish
+ 147f4b8:	e852 1f00 	ldrex	r1, [r2]
+ 147f4bc:	1e4b      	subs	r3, r1, #1
+ 147f4be:	e842 3600 	strex	r6, r3, [r2]
+ 147f4c2:	2e00      	cmp	r6, #0
+ 147f4c4:	d1f8      	bne.n	147f4b8 <TransferPacket::read(BinaryStream&)+0x8c>
+ 147f4c6:	f3bf 8f5b 	dmb	ish
+ 147f4ca:	2900      	cmp	r1, #0
+ 147f4cc:	bfdc      	itt	le
+ 147f4ce:	f10d 010c 	addle.w	r1, sp, #12
+ 147f4d2:	f174 d5d5 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f4d6:	4620      	mov	r0, r4
+ 147f4d8:	f486 cde6 	blx	9060a8 <_Unwind_Resume@plt>
+ 147f4dc:	6811      	ldr	r1, [r2, #0]
+ 147f4de:	1e4b      	subs	r3, r1, #1
+ 147f4e0:	6013      	str	r3, [r2, #0]
+ 147f4e2:	e7f2      	b.n	147f4ca <TransferPacket::read(BinaryStream&)+0x9e>
+ 147f4e4:	5a2e      	ldrh	r6, [r5, r0]
+ 147f4e6:	0132      	lsls	r2, r6, #4
+ 147f4e8:	5a24      	ldrh	r4, [r4, r0]
+ 147f4ea:	0132      	lsls	r2, r6, #4
+ 147f4ec:	5a82      	ldrh	r2, [r0, r2]
+ 147f4ee:	0132      	lsls	r2, r6, #4
+ 147f4f0:	5a6c      	ldrh	r4, [r5, r1]
+ 147f4f2:	0132      	lsls	r2, r6, #4

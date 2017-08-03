@@ -1,0 +1,81 @@
+ 147f238:	b570      	push	{r4, r5, r6, lr}
+ 147f23a:	b084      	sub	sp, #16
+ 147f23c:	ae01      	add	r6, sp, #4
+ 147f23e:	4604      	mov	r4, r0
+ 147f240:	460d      	mov	r5, r1
+ 147f242:	4630      	mov	r0, r6
+ 147f244:	f487 cf16 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147f248:	f104 0010 	add.w	r0, r4, #16
+ 147f24c:	4631      	mov	r1, r6
+ 147f24e:	f173 d54b 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147f252:	4829      	ldr	r0, [pc, #164]	; (147f2f8 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xc0>)
+ 147f254:	9901      	ldr	r1, [sp, #4]
+ 147f256:	4478      	add	r0, pc
+ 147f258:	6802      	ldr	r2, [r0, #0]
+ 147f25a:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f25e:	4290      	cmp	r0, r2
+ 147f260:	d105      	bne.n	147f26e <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x36>
+ 147f262:	4628      	mov	r0, r5
+ 147f264:	f4be cf3a 	blx	93e0dc <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+ 147f268:	6160      	str	r0, [r4, #20]
+ 147f26a:	b004      	add	sp, #16
+ 147f26c:	bd70      	pop	{r4, r5, r6, pc}
+ 147f26e:	4a23      	ldr	r2, [pc, #140]	; (147f2fc <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xc4>)
+ 147f270:	447a      	add	r2, pc
+ 147f272:	6813      	ldr	r3, [r2, #0]
+ 147f274:	1f0a      	subs	r2, r1, #4
+ 147f276:	b15b      	cbz	r3, 147f290 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x58>
+ 147f278:	f3bf 8f5b 	dmb	ish
+ 147f27c:	e852 1f00 	ldrex	r1, [r2]
+ 147f280:	1e4b      	subs	r3, r1, #1
+ 147f282:	e842 3600 	strex	r6, r3, [r2]
+ 147f286:	2e00      	cmp	r6, #0
+ 147f288:	d1f8      	bne.n	147f27c <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x44>
+ 147f28a:	f3bf 8f5b 	dmb	ish
+ 147f28e:	e002      	b.n	147f296 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x5e>
+ 147f290:	6811      	ldr	r1, [r2, #0]
+ 147f292:	1e4b      	subs	r3, r1, #1
+ 147f294:	6013      	str	r3, [r2, #0]
+ 147f296:	2900      	cmp	r1, #0
+ 147f298:	bfdc      	itt	le
+ 147f29a:	f10d 0108 	addle.w	r1, sp, #8
+ 147f29e:	f174 d6ef 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f2a2:	e7de      	b.n	147f262 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x2a>
+ 147f2a4:	4a12      	ldr	r2, [pc, #72]	; (147f2f0 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xb8>)
+ 147f2a6:	4604      	mov	r4, r0
+ 147f2a8:	9901      	ldr	r1, [sp, #4]
+ 147f2aa:	447a      	add	r2, pc
+ 147f2ac:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f2b0:	6812      	ldr	r2, [r2, #0]
+ 147f2b2:	4290      	cmp	r0, r2
+ 147f2b4:	d015      	beq.n	147f2e2 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xaa>
+ 147f2b6:	4a0f      	ldr	r2, [pc, #60]	; (147f2f4 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xbc>)
+ 147f2b8:	447a      	add	r2, pc
+ 147f2ba:	6813      	ldr	r3, [r2, #0]
+ 147f2bc:	1f0a      	subs	r2, r1, #4
+ 147f2be:	b19b      	cbz	r3, 147f2e8 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0xb0>
+ 147f2c0:	f3bf 8f5b 	dmb	ish
+ 147f2c4:	e852 1f00 	ldrex	r1, [r2]
+ 147f2c8:	1e4b      	subs	r3, r1, #1
+ 147f2ca:	e842 3600 	strex	r6, r3, [r2]
+ 147f2ce:	2e00      	cmp	r6, #0
+ 147f2d0:	d1f8      	bne.n	147f2c4 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x8c>
+ 147f2d2:	f3bf 8f5b 	dmb	ish
+ 147f2d6:	2900      	cmp	r1, #0
+ 147f2d8:	bfdc      	itt	le
+ 147f2da:	f10d 010c 	addle.w	r1, sp, #12
+ 147f2de:	f174 d6cf 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f2e2:	4620      	mov	r0, r4
+ 147f2e4:	f486 cee0 	blx	9060a8 <_Unwind_Resume@plt>
+ 147f2e8:	6811      	ldr	r1, [r2, #0]
+ 147f2ea:	1e4b      	subs	r3, r1, #1
+ 147f2ec:	6013      	str	r3, [r2, #0]
+ 147f2ee:	e7f2      	b.n	147f2d6 <ResourcePackChunkRequestPacket::read(BinaryStream&)+0x9e>
+ 147f2f0:	5c22      	ldrb	r2, [r4, r0]
+ 147f2f2:	0132      	lsls	r2, r6, #4
+ 147f2f4:	5c18      	ldrb	r0, [r3, r0]
+ 147f2f6:	0132      	lsls	r2, r6, #4
+ 147f2f8:	5c76      	ldrb	r6, [r6, r1]
+ 147f2fa:	0132      	lsls	r2, r6, #4
+ 147f2fc:	5c60      	ldrb	r0, [r4, r1]
+ 147f2fe:	0132      	lsls	r2, r6, #4

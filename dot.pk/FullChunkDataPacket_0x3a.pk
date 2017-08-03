@@ -1,0 +1,83 @@
+ 147d510:	b570      	push	{r4, r5, r6, lr}
+ 147d512:	b086      	sub	sp, #24
+ 147d514:	4605      	mov	r5, r0
+ 147d516:	a802      	add	r0, sp, #8
+ 147d518:	460c      	mov	r4, r1
+ 147d51a:	f4c9 cfc6 	blx	9474a8 <ChunkPos ReadOnlyBinaryStream::getType<ChunkPos>()@plt>
+ 147d51e:	ae01      	add	r6, sp, #4
+ 147d520:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+ 147d524:	e9c5 0104 	strd	r0, r1, [r5, #16]
+ 147d528:	4621      	mov	r1, r4
+ 147d52a:	4630      	mov	r0, r6
+ 147d52c:	f489 cda2 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147d530:	f105 0018 	add.w	r0, r5, #24
+ 147d534:	4631      	mov	r1, r6
+ 147d536:	f175 d3d7 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147d53a:	4827      	ldr	r0, [pc, #156]	; (147d5d8 <FullChunkDataPacket::read(BinaryStream&)+0xc8>)
+ 147d53c:	9901      	ldr	r1, [sp, #4]
+ 147d53e:	4478      	add	r0, pc
+ 147d540:	6802      	ldr	r2, [r0, #0]
+ 147d542:	f1a1 000c 	sub.w	r0, r1, #12
+ 147d546:	4290      	cmp	r0, r2
+ 147d548:	d101      	bne.n	147d54e <FullChunkDataPacket::read(BinaryStream&)+0x3e>
+ 147d54a:	b006      	add	sp, #24
+ 147d54c:	bd70      	pop	{r4, r5, r6, pc}
+ 147d54e:	4a23      	ldr	r2, [pc, #140]	; (147d5dc <FullChunkDataPacket::read(BinaryStream&)+0xcc>)
+ 147d550:	447a      	add	r2, pc
+ 147d552:	6813      	ldr	r3, [r2, #0]
+ 147d554:	1f0a      	subs	r2, r1, #4
+ 147d556:	b15b      	cbz	r3, 147d570 <FullChunkDataPacket::read(BinaryStream&)+0x60>
+ 147d558:	f3bf 8f5b 	dmb	ish
+ 147d55c:	e852 1f00 	ldrex	r1, [r2]
+ 147d560:	1e4b      	subs	r3, r1, #1
+ 147d562:	e842 3600 	strex	r6, r3, [r2]
+ 147d566:	2e00      	cmp	r6, #0
+ 147d568:	d1f8      	bne.n	147d55c <FullChunkDataPacket::read(BinaryStream&)+0x4c>
+ 147d56a:	f3bf 8f5b 	dmb	ish
+ 147d56e:	e002      	b.n	147d576 <FullChunkDataPacket::read(BinaryStream&)+0x66>
+ 147d570:	6811      	ldr	r1, [r2, #0]
+ 147d572:	1e4b      	subs	r3, r1, #1
+ 147d574:	6013      	str	r3, [r2, #0]
+ 147d576:	2900      	cmp	r1, #0
+ 147d578:	bfdc      	itt	le
+ 147d57a:	f10d 0110 	addle.w	r1, sp, #16
+ 147d57e:	f176 d57f 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147d582:	e7e2      	b.n	147d54a <FullChunkDataPacket::read(BinaryStream&)+0x3a>
+ 147d584:	4a12      	ldr	r2, [pc, #72]	; (147d5d0 <FullChunkDataPacket::read(BinaryStream&)+0xc0>)
+ 147d586:	4604      	mov	r4, r0
+ 147d588:	9901      	ldr	r1, [sp, #4]
+ 147d58a:	447a      	add	r2, pc
+ 147d58c:	f1a1 000c 	sub.w	r0, r1, #12
+ 147d590:	6812      	ldr	r2, [r2, #0]
+ 147d592:	4290      	cmp	r0, r2
+ 147d594:	d015      	beq.n	147d5c2 <FullChunkDataPacket::read(BinaryStream&)+0xb2>
+ 147d596:	4a0f      	ldr	r2, [pc, #60]	; (147d5d4 <FullChunkDataPacket::read(BinaryStream&)+0xc4>)
+ 147d598:	447a      	add	r2, pc
+ 147d59a:	6813      	ldr	r3, [r2, #0]
+ 147d59c:	1f0a      	subs	r2, r1, #4
+ 147d59e:	b19b      	cbz	r3, 147d5c8 <FullChunkDataPacket::read(BinaryStream&)+0xb8>
+ 147d5a0:	f3bf 8f5b 	dmb	ish
+ 147d5a4:	e852 1f00 	ldrex	r1, [r2]
+ 147d5a8:	1e4b      	subs	r3, r1, #1
+ 147d5aa:	e842 3600 	strex	r6, r3, [r2]
+ 147d5ae:	2e00      	cmp	r6, #0
+ 147d5b0:	d1f8      	bne.n	147d5a4 <FullChunkDataPacket::read(BinaryStream&)+0x94>
+ 147d5b2:	f3bf 8f5b 	dmb	ish
+ 147d5b6:	2900      	cmp	r1, #0
+ 147d5b8:	bfdc      	itt	le
+ 147d5ba:	f10d 0114 	addle.w	r1, sp, #20
+ 147d5be:	f176 d55f 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147d5c2:	4620      	mov	r0, r4
+ 147d5c4:	f488 cd70 	blx	9060a8 <_Unwind_Resume@plt>
+ 147d5c8:	6811      	ldr	r1, [r2, #0]
+ 147d5ca:	1e4b      	subs	r3, r1, #1
+ 147d5cc:	6013      	str	r3, [r2, #0]
+ 147d5ce:	e7f2      	b.n	147d5b6 <FullChunkDataPacket::read(BinaryStream&)+0xa6>
+ 147d5d0:	7942      	ldrb	r2, [r0, #5]
+ 147d5d2:	0132      	lsls	r2, r6, #4
+ 147d5d4:	7938      	ldrb	r0, [r7, #4]
+ 147d5d6:	0132      	lsls	r2, r6, #4
+ 147d5d8:	798e      	ldrb	r6, [r1, #6]
+ 147d5da:	0132      	lsls	r2, r6, #4
+ 147d5dc:	7980      	ldrb	r0, [r0, #6]
+ 147d5de:	0132      	lsls	r2, r6, #4

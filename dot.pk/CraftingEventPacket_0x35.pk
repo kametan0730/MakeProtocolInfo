@@ -1,0 +1,84 @@
+ 147cd14:	b5b0      	push	{r4, r5, r7, lr}
+ 147cd16:	b08c      	sub	sp, #48	; 0x30
+ 147cd18:	460c      	mov	r4, r1
+ 147cd1a:	4605      	mov	r5, r0
+ 147cd1c:	4620      	mov	r0, r4
+ 147cd1e:	f48a c96e 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147cd22:	7368      	strb	r0, [r5, #13]
+ 147cd24:	4620      	mov	r0, r4
+ 147cd26:	f48a c9be 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147cd2a:	6128      	str	r0, [r5, #16]
+ 147cd2c:	a808      	add	r0, sp, #32
+ 147cd2e:	4621      	mov	r1, r4
+ 147cd30:	f498 c88e 	blx	914e50 <mce::UUID ReadOnlyBinaryStream::getType<mce::UUID>()@plt>
+ 147cd34:	ab08      	add	r3, sp, #32
+ 147cd36:	f105 0c18 	add.w	ip, r5, #24
+ 147cd3a:	cb0f      	ldmia	r3, {r0, r1, r2, r3}
+ 147cd3c:	e88c 000f 	stmia.w	ip, {r0, r1, r2, r3}
+ 147cd40:	2001      	movs	r0, #1
+ 147cd42:	f489 c9b8 	blx	9060b4 <operator new(unsigned int)@plt>
+ 147cd46:	4924      	ldr	r1, [pc, #144]	; (147cdd8 <CraftingEventPacket::read(BinaryStream&)+0xc4>)
+ 147cd48:	4a24      	ldr	r2, [pc, #144]	; (147cddc <CraftingEventPacket::read(BinaryStream&)+0xc8>)
+ 147cd4a:	4479      	add	r1, pc
+ 147cd4c:	9004      	str	r0, [sp, #16]
+ 147cd4e:	447a      	add	r2, pc
+ 147cd50:	6809      	ldr	r1, [r1, #0]
+ 147cd52:	6812      	ldr	r2, [r2, #0]
+ 147cd54:	e9cd 2106 	strd	r2, r1, [sp, #24]
+ 147cd58:	f105 0128 	add.w	r1, r5, #40	; 0x28
+ 147cd5c:	aa04      	add	r2, sp, #16
+ 147cd5e:	4620      	mov	r0, r4
+ 147cd60:	f4c9 ccee 	blx	946740 <void ReadOnlyBinaryStream::readVectorList<ItemInstance>(std::vector<ItemInstance, std::allocator<ItemInstance> >&, std::function<ItemInstance (ReadOnlyBinaryStream&)>&&)@plt>
+ 147cd64:	9b06      	ldr	r3, [sp, #24]
+ 147cd66:	b11b      	cbz	r3, 147cd70 <CraftingEventPacket::read(BinaryStream&)+0x5c>
+ 147cd68:	a804      	add	r0, sp, #16
+ 147cd6a:	2203      	movs	r2, #3
+ 147cd6c:	4601      	mov	r1, r0
+ 147cd6e:	4798      	blx	r3
+ 147cd70:	2001      	movs	r0, #1
+ 147cd72:	f489 c9a0 	blx	9060b4 <operator new(unsigned int)@plt>
+ 147cd76:	491a      	ldr	r1, [pc, #104]	; (147cde0 <CraftingEventPacket::read(BinaryStream&)+0xcc>)
+ 147cd78:	4a1a      	ldr	r2, [pc, #104]	; (147cde4 <CraftingEventPacket::read(BinaryStream&)+0xd0>)
+ 147cd7a:	4479      	add	r1, pc
+ 147cd7c:	9000      	str	r0, [sp, #0]
+ 147cd7e:	447a      	add	r2, pc
+ 147cd80:	6809      	ldr	r1, [r1, #0]
+ 147cd82:	6812      	ldr	r2, [r2, #0]
+ 147cd84:	e9cd 2102 	strd	r2, r1, [sp, #8]
+ 147cd88:	f105 0134 	add.w	r1, r5, #52	; 0x34
+ 147cd8c:	466a      	mov	r2, sp
+ 147cd8e:	4620      	mov	r0, r4
+ 147cd90:	f4c9 ccd6 	blx	946740 <void ReadOnlyBinaryStream::readVectorList<ItemInstance>(std::vector<ItemInstance, std::allocator<ItemInstance> >&, std::function<ItemInstance (ReadOnlyBinaryStream&)>&&)@plt>
+ 147cd94:	9b02      	ldr	r3, [sp, #8]
+ 147cd96:	b11b      	cbz	r3, 147cda0 <CraftingEventPacket::read(BinaryStream&)+0x8c>
+ 147cd98:	4668      	mov	r0, sp
+ 147cd9a:	2203      	movs	r2, #3
+ 147cd9c:	4601      	mov	r1, r0
+ 147cd9e:	4798      	blx	r3
+ 147cda0:	b00c      	add	sp, #48	; 0x30
+ 147cda2:	bdb0      	pop	{r4, r5, r7, pc}
+ 147cda4:	9b06      	ldr	r3, [sp, #24]
+ 147cda6:	4604      	mov	r4, r0
+ 147cda8:	b16b      	cbz	r3, 147cdc6 <CraftingEventPacket::read(BinaryStream&)+0xb2>
+ 147cdaa:	a804      	add	r0, sp, #16
+ 147cdac:	2203      	movs	r2, #3
+ 147cdae:	4601      	mov	r1, r0
+ 147cdb0:	4798      	blx	r3
+ 147cdb2:	e008      	b.n	147cdc6 <CraftingEventPacket::read(BinaryStream&)+0xb2>
+ 147cdb4:	f661 dce0 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147cdb8:	9b02      	ldr	r3, [sp, #8]
+ 147cdba:	4604      	mov	r4, r0
+ 147cdbc:	b11b      	cbz	r3, 147cdc6 <CraftingEventPacket::read(BinaryStream&)+0xb2>
+ 147cdbe:	4668      	mov	r0, sp
+ 147cdc0:	2203      	movs	r2, #3
+ 147cdc2:	4601      	mov	r1, r0
+ 147cdc4:	4798      	blx	r3
+ 147cdc6:	4620      	mov	r0, r4
+ 147cdc8:	f489 c96e 	blx	9060a8 <_Unwind_Resume@plt>
+ 147cdcc:	f661 dcd4 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147cdd0:	f661 dcd2 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147cdd4:	f661 dcd0 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147cdd8:	f09e 0132 	eors.w	r1, lr, #50	; 0x32
+ 147cddc:	f09e 0132 	eors.w	r1, lr, #50	; 0x32
+ 147cde0:	f076 0132 	orns	r1, r6, #50	; 0x32
+ 147cde4:	f076 0132 	orns	r1, r6, #50	; 0x32

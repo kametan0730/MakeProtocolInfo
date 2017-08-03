@@ -1,0 +1,169 @@
+ 147b57c:	b570      	push	{r4, r5, r6, lr}
+ 147b57e:	b094      	sub	sp, #80	; 0x50
+ 147b580:	4604      	mov	r4, r0
+ 147b582:	a810      	add	r0, sp, #64	; 0x40
+ 147b584:	460d      	mov	r5, r1
+ 147b586:	f499 cc64 	blx	914e50 <mce::UUID ReadOnlyBinaryStream::getType<mce::UUID>()@plt>
+ 147b58a:	ab10      	add	r3, sp, #64	; 0x40
+ 147b58c:	ae0f      	add	r6, sp, #60	; 0x3c
+ 147b58e:	cb0f      	ldmia	r3, {r0, r1, r2, r3}
+ 147b590:	f104 0c18 	add.w	ip, r4, #24
+ 147b594:	e88c 000f 	stmia.w	ip, {r0, r1, r2, r3}
+ 147b598:	4630      	mov	r0, r6
+ 147b59a:	4629      	mov	r1, r5
+ 147b59c:	f48b cd6a 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147b5a0:	f104 0010 	add.w	r0, r4, #16
+ 147b5a4:	4631      	mov	r1, r6
+ 147b5a6:	f177 d39f 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147b5aa:	4860      	ldr	r0, [pc, #384]	; (147b72c <AddPlayerPacket::read(BinaryStream&)+0x1b0>)
+ 147b5ac:	990f      	ldr	r1, [sp, #60]	; 0x3c
+ 147b5ae:	4478      	add	r0, pc
+ 147b5b0:	6802      	ldr	r2, [r0, #0]
+ 147b5b2:	f1a1 000c 	sub.w	r0, r1, #12
+ 147b5b6:	4290      	cmp	r0, r2
+ 147b5b8:	d170      	bne.n	147b69c <AddPlayerPacket::read(BinaryStream&)+0x120>
+ 147b5ba:	a802      	add	r0, sp, #8
+ 147b5bc:	4629      	mov	r1, r5
+ 147b5be:	f4c2 cda0 	blx	93e100 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+ 147b5c2:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+ 147b5c6:	e9c4 010a 	strd	r0, r1, [r4, #40]	; 0x28
+ 147b5ca:	a802      	add	r0, sp, #8
+ 147b5cc:	4629      	mov	r1, r5
+ 147b5ce:	f4a3 cf98 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+ 147b5d2:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+ 147b5d6:	e9c4 010c 	strd	r0, r1, [r4, #48]	; 0x30
+ 147b5da:	a802      	add	r0, sp, #8
+ 147b5dc:	4629      	mov	r1, r5
+ 147b5de:	f4a3 cfa8 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+ 147b5e2:	9802      	ldr	r0, [sp, #8]
+ 147b5e4:	4629      	mov	r1, r5
+ 147b5e6:	63a0      	str	r0, [r4, #56]	; 0x38
+ 147b5e8:	9803      	ldr	r0, [sp, #12]
+ 147b5ea:	63e0      	str	r0, [r4, #60]	; 0x3c
+ 147b5ec:	9804      	ldr	r0, [sp, #16]
+ 147b5ee:	6420      	str	r0, [r4, #64]	; 0x40
+ 147b5f0:	a802      	add	r0, sp, #8
+ 147b5f2:	f4a3 cf9e 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+ 147b5f6:	9802      	ldr	r0, [sp, #8]
+ 147b5f8:	ae02      	add	r6, sp, #8
+ 147b5fa:	6460      	str	r0, [r4, #68]	; 0x44
+ 147b5fc:	4629      	mov	r1, r5
+ 147b5fe:	9803      	ldr	r0, [sp, #12]
+ 147b600:	64a0      	str	r0, [r4, #72]	; 0x48
+ 147b602:	9804      	ldr	r0, [sp, #16]
+ 147b604:	64e0      	str	r0, [r4, #76]	; 0x4c
+ 147b606:	4630      	mov	r0, r6
+ 147b608:	f4a3 cf98 	blx	91f53c <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+ 147b60c:	e9dd 0102 	ldrd	r0, r1, [sp, #8]
+ 147b610:	e9c4 0114 	strd	r0, r1, [r4, #80]	; 0x50
+ 147b614:	4628      	mov	r0, r5
+ 147b616:	f48b cd34 	blx	907080 <ReadOnlyBinaryStream::getFloat()@plt>
+ 147b61a:	f104 0160 	add.w	r1, r4, #96	; 0x60
+ 147b61e:	65a0      	str	r0, [r4, #88]	; 0x58
+ 147b620:	4628      	mov	r0, r5
+ 147b622:	f4a3 cfaa 	blx	91f578 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+ 147b626:	f104 01a0 	add.w	r1, r4, #160	; 0xa0
+ 147b62a:	4628      	mov	r0, r5
+ 147b62c:	f4cb cea6 	blx	94737c <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+ 147b630:	4840      	ldr	r0, [pc, #256]	; (147b734 <AddPlayerPacket::read(BinaryStream&)+0x1b8>)
+ 147b632:	2101      	movs	r1, #1
+ 147b634:	2202      	movs	r2, #2
+ 147b636:	4478      	add	r0, pc
+ 147b638:	e9cd 2103 	strd	r2, r1, [sp, #12]
+ 147b63c:	2100      	movs	r1, #0
+ 147b63e:	6800      	ldr	r0, [r0, #0]
+ 147b640:	f88d 1014 	strb.w	r1, [sp, #20]
+ 147b644:	3008      	adds	r0, #8
+ 147b646:	9002      	str	r0, [sp, #8]
+ 147b648:	f04f 30ff 	mov.w	r0, #4294967295
+ 147b64c:	9106      	str	r1, [sp, #24]
+ 147b64e:	9108      	str	r1, [sp, #32]
+ 147b650:	e9cd 000a 	strd	r0, r0, [sp, #40]	; 0x28
+ 147b654:	4628      	mov	r0, r5
+ 147b656:	f499 cbe4 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 147b65a:	9006      	str	r0, [sp, #24]
+ 147b65c:	4628      	mov	r0, r5
+ 147b65e:	f499 cbe0 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 147b662:	f88d 001c 	strb.w	r0, [sp, #28]
+ 147b666:	4628      	mov	r0, r5
+ 147b668:	f499 cbda 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 147b66c:	9008      	str	r0, [sp, #32]
+ 147b66e:	4628      	mov	r0, r5
+ 147b670:	f499 cbd6 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 147b674:	f88d 0024 	strb.w	r0, [sp, #36]	; 0x24
+ 147b678:	4628      	mov	r0, r5
+ 147b67a:	f499 cc7a 	blx	914f70 <ReadOnlyBinaryStream::getSignedInt64()@plt>
+ 147b67e:	f106 0220 	add.w	r2, r6, #32
+ 147b682:	e9c2 0100 	strd	r0, r1, [r2]
+ 147b686:	4668      	mov	r0, sp
+ 147b688:	f4cb cec6 	blx	947418 <AdventureSettings::AdventureSettings()@plt>
+ 147b68c:	f104 02ac 	add.w	r2, r4, #172	; 0xac
+ 147b690:	a802      	add	r0, sp, #8
+ 147b692:	4669      	mov	r1, sp
+ 147b694:	f4a0 ceec 	blx	91c470 <AdventureSettingsPacket::fillIn(AdventureSettings&, Abilities&) const@plt>
+ 147b698:	b014      	add	sp, #80	; 0x50
+ 147b69a:	bd70      	pop	{r4, r5, r6, pc}
+ 147b69c:	4a24      	ldr	r2, [pc, #144]	; (147b730 <AddPlayerPacket::read(BinaryStream&)+0x1b4>)
+ 147b69e:	447a      	add	r2, pc
+ 147b6a0:	6813      	ldr	r3, [r2, #0]
+ 147b6a2:	1f0a      	subs	r2, r1, #4
+ 147b6a4:	b15b      	cbz	r3, 147b6be <AddPlayerPacket::read(BinaryStream&)+0x142>
+ 147b6a6:	f3bf 8f5b 	dmb	ish
+ 147b6aa:	e852 1f00 	ldrex	r1, [r2]
+ 147b6ae:	1e4b      	subs	r3, r1, #1
+ 147b6b0:	e842 3600 	strex	r6, r3, [r2]
+ 147b6b4:	2e00      	cmp	r6, #0
+ 147b6b6:	d1f8      	bne.n	147b6aa <AddPlayerPacket::read(BinaryStream&)+0x12e>
+ 147b6b8:	f3bf 8f5b 	dmb	ish
+ 147b6bc:	e002      	b.n	147b6c4 <AddPlayerPacket::read(BinaryStream&)+0x148>
+ 147b6be:	6811      	ldr	r1, [r2, #0]
+ 147b6c0:	1e4b      	subs	r3, r1, #1
+ 147b6c2:	6013      	str	r3, [r2, #0]
+ 147b6c4:	2900      	cmp	r1, #0
+ 147b6c6:	bfdc      	itt	le
+ 147b6c8:	f10d 0140 	addle.w	r1, sp, #64	; 0x40
+ 147b6cc:	f178 d4d8 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147b6d0:	e773      	b.n	147b5ba <AddPlayerPacket::read(BinaryStream&)+0x3e>
+ 147b6d2:	4604      	mov	r4, r0
+ 147b6d4:	4620      	mov	r0, r4
+ 147b6d6:	f48a cce8 	blx	9060a8 <_Unwind_Resume@plt>
+ 147b6da:	4a12      	ldr	r2, [pc, #72]	; (147b724 <AddPlayerPacket::read(BinaryStream&)+0x1a8>)
+ 147b6dc:	4604      	mov	r4, r0
+ 147b6de:	990f      	ldr	r1, [sp, #60]	; 0x3c
+ 147b6e0:	447a      	add	r2, pc
+ 147b6e2:	f1a1 000c 	sub.w	r0, r1, #12
+ 147b6e6:	6812      	ldr	r2, [r2, #0]
+ 147b6e8:	4290      	cmp	r0, r2
+ 147b6ea:	d0f3      	beq.n	147b6d4 <AddPlayerPacket::read(BinaryStream&)+0x158>
+ 147b6ec:	4a0e      	ldr	r2, [pc, #56]	; (147b728 <AddPlayerPacket::read(BinaryStream&)+0x1ac>)
+ 147b6ee:	447a      	add	r2, pc
+ 147b6f0:	6813      	ldr	r3, [r2, #0]
+ 147b6f2:	1f0a      	subs	r2, r1, #4
+ 147b6f4:	b193      	cbz	r3, 147b71c <AddPlayerPacket::read(BinaryStream&)+0x1a0>
+ 147b6f6:	f3bf 8f5b 	dmb	ish
+ 147b6fa:	e852 1f00 	ldrex	r1, [r2]
+ 147b6fe:	1e4b      	subs	r3, r1, #1
+ 147b700:	e842 3600 	strex	r6, r3, [r2]
+ 147b704:	2e00      	cmp	r6, #0
+ 147b706:	d1f8      	bne.n	147b6fa <AddPlayerPacket::read(BinaryStream&)+0x17e>
+ 147b708:	f3bf 8f5b 	dmb	ish
+ 147b70c:	2900      	cmp	r1, #0
+ 147b70e:	dce1      	bgt.n	147b6d4 <AddPlayerPacket::read(BinaryStream&)+0x158>
+ 147b710:	a910      	add	r1, sp, #64	; 0x40
+ 147b712:	f178 d4b5 	bl	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147b716:	4620      	mov	r0, r4
+ 147b718:	f48a ccc6 	blx	9060a8 <_Unwind_Resume@plt>
+ 147b71c:	6811      	ldr	r1, [r2, #0]
+ 147b71e:	1e4b      	subs	r3, r1, #1
+ 147b720:	6013      	str	r3, [r2, #0]
+ 147b722:	e7f3      	b.n	147b70c <AddPlayerPacket::read(BinaryStream&)+0x190>
+ 147b724:	97ec      	str	r7, [sp, #944]	; 0x3b0
+ 147b726:	0132      	lsls	r2, r6, #4
+ 147b728:	97e2      	str	r7, [sp, #904]	; 0x388
+ 147b72a:	0132      	lsls	r2, r6, #4
+ 147b72c:	991e      	ldr	r1, [sp, #120]	; 0x78
+ 147b72e:	0132      	lsls	r2, r6, #4
+ 147b730:	9832      	ldr	r0, [sp, #200]	; 0xc8
+ 147b732:	0132      	lsls	r2, r6, #4
+ 147b734:	da26      	bge.n	147b784 <MoveEntityPacket::read(BinaryStream&)+0x14>
+ 147b736:	0132      	lsls	r2, r6, #4

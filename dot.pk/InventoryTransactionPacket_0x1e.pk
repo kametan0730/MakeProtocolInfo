@@ -1,0 +1,45 @@
+  e1e472:	b5f0      	push	{r4, r5, r6, r7, lr}
+  e1e474:	b08b      	sub	sp, #44	; 0x2c
+  e1e476:	460c      	mov	r4, r1
+  e1e478:	4605      	mov	r5, r0
+  e1e47a:	4620      	mov	r0, r4
+  e1e47c:	f6f6 e4d0 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  e1e480:	466f      	mov	r7, sp
+  e1e482:	4606      	mov	r6, r0
+  e1e484:	4638      	mov	r0, r7
+  e1e486:	4621      	mov	r1, r4
+  e1e488:	f701 e094 	blx	91f5b4 <InventoryTransaction ReadOnlyBinaryStream::getType<InventoryTransaction>()@plt>
+  e1e48c:	a80a      	add	r0, sp, #40	; 0x28
+  e1e48e:	4631      	mov	r1, r6
+  e1e490:	463a      	mov	r2, r7
+  e1e492:	f700 e734 	blx	91f2fc <ComplexInventoryTransaction::fromType(ComplexInventoryTransaction::Type, InventoryTransaction const&)@plt>
+  e1e496:	2600      	movs	r6, #0
+  e1e498:	990a      	ldr	r1, [sp, #40]	; 0x28
+  e1e49a:	960a      	str	r6, [sp, #40]	; 0x28
+  e1e49c:	6928      	ldr	r0, [r5, #16]
+  e1e49e:	6129      	str	r1, [r5, #16]
+  e1e4a0:	b140      	cbz	r0, e1e4b4 <InventoryTransactionPacket::read(BinaryStream&)+0x42>
+  e1e4a2:	6801      	ldr	r1, [r0, #0]
+  e1e4a4:	6849      	ldr	r1, [r1, #4]
+  e1e4a6:	4788      	blx	r1
+  e1e4a8:	980a      	ldr	r0, [sp, #40]	; 0x28
+  e1e4aa:	2800      	cmp	r0, #0
+  e1e4ac:	bf1e      	ittt	ne
+  e1e4ae:	6801      	ldrne	r1, [r0, #0]
+  e1e4b0:	6849      	ldrne	r1, [r1, #4]
+  e1e4b2:	4788      	blxne	r1
+  e1e4b4:	4668      	mov	r0, sp
+  e1e4b6:	960a      	str	r6, [sp, #40]	; 0x28
+  e1e4b8:	f701 e082 	blx	91f5c0 <InventoryTransaction::~InventoryTransaction()@plt>
+  e1e4bc:	6928      	ldr	r0, [r5, #16]
+  e1e4be:	6801      	ldr	r1, [r0, #0]
+  e1e4c0:	688a      	ldr	r2, [r1, #8]
+  e1e4c2:	4621      	mov	r1, r4
+  e1e4c4:	4790      	blx	r2
+  e1e4c6:	b00b      	add	sp, #44	; 0x2c
+  e1e4c8:	bdf0      	pop	{r4, r5, r6, r7, pc}
+  e1e4ca:	4604      	mov	r4, r0
+  e1e4cc:	4668      	mov	r0, sp
+  e1e4ce:	f701 e078 	blx	91f5c0 <InventoryTransaction::~InventoryTransaction()@plt>
+  e1e4d2:	4620      	mov	r0, r4
+  e1e4d4:	f6e7 e5e8 	blx	9060a8 <_Unwind_Resume@plt>

@@ -1,0 +1,13 @@
+  ddd0b0:	b570      	push	{r4, r5, r6, lr}
+  ddd0b2:	b088      	sub	sp, #32
+  ddd0b4:	466e      	mov	r6, sp
+  ddd0b6:	4604      	mov	r4, r0
+  ddd0b8:	4630      	mov	r0, r6
+  ddd0ba:	f73f e26a 	blx	91c590 <EntityLink ReadOnlyBinaryStream::getType<EntityLink>()@plt>
+  ddd0be:	f104 0c10 	add.w	ip, r4, #16
+  ddd0c2:	ce3f      	ldmia	r6!, {r0, r1, r2, r3, r4, r5}
+  ddd0c4:	e8ac 003f 	stmia.w	ip!, {r0, r1, r2, r3, r4, r5}
+  ddd0c8:	7830      	ldrb	r0, [r6, #0]
+  ddd0ca:	f88c 0000 	strb.w	r0, [ip]
+  ddd0ce:	b008      	add	sp, #32
+  ddd0d0:	bd70      	pop	{r4, r5, r6, pc}

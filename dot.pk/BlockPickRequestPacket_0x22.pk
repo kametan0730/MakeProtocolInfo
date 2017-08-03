@@ -1,0 +1,20 @@
+  e1e6d0:	b5b0      	push	{r4, r5, r7, lr}
+  e1e6d2:	b084      	sub	sp, #16
+  e1e6d4:	4605      	mov	r5, r0
+  e1e6d6:	a801      	add	r0, sp, #4
+  e1e6d8:	460c      	mov	r4, r1
+  e1e6da:	f700 e77e 	blx	91f5d8 <BlockPos ReadOnlyBinaryStream::getType<BlockPos>()@plt>
+  e1e6de:	9801      	ldr	r0, [sp, #4]
+  e1e6e0:	6128      	str	r0, [r5, #16]
+  e1e6e2:	9802      	ldr	r0, [sp, #8]
+  e1e6e4:	6168      	str	r0, [r5, #20]
+  e1e6e6:	9803      	ldr	r0, [sp, #12]
+  e1e6e8:	61a8      	str	r0, [r5, #24]
+  e1e6ea:	4620      	mov	r0, r4
+  e1e6ec:	f6ed e2ea 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+  e1e6f0:	7728      	strb	r0, [r5, #28]
+  e1e6f2:	4620      	mov	r0, r4
+  e1e6f4:	f6e8 e482 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+  e1e6f8:	7768      	strb	r0, [r5, #29]
+  e1e6fa:	b004      	add	sp, #16
+  e1e6fc:	bdb0      	pop	{r4, r5, r7, pc}

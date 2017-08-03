@@ -1,0 +1,92 @@
+ 147f638:	b570      	push	{r4, r5, r6, lr}
+ 147f63a:	b084      	sub	sp, #16
+ 147f63c:	460d      	mov	r5, r1
+ 147f63e:	4604      	mov	r4, r0
+ 147f640:	4628      	mov	r0, r5
+ 147f642:	f487 cd30 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147f646:	ae01      	add	r6, sp, #4
+ 147f648:	6120      	str	r0, [r4, #16]
+ 147f64a:	4629      	mov	r1, r5
+ 147f64c:	4630      	mov	r0, r6
+ 147f64e:	f487 cd12 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147f652:	f104 0014 	add.w	r0, r4, #20
+ 147f656:	4631      	mov	r1, r6
+ 147f658:	f173 d346 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147f65c:	482d      	ldr	r0, [pc, #180]	; (147f714 <SetTitlePacket::read(BinaryStream&)+0xdc>)
+ 147f65e:	9901      	ldr	r1, [sp, #4]
+ 147f660:	4478      	add	r0, pc
+ 147f662:	6802      	ldr	r2, [r0, #0]
+ 147f664:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f668:	4290      	cmp	r0, r2
+ 147f66a:	d10d      	bne.n	147f688 <SetTitlePacket::read(BinaryStream&)+0x50>
+ 147f66c:	4628      	mov	r0, r5
+ 147f66e:	f487 cd1a 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147f672:	61a0      	str	r0, [r4, #24]
+ 147f674:	4628      	mov	r0, r5
+ 147f676:	f487 cd16 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147f67a:	61e0      	str	r0, [r4, #28]
+ 147f67c:	4628      	mov	r0, r5
+ 147f67e:	f487 cd12 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147f682:	6220      	str	r0, [r4, #32]
+ 147f684:	b004      	add	sp, #16
+ 147f686:	bd70      	pop	{r4, r5, r6, pc}
+ 147f688:	4a23      	ldr	r2, [pc, #140]	; (147f718 <SetTitlePacket::read(BinaryStream&)+0xe0>)
+ 147f68a:	447a      	add	r2, pc
+ 147f68c:	6813      	ldr	r3, [r2, #0]
+ 147f68e:	1f0a      	subs	r2, r1, #4
+ 147f690:	b15b      	cbz	r3, 147f6aa <SetTitlePacket::read(BinaryStream&)+0x72>
+ 147f692:	f3bf 8f5b 	dmb	ish
+ 147f696:	e852 1f00 	ldrex	r1, [r2]
+ 147f69a:	1e4b      	subs	r3, r1, #1
+ 147f69c:	e842 3600 	strex	r6, r3, [r2]
+ 147f6a0:	2e00      	cmp	r6, #0
+ 147f6a2:	d1f8      	bne.n	147f696 <SetTitlePacket::read(BinaryStream&)+0x5e>
+ 147f6a4:	f3bf 8f5b 	dmb	ish
+ 147f6a8:	e002      	b.n	147f6b0 <SetTitlePacket::read(BinaryStream&)+0x78>
+ 147f6aa:	6811      	ldr	r1, [r2, #0]
+ 147f6ac:	1e4b      	subs	r3, r1, #1
+ 147f6ae:	6013      	str	r3, [r2, #0]
+ 147f6b0:	2900      	cmp	r1, #0
+ 147f6b2:	bfdc      	itt	le
+ 147f6b4:	f10d 0108 	addle.w	r1, sp, #8
+ 147f6b8:	f174 d4e2 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f6bc:	e7d6      	b.n	147f66c <SetTitlePacket::read(BinaryStream&)+0x34>
+ 147f6be:	4a13      	ldr	r2, [pc, #76]	; (147f70c <SetTitlePacket::read(BinaryStream&)+0xd4>)
+ 147f6c0:	4604      	mov	r4, r0
+ 147f6c2:	9901      	ldr	r1, [sp, #4]
+ 147f6c4:	447a      	add	r2, pc
+ 147f6c6:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f6ca:	6812      	ldr	r2, [r2, #0]
+ 147f6cc:	4290      	cmp	r0, r2
+ 147f6ce:	d015      	beq.n	147f6fc <SetTitlePacket::read(BinaryStream&)+0xc4>
+ 147f6d0:	4a0f      	ldr	r2, [pc, #60]	; (147f710 <SetTitlePacket::read(BinaryStream&)+0xd8>)
+ 147f6d2:	447a      	add	r2, pc
+ 147f6d4:	6813      	ldr	r3, [r2, #0]
+ 147f6d6:	1f0a      	subs	r2, r1, #4
+ 147f6d8:	b19b      	cbz	r3, 147f702 <SetTitlePacket::read(BinaryStream&)+0xca>
+ 147f6da:	f3bf 8f5b 	dmb	ish
+ 147f6de:	e852 1f00 	ldrex	r1, [r2]
+ 147f6e2:	1e4b      	subs	r3, r1, #1
+ 147f6e4:	e842 3600 	strex	r6, r3, [r2]
+ 147f6e8:	2e00      	cmp	r6, #0
+ 147f6ea:	d1f8      	bne.n	147f6de <SetTitlePacket::read(BinaryStream&)+0xa6>
+ 147f6ec:	f3bf 8f5b 	dmb	ish
+ 147f6f0:	2900      	cmp	r1, #0
+ 147f6f2:	bfdc      	itt	le
+ 147f6f4:	f10d 010c 	addle.w	r1, sp, #12
+ 147f6f8:	f174 d4c2 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f6fc:	4620      	mov	r0, r4
+ 147f6fe:	f486 ccd4 	blx	9060a8 <_Unwind_Resume@plt>
+ 147f702:	6811      	ldr	r1, [r2, #0]
+ 147f704:	1e4b      	subs	r3, r1, #1
+ 147f706:	6013      	str	r3, [r2, #0]
+ 147f708:	e7f2      	b.n	147f6f0 <SetTitlePacket::read(BinaryStream&)+0xb8>
+ 147f70a:	bf00      	nop
+ 147f70c:	5808      	ldr	r0, [r1, r0]
+ 147f70e:	0132      	lsls	r2, r6, #4
+ 147f710:	57fe      	ldrsb	r6, [r7, r7]
+ 147f712:	0132      	lsls	r2, r6, #4
+ 147f714:	586c      	ldr	r4, [r5, r1]
+ 147f716:	0132      	lsls	r2, r6, #4
+ 147f718:	5846      	ldr	r6, [r0, r1]
+ 147f71a:	0132      	lsls	r2, r6, #4

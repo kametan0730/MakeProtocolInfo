@@ -1,0 +1,78 @@
+ 148057c:	b5b0      	push	{r4, r5, r7, lr}
+ 148057e:	b084      	sub	sp, #16
+ 1480580:	ad01      	add	r5, sp, #4
+ 1480582:	4604      	mov	r4, r0
+ 1480584:	4628      	mov	r0, r5
+ 1480586:	f486 cd76 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 148058a:	f104 0010 	add.w	r0, r4, #16
+ 148058e:	4629      	mov	r1, r5
+ 1480590:	f172 d3aa 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 1480594:	4827      	ldr	r0, [pc, #156]	; (1480634 <AddBehaviorTreePacket::read(BinaryStream&)+0xb8>)
+ 1480596:	9901      	ldr	r1, [sp, #4]
+ 1480598:	4478      	add	r0, pc
+ 148059a:	6802      	ldr	r2, [r0, #0]
+ 148059c:	f1a1 000c 	sub.w	r0, r1, #12
+ 14805a0:	4290      	cmp	r0, r2
+ 14805a2:	d101      	bne.n	14805a8 <AddBehaviorTreePacket::read(BinaryStream&)+0x2c>
+ 14805a4:	b004      	add	sp, #16
+ 14805a6:	bdb0      	pop	{r4, r5, r7, pc}
+ 14805a8:	4a23      	ldr	r2, [pc, #140]	; (1480638 <AddBehaviorTreePacket::read(BinaryStream&)+0xbc>)
+ 14805aa:	447a      	add	r2, pc
+ 14805ac:	6813      	ldr	r3, [r2, #0]
+ 14805ae:	1f0a      	subs	r2, r1, #4
+ 14805b0:	b15b      	cbz	r3, 14805ca <AddBehaviorTreePacket::read(BinaryStream&)+0x4e>
+ 14805b2:	f3bf 8f5b 	dmb	ish
+ 14805b6:	e852 1f00 	ldrex	r1, [r2]
+ 14805ba:	1e4b      	subs	r3, r1, #1
+ 14805bc:	e842 3500 	strex	r5, r3, [r2]
+ 14805c0:	2d00      	cmp	r5, #0
+ 14805c2:	d1f8      	bne.n	14805b6 <AddBehaviorTreePacket::read(BinaryStream&)+0x3a>
+ 14805c4:	f3bf 8f5b 	dmb	ish
+ 14805c8:	e002      	b.n	14805d0 <AddBehaviorTreePacket::read(BinaryStream&)+0x54>
+ 14805ca:	6811      	ldr	r1, [r2, #0]
+ 14805cc:	1e4b      	subs	r3, r1, #1
+ 14805ce:	6013      	str	r3, [r2, #0]
+ 14805d0:	2900      	cmp	r1, #0
+ 14805d2:	bfdc      	itt	le
+ 14805d4:	f10d 0108 	addle.w	r1, sp, #8
+ 14805d8:	f173 d552 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 14805dc:	e7e2      	b.n	14805a4 <AddBehaviorTreePacket::read(BinaryStream&)+0x28>
+ 14805de:	4a13      	ldr	r2, [pc, #76]	; (148062c <AddBehaviorTreePacket::read(BinaryStream&)+0xb0>)
+ 14805e0:	4604      	mov	r4, r0
+ 14805e2:	9901      	ldr	r1, [sp, #4]
+ 14805e4:	447a      	add	r2, pc
+ 14805e6:	f1a1 000c 	sub.w	r0, r1, #12
+ 14805ea:	6812      	ldr	r2, [r2, #0]
+ 14805ec:	4290      	cmp	r0, r2
+ 14805ee:	d015      	beq.n	148061c <AddBehaviorTreePacket::read(BinaryStream&)+0xa0>
+ 14805f0:	4a0f      	ldr	r2, [pc, #60]	; (1480630 <AddBehaviorTreePacket::read(BinaryStream&)+0xb4>)
+ 14805f2:	447a      	add	r2, pc
+ 14805f4:	6813      	ldr	r3, [r2, #0]
+ 14805f6:	1f0a      	subs	r2, r1, #4
+ 14805f8:	b19b      	cbz	r3, 1480622 <AddBehaviorTreePacket::read(BinaryStream&)+0xa6>
+ 14805fa:	f3bf 8f5b 	dmb	ish
+ 14805fe:	e852 1f00 	ldrex	r1, [r2]
+ 1480602:	1e4b      	subs	r3, r1, #1
+ 1480604:	e842 3500 	strex	r5, r3, [r2]
+ 1480608:	2d00      	cmp	r5, #0
+ 148060a:	d1f8      	bne.n	14805fe <AddBehaviorTreePacket::read(BinaryStream&)+0x82>
+ 148060c:	f3bf 8f5b 	dmb	ish
+ 1480610:	2900      	cmp	r1, #0
+ 1480612:	bfdc      	itt	le
+ 1480614:	f10d 010c 	addle.w	r1, sp, #12
+ 1480618:	f173 d532 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 148061c:	4620      	mov	r0, r4
+ 148061e:	f485 cd44 	blx	9060a8 <_Unwind_Resume@plt>
+ 1480622:	6811      	ldr	r1, [r2, #0]
+ 1480624:	1e4b      	subs	r3, r1, #1
+ 1480626:	6013      	str	r3, [r2, #0]
+ 1480628:	e7f2      	b.n	1480610 <AddBehaviorTreePacket::read(BinaryStream&)+0x94>
+ 148062a:	bf00      	nop
+ 148062c:	48e8      	ldr	r0, [pc, #928]	; (14809d0 <AvailableCommandsPacket::write(BinaryStream&) const+0x284>)
+ 148062e:	0132      	lsls	r2, r6, #4
+ 1480630:	48de      	ldr	r0, [pc, #888]	; (14809ac <AvailableCommandsPacket::write(BinaryStream&) const+0x260>)
+ 1480632:	0132      	lsls	r2, r6, #4
+ 1480634:	4934      	ldr	r1, [pc, #208]	; (1480708 <AddBehaviorTreePacket::~AddBehaviorTreePacket()+0x4c>)
+ 1480636:	0132      	lsls	r2, r6, #4
+ 1480638:	4926      	ldr	r1, [pc, #152]	; (14806d4 <AddBehaviorTreePacket::~AddBehaviorTreePacket()+0x18>)
+ 148063a:	0132      	lsls	r2, r6, #4

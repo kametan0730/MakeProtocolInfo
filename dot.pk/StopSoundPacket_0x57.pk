@@ -1,0 +1,81 @@
+ 147fa6c:	b570      	push	{r4, r5, r6, lr}
+ 147fa6e:	b084      	sub	sp, #16
+ 147fa70:	ae01      	add	r6, sp, #4
+ 147fa72:	4604      	mov	r4, r0
+ 147fa74:	460d      	mov	r5, r1
+ 147fa76:	4630      	mov	r0, r6
+ 147fa78:	f487 cafc 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147fa7c:	f104 0010 	add.w	r0, r4, #16
+ 147fa80:	4631      	mov	r1, r6
+ 147fa82:	f173 d131 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147fa86:	4829      	ldr	r0, [pc, #164]	; (147fb2c <StopSoundPacket::read(BinaryStream&)+0xc0>)
+ 147fa88:	9901      	ldr	r1, [sp, #4]
+ 147fa8a:	4478      	add	r0, pc
+ 147fa8c:	6802      	ldr	r2, [r0, #0]
+ 147fa8e:	f1a1 000c 	sub.w	r0, r1, #12
+ 147fa92:	4290      	cmp	r0, r2
+ 147fa94:	d105      	bne.n	147faa2 <StopSoundPacket::read(BinaryStream&)+0x36>
+ 147fa96:	4628      	mov	r0, r5
+ 147fa98:	f48c c914 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+ 147fa9c:	7520      	strb	r0, [r4, #20]
+ 147fa9e:	b004      	add	sp, #16
+ 147faa0:	bd70      	pop	{r4, r5, r6, pc}
+ 147faa2:	4a23      	ldr	r2, [pc, #140]	; (147fb30 <StopSoundPacket::read(BinaryStream&)+0xc4>)
+ 147faa4:	447a      	add	r2, pc
+ 147faa6:	6813      	ldr	r3, [r2, #0]
+ 147faa8:	1f0a      	subs	r2, r1, #4
+ 147faaa:	b15b      	cbz	r3, 147fac4 <StopSoundPacket::read(BinaryStream&)+0x58>
+ 147faac:	f3bf 8f5b 	dmb	ish
+ 147fab0:	e852 1f00 	ldrex	r1, [r2]
+ 147fab4:	1e4b      	subs	r3, r1, #1
+ 147fab6:	e842 3600 	strex	r6, r3, [r2]
+ 147faba:	2e00      	cmp	r6, #0
+ 147fabc:	d1f8      	bne.n	147fab0 <StopSoundPacket::read(BinaryStream&)+0x44>
+ 147fabe:	f3bf 8f5b 	dmb	ish
+ 147fac2:	e002      	b.n	147faca <StopSoundPacket::read(BinaryStream&)+0x5e>
+ 147fac4:	6811      	ldr	r1, [r2, #0]
+ 147fac6:	1e4b      	subs	r3, r1, #1
+ 147fac8:	6013      	str	r3, [r2, #0]
+ 147faca:	2900      	cmp	r1, #0
+ 147facc:	bfdc      	itt	le
+ 147face:	f10d 0108 	addle.w	r1, sp, #8
+ 147fad2:	f174 d2d5 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147fad6:	e7de      	b.n	147fa96 <StopSoundPacket::read(BinaryStream&)+0x2a>
+ 147fad8:	4a12      	ldr	r2, [pc, #72]	; (147fb24 <StopSoundPacket::read(BinaryStream&)+0xb8>)
+ 147fada:	4604      	mov	r4, r0
+ 147fadc:	9901      	ldr	r1, [sp, #4]
+ 147fade:	447a      	add	r2, pc
+ 147fae0:	f1a1 000c 	sub.w	r0, r1, #12
+ 147fae4:	6812      	ldr	r2, [r2, #0]
+ 147fae6:	4290      	cmp	r0, r2
+ 147fae8:	d015      	beq.n	147fb16 <StopSoundPacket::read(BinaryStream&)+0xaa>
+ 147faea:	4a0f      	ldr	r2, [pc, #60]	; (147fb28 <StopSoundPacket::read(BinaryStream&)+0xbc>)
+ 147faec:	447a      	add	r2, pc
+ 147faee:	6813      	ldr	r3, [r2, #0]
+ 147faf0:	1f0a      	subs	r2, r1, #4
+ 147faf2:	b19b      	cbz	r3, 147fb1c <StopSoundPacket::read(BinaryStream&)+0xb0>
+ 147faf4:	f3bf 8f5b 	dmb	ish
+ 147faf8:	e852 1f00 	ldrex	r1, [r2]
+ 147fafc:	1e4b      	subs	r3, r1, #1
+ 147fafe:	e842 3600 	strex	r6, r3, [r2]
+ 147fb02:	2e00      	cmp	r6, #0
+ 147fb04:	d1f8      	bne.n	147faf8 <StopSoundPacket::read(BinaryStream&)+0x8c>
+ 147fb06:	f3bf 8f5b 	dmb	ish
+ 147fb0a:	2900      	cmp	r1, #0
+ 147fb0c:	bfdc      	itt	le
+ 147fb0e:	f10d 010c 	addle.w	r1, sp, #12
+ 147fb12:	f174 d2b5 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147fb16:	4620      	mov	r0, r4
+ 147fb18:	f486 cac6 	blx	9060a8 <_Unwind_Resume@plt>
+ 147fb1c:	6811      	ldr	r1, [r2, #0]
+ 147fb1e:	1e4b      	subs	r3, r1, #1
+ 147fb20:	6013      	str	r3, [r2, #0]
+ 147fb22:	e7f2      	b.n	147fb0a <StopSoundPacket::read(BinaryStream&)+0x9e>
+ 147fb24:	53ee      	strh	r6, [r5, r7]
+ 147fb26:	0132      	lsls	r2, r6, #4
+ 147fb28:	53e4      	strh	r4, [r4, r7]
+ 147fb2a:	0132      	lsls	r2, r6, #4
+ 147fb2c:	5442      	strb	r2, [r0, r1]
+ 147fb2e:	0132      	lsls	r2, r6, #4
+ 147fb30:	542c      	strb	r4, [r5, r0]
+ 147fb32:	0132      	lsls	r2, r6, #4

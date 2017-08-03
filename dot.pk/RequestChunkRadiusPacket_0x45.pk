@@ -1,0 +1,6 @@
+  e1d9a6:	b510      	push	{r4, lr}
+  e1d9a8:	4604      	mov	r4, r0
+  e1d9aa:	4608      	mov	r0, r1
+  e1d9ac:	f6e9 e37a 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  e1d9b0:	6120      	str	r0, [r4, #16]
+  e1d9b2:	bd10      	pop	{r4, pc}

@@ -1,0 +1,22 @@
+ 147c3d6:	b5b0      	push	{r4, r5, r7, lr}
+ 147c3d8:	b082      	sub	sp, #8
+ 147c3da:	4605      	mov	r5, r0
+ 147c3dc:	4668      	mov	r0, sp
+ 147c3de:	460c      	mov	r4, r1
+ 147c3e0:	f4a3 c88e 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+ 147c3e4:	e9dd 0100 	ldrd	r0, r1, [sp]
+ 147c3e8:	e9c5 0104 	strd	r0, r1, [r5, #16]
+ 147c3ec:	f105 0118 	add.w	r1, r5, #24
+ 147c3f0:	4620      	mov	r0, r4
+ 147c3f2:	f4a3 c8c2 	blx	91f578 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+ 147c3f6:	f105 0158 	add.w	r1, r5, #88	; 0x58
+ 147c3fa:	4620      	mov	r0, r4
+ 147c3fc:	f4a3 c8bc 	blx	91f578 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+ 147c400:	f105 0198 	add.w	r1, r5, #152	; 0x98
+ 147c404:	4620      	mov	r0, r4
+ 147c406:	f4a3 c8b8 	blx	91f578 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+ 147c40a:	f105 01d8 	add.w	r1, r5, #216	; 0xd8
+ 147c40e:	4620      	mov	r0, r4
+ 147c410:	f4a3 c8b2 	blx	91f578 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+ 147c414:	b002      	add	sp, #8
+ 147c416:	bdb0      	pop	{r4, r5, r7, pc}

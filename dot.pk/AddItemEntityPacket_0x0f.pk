@@ -1,0 +1,39 @@
+ 147b0f8:	b5b0      	push	{r4, r5, r7, lr}
+ 147b0fa:	b084      	sub	sp, #16
+ 147b0fc:	4605      	mov	r5, r0
+ 147b0fe:	4668      	mov	r0, sp
+ 147b100:	460c      	mov	r4, r1
+ 147b102:	f4c2 cffe 	blx	93e100 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+ 147b106:	e9dd 0100 	ldrd	r0, r1, [sp]
+ 147b10a:	e9c5 0108 	strd	r0, r1, [r5, #32]
+ 147b10e:	4668      	mov	r0, sp
+ 147b110:	4621      	mov	r1, r4
+ 147b112:	f4a4 c9f6 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+ 147b116:	e9dd 0100 	ldrd	r0, r1, [sp]
+ 147b11a:	e9c5 010a 	strd	r0, r1, [r5, #40]	; 0x28
+ 147b11e:	f105 0130 	add.w	r1, r5, #48	; 0x30
+ 147b122:	4620      	mov	r0, r4
+ 147b124:	f4a4 ca28 	blx	91f578 <void ReadOnlyBinaryStream::readType<ItemInstance>(ItemInstance&)@plt>
+ 147b128:	4668      	mov	r0, sp
+ 147b12a:	4621      	mov	r1, r4
+ 147b12c:	f4a4 ca00 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+ 147b130:	9800      	ldr	r0, [sp, #0]
+ 147b132:	4621      	mov	r1, r4
+ 147b134:	6728      	str	r0, [r5, #112]	; 0x70
+ 147b136:	9801      	ldr	r0, [sp, #4]
+ 147b138:	6768      	str	r0, [r5, #116]	; 0x74
+ 147b13a:	9802      	ldr	r0, [sp, #8]
+ 147b13c:	67a8      	str	r0, [r5, #120]	; 0x78
+ 147b13e:	4668      	mov	r0, sp
+ 147b140:	f4a4 c9f6 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+ 147b144:	9800      	ldr	r0, [sp, #0]
+ 147b146:	f105 0110 	add.w	r1, r5, #16
+ 147b14a:	67e8      	str	r0, [r5, #124]	; 0x7c
+ 147b14c:	9801      	ldr	r0, [sp, #4]
+ 147b14e:	f8c5 0080 	str.w	r0, [r5, #128]	; 0x80
+ 147b152:	9802      	ldr	r0, [sp, #8]
+ 147b154:	f8c5 0084 	str.w	r0, [r5, #132]	; 0x84
+ 147b158:	4620      	mov	r0, r4
+ 147b15a:	f4cc c910 	blx	94737c <void ReadOnlyBinaryStream::readType<std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > > >(std::vector<std::unique_ptr<DataItem, std::default_delete<DataItem> >, std::allocator<std::unique_ptr<DataItem, std::default_delete<DataItem> > > >&)@plt>
+ 147b15e:	b004      	add	sp, #16
+ 147b160:	bdb0      	pop	{r4, r5, r7, pc}

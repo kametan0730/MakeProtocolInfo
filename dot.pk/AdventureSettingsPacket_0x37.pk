@@ -1,0 +1,19 @@
+  ca991c:	b5b0      	push	{r4, r5, r7, lr}
+  ca991e:	460c      	mov	r4, r1
+  ca9920:	4605      	mov	r5, r0
+  ca9922:	4620      	mov	r0, r4
+  ca9924:	f46b ea7c 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ca9928:	6128      	str	r0, [r5, #16]
+  ca992a:	4620      	mov	r0, r4
+  ca992c:	f46b ea78 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ca9930:	7528      	strb	r0, [r5, #20]
+  ca9932:	4620      	mov	r0, r4
+  ca9934:	f46b ea74 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ca9938:	61a8      	str	r0, [r5, #24]
+  ca993a:	4620      	mov	r0, r4
+  ca993c:	f46b ea70 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+  ca9940:	7728      	strb	r0, [r5, #28]
+  ca9942:	4620      	mov	r0, r4
+  ca9944:	f46b eb14 	blx	914f70 <ReadOnlyBinaryStream::getSignedInt64()@plt>
+  ca9948:	e9c5 0108 	strd	r0, r1, [r5, #32]
+  ca994c:	bdb0      	pop	{r4, r5, r7, pc}

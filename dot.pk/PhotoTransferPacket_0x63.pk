@@ -1,0 +1,208 @@
+ 124a67c:	b570      	push	{r4, r5, r6, lr}
+ 124a67e:	b084      	sub	sp, #16
+ 124a680:	ae02      	add	r6, sp, #8
+ 124a682:	4604      	mov	r4, r0
+ 124a684:	460d      	mov	r5, r1
+ 124a686:	4630      	mov	r0, r6
+ 124a688:	f6bc ccf4 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 124a68c:	f104 0010 	add.w	r0, r4, #16
+ 124a690:	4631      	mov	r1, r6
+ 124a692:	f3a8 d329 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 124a696:	486f      	ldr	r0, [pc, #444]	; (124a854 <PhotoTransferPacket::read(BinaryStream&)+0x1d8>)
+ 124a698:	9902      	ldr	r1, [sp, #8]
+ 124a69a:	4478      	add	r0, pc
+ 124a69c:	6802      	ldr	r2, [r0, #0]
+ 124a69e:	f1a1 000c 	sub.w	r0, r1, #12
+ 124a6a2:	4290      	cmp	r0, r2
+ 124a6a4:	d125      	bne.n	124a6f2 <PhotoTransferPacket::read(BinaryStream&)+0x76>
+ 124a6a6:	ae01      	add	r6, sp, #4
+ 124a6a8:	4629      	mov	r1, r5
+ 124a6aa:	4630      	mov	r0, r6
+ 124a6ac:	f6bc cce2 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 124a6b0:	f104 0014 	add.w	r0, r4, #20
+ 124a6b4:	4631      	mov	r1, r6
+ 124a6b6:	f3a8 d317 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 124a6ba:	486a      	ldr	r0, [pc, #424]	; (124a864 <PhotoTransferPacket::read(BinaryStream&)+0x1e8>)
+ 124a6bc:	9901      	ldr	r1, [sp, #4]
+ 124a6be:	4478      	add	r0, pc
+ 124a6c0:	6802      	ldr	r2, [r0, #0]
+ 124a6c2:	f1a1 000c 	sub.w	r0, r1, #12
+ 124a6c6:	4290      	cmp	r0, r2
+ 124a6c8:	d124      	bne.n	124a714 <PhotoTransferPacket::read(BinaryStream&)+0x98>
+ 124a6ca:	466e      	mov	r6, sp
+ 124a6cc:	4629      	mov	r1, r5
+ 124a6ce:	4630      	mov	r0, r6
+ 124a6d0:	f6bc ccd0 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 124a6d4:	f104 0018 	add.w	r0, r4, #24
+ 124a6d8:	4631      	mov	r1, r6
+ 124a6da:	f3a8 d305 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 124a6de:	4865      	ldr	r0, [pc, #404]	; (124a874 <PhotoTransferPacket::read(BinaryStream&)+0x1f8>)
+ 124a6e0:	9900      	ldr	r1, [sp, #0]
+ 124a6e2:	4478      	add	r0, pc
+ 124a6e4:	6802      	ldr	r2, [r0, #0]
+ 124a6e6:	f1a1 000c 	sub.w	r0, r1, #12
+ 124a6ea:	4290      	cmp	r0, r2
+ 124a6ec:	d123      	bne.n	124a736 <PhotoTransferPacket::read(BinaryStream&)+0xba>
+ 124a6ee:	b004      	add	sp, #16
+ 124a6f0:	bd70      	pop	{r4, r5, r6, pc}
+ 124a6f2:	4a59      	ldr	r2, [pc, #356]	; (124a858 <PhotoTransferPacket::read(BinaryStream&)+0x1dc>)
+ 124a6f4:	447a      	add	r2, pc
+ 124a6f6:	6813      	ldr	r3, [r2, #0]
+ 124a6f8:	1f0a      	subs	r2, r1, #4
+ 124a6fa:	b36b      	cbz	r3, 124a758 <PhotoTransferPacket::read(BinaryStream&)+0xdc>
+ 124a6fc:	f3bf 8f5b 	dmb	ish
+ 124a700:	e852 1f00 	ldrex	r1, [r2]
+ 124a704:	1e4b      	subs	r3, r1, #1
+ 124a706:	e842 3600 	strex	r6, r3, [r2]
+ 124a70a:	2e00      	cmp	r6, #0
+ 124a70c:	d1f8      	bne.n	124a700 <PhotoTransferPacket::read(BinaryStream&)+0x84>
+ 124a70e:	f3bf 8f5b 	dmb	ish
+ 124a712:	e024      	b.n	124a75e <PhotoTransferPacket::read(BinaryStream&)+0xe2>
+ 124a714:	4a54      	ldr	r2, [pc, #336]	; (124a868 <PhotoTransferPacket::read(BinaryStream&)+0x1ec>)
+ 124a716:	447a      	add	r2, pc
+ 124a718:	6813      	ldr	r3, [r2, #0]
+ 124a71a:	1f0a      	subs	r2, r1, #4
+ 124a71c:	b333      	cbz	r3, 124a76c <PhotoTransferPacket::read(BinaryStream&)+0xf0>
+ 124a71e:	f3bf 8f5b 	dmb	ish
+ 124a722:	e852 1f00 	ldrex	r1, [r2]
+ 124a726:	1e4b      	subs	r3, r1, #1
+ 124a728:	e842 3600 	strex	r6, r3, [r2]
+ 124a72c:	2e00      	cmp	r6, #0
+ 124a72e:	d1f8      	bne.n	124a722 <PhotoTransferPacket::read(BinaryStream&)+0xa6>
+ 124a730:	f3bf 8f5b 	dmb	ish
+ 124a734:	e01d      	b.n	124a772 <PhotoTransferPacket::read(BinaryStream&)+0xf6>
+ 124a736:	4a50      	ldr	r2, [pc, #320]	; (124a878 <PhotoTransferPacket::read(BinaryStream&)+0x1fc>)
+ 124a738:	447a      	add	r2, pc
+ 124a73a:	6813      	ldr	r3, [r2, #0]
+ 124a73c:	1f0a      	subs	r2, r1, #4
+ 124a73e:	b1fb      	cbz	r3, 124a780 <PhotoTransferPacket::read(BinaryStream&)+0x104>
+ 124a740:	f3bf 8f5b 	dmb	ish
+ 124a744:	e852 1f00 	ldrex	r1, [r2]
+ 124a748:	1e4b      	subs	r3, r1, #1
+ 124a74a:	e842 3600 	strex	r6, r3, [r2]
+ 124a74e:	2e00      	cmp	r6, #0
+ 124a750:	d1f8      	bne.n	124a744 <PhotoTransferPacket::read(BinaryStream&)+0xc8>
+ 124a752:	f3bf 8f5b 	dmb	ish
+ 124a756:	e016      	b.n	124a786 <PhotoTransferPacket::read(BinaryStream&)+0x10a>
+ 124a758:	6811      	ldr	r1, [r2, #0]
+ 124a75a:	1e4b      	subs	r3, r1, #1
+ 124a75c:	6013      	str	r3, [r2, #0]
+ 124a75e:	2900      	cmp	r1, #0
+ 124a760:	bfdc      	itt	le
+ 124a762:	f10d 010c 	addle.w	r1, sp, #12
+ 124a766:	f3a9 d48b 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 124a76a:	e79c      	b.n	124a6a6 <PhotoTransferPacket::read(BinaryStream&)+0x2a>
+ 124a76c:	6811      	ldr	r1, [r2, #0]
+ 124a76e:	1e4b      	subs	r3, r1, #1
+ 124a770:	6013      	str	r3, [r2, #0]
+ 124a772:	2900      	cmp	r1, #0
+ 124a774:	bfdc      	itt	le
+ 124a776:	f10d 010c 	addle.w	r1, sp, #12
+ 124a77a:	f3a9 d481 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 124a77e:	e7a4      	b.n	124a6ca <PhotoTransferPacket::read(BinaryStream&)+0x4e>
+ 124a780:	6811      	ldr	r1, [r2, #0]
+ 124a782:	1e4b      	subs	r3, r1, #1
+ 124a784:	6013      	str	r3, [r2, #0]
+ 124a786:	2900      	cmp	r1, #0
+ 124a788:	bfdc      	itt	le
+ 124a78a:	f10d 010c 	addle.w	r1, sp, #12
+ 124a78e:	f3a9 d477 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 124a792:	e7ac      	b.n	124a6ee <PhotoTransferPacket::read(BinaryStream&)+0x72>
+ 124a794:	4a2d      	ldr	r2, [pc, #180]	; (124a84c <PhotoTransferPacket::read(BinaryStream&)+0x1d0>)
+ 124a796:	4604      	mov	r4, r0
+ 124a798:	9902      	ldr	r1, [sp, #8]
+ 124a79a:	447a      	add	r2, pc
+ 124a79c:	f1a1 000c 	sub.w	r0, r1, #12
+ 124a7a0:	6812      	ldr	r2, [r2, #0]
+ 124a7a2:	4290      	cmp	r0, r2
+ 124a7a4:	d04a      	beq.n	124a83c <PhotoTransferPacket::read(BinaryStream&)+0x1c0>
+ 124a7a6:	4a2a      	ldr	r2, [pc, #168]	; (124a850 <PhotoTransferPacket::read(BinaryStream&)+0x1d4>)
+ 124a7a8:	447a      	add	r2, pc
+ 124a7aa:	6813      	ldr	r3, [r2, #0]
+ 124a7ac:	1f0a      	subs	r2, r1, #4
+ 124a7ae:	2b00      	cmp	r3, #0
+ 124a7b0:	d047      	beq.n	124a842 <PhotoTransferPacket::read(BinaryStream&)+0x1c6>
+ 124a7b2:	f3bf 8f5b 	dmb	ish
+ 124a7b6:	e852 1f00 	ldrex	r1, [r2]
+ 124a7ba:	1e4b      	subs	r3, r1, #1
+ 124a7bc:	e842 3600 	strex	r6, r3, [r2]
+ 124a7c0:	2e00      	cmp	r6, #0
+ 124a7c2:	d1f8      	bne.n	124a7b6 <PhotoTransferPacket::read(BinaryStream&)+0x13a>
+ 124a7c4:	f3bf 8f5b 	dmb	ish
+ 124a7c8:	e032      	b.n	124a830 <PhotoTransferPacket::read(BinaryStream&)+0x1b4>
+ 124a7ca:	4a24      	ldr	r2, [pc, #144]	; (124a85c <PhotoTransferPacket::read(BinaryStream&)+0x1e0>)
+ 124a7cc:	4604      	mov	r4, r0
+ 124a7ce:	9901      	ldr	r1, [sp, #4]
+ 124a7d0:	447a      	add	r2, pc
+ 124a7d2:	f1a1 000c 	sub.w	r0, r1, #12
+ 124a7d6:	6812      	ldr	r2, [r2, #0]
+ 124a7d8:	4290      	cmp	r0, r2
+ 124a7da:	d02f      	beq.n	124a83c <PhotoTransferPacket::read(BinaryStream&)+0x1c0>
+ 124a7dc:	4a20      	ldr	r2, [pc, #128]	; (124a860 <PhotoTransferPacket::read(BinaryStream&)+0x1e4>)
+ 124a7de:	447a      	add	r2, pc
+ 124a7e0:	6813      	ldr	r3, [r2, #0]
+ 124a7e2:	1f0a      	subs	r2, r1, #4
+ 124a7e4:	b36b      	cbz	r3, 124a842 <PhotoTransferPacket::read(BinaryStream&)+0x1c6>
+ 124a7e6:	f3bf 8f5b 	dmb	ish
+ 124a7ea:	e852 1f00 	ldrex	r1, [r2]
+ 124a7ee:	1e4b      	subs	r3, r1, #1
+ 124a7f0:	e842 3600 	strex	r6, r3, [r2]
+ 124a7f4:	2e00      	cmp	r6, #0
+ 124a7f6:	d1f8      	bne.n	124a7ea <PhotoTransferPacket::read(BinaryStream&)+0x16e>
+ 124a7f8:	f3bf 8f5b 	dmb	ish
+ 124a7fc:	e018      	b.n	124a830 <PhotoTransferPacket::read(BinaryStream&)+0x1b4>
+ 124a7fe:	4a1b      	ldr	r2, [pc, #108]	; (124a86c <PhotoTransferPacket::read(BinaryStream&)+0x1f0>)
+ 124a800:	4604      	mov	r4, r0
+ 124a802:	9900      	ldr	r1, [sp, #0]
+ 124a804:	447a      	add	r2, pc
+ 124a806:	f1a1 000c 	sub.w	r0, r1, #12
+ 124a80a:	6812      	ldr	r2, [r2, #0]
+ 124a80c:	4290      	cmp	r0, r2
+ 124a80e:	d015      	beq.n	124a83c <PhotoTransferPacket::read(BinaryStream&)+0x1c0>
+ 124a810:	4a17      	ldr	r2, [pc, #92]	; (124a870 <PhotoTransferPacket::read(BinaryStream&)+0x1f4>)
+ 124a812:	447a      	add	r2, pc
+ 124a814:	6813      	ldr	r3, [r2, #0]
+ 124a816:	1f0a      	subs	r2, r1, #4
+ 124a818:	b19b      	cbz	r3, 124a842 <PhotoTransferPacket::read(BinaryStream&)+0x1c6>
+ 124a81a:	f3bf 8f5b 	dmb	ish
+ 124a81e:	e852 1f00 	ldrex	r1, [r2]
+ 124a822:	1e4b      	subs	r3, r1, #1
+ 124a824:	e842 3600 	strex	r6, r3, [r2]
+ 124a828:	2e00      	cmp	r6, #0
+ 124a82a:	d1f8      	bne.n	124a81e <PhotoTransferPacket::read(BinaryStream&)+0x1a2>
+ 124a82c:	f3bf 8f5b 	dmb	ish
+ 124a830:	2900      	cmp	r1, #0
+ 124a832:	bfdc      	itt	le
+ 124a834:	f10d 010c 	addle.w	r1, sp, #12
+ 124a838:	f3a9 d422 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 124a83c:	4620      	mov	r0, r4
+ 124a83e:	f6bb cc34 	blx	9060a8 <_Unwind_Resume@plt>
+ 124a842:	6811      	ldr	r1, [r2, #0]
+ 124a844:	1e4b      	subs	r3, r1, #1
+ 124a846:	6013      	str	r3, [r2, #0]
+ 124a848:	e7f2      	b.n	124a830 <PhotoTransferPacket::read(BinaryStream&)+0x1b4>
+ 124a84a:	bf00      	nop
+ 124a84c:	a732      	add	r7, pc, #200	; (adr r7, 124a918 <std::default_delete<SyncedPhotoView>::operator()(SyncedPhotoView*) const+0x8c>)
+ 124a84e:	0155      	lsls	r5, r2, #5
+ 124a850:	a728      	add	r7, pc, #160	; (adr r7, 124a8f4 <std::default_delete<SyncedPhotoView>::operator()(SyncedPhotoView*) const+0x68>)
+ 124a852:	0155      	lsls	r5, r2, #5
+ 124a854:	a832      	add	r0, sp, #200	; 0xc8
+ 124a856:	0155      	lsls	r5, r2, #5
+ 124a858:	a7dc      	add	r7, pc, #880	; (adr r7, 124abcc <std::pair<std::__detail::_Node_iterator<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, false, true>, bool> std::_Hashtable<std::string, std::pair<std::string const, SyncedPhotoView::PhotoStatus>, std::allocator<std::pair<std::string const, SyncedPhotoView::PhotoStatus> >, std::__detail::_Select1st, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_insert<std::pair<std::string const, SyncedPhotoView::PhotoStatus> const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, true> > > >(std::pair<std::string const, SyncedPhotoView::PhotoStatus> const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, true> > > const&, std::integral_constant<bool, true>)+0x6>)
+ 124a85a:	0155      	lsls	r5, r2, #5
+ 124a85c:	a6fc      	add	r6, pc, #1008	; (adr r6, 124ac50 <std::pair<std::__detail::_Node_iterator<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, false, true>, bool> std::_Hashtable<std::string, std::pair<std::string const, SyncedPhotoView::PhotoStatus>, std::allocator<std::pair<std::string const, SyncedPhotoView::PhotoStatus> >, std::__detail::_Select1st, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_insert<std::pair<std::string const, SyncedPhotoView::PhotoStatus> const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, true> > > >(std::pair<std::string const, SyncedPhotoView::PhotoStatus> const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, true> > > const&, std::integral_constant<bool, true>)+0x8a>)
+ 124a85e:	0155      	lsls	r5, r2, #5
+ 124a860:	a6f2      	add	r6, pc, #968	; (adr r6, 124ac2c <std::pair<std::__detail::_Node_iterator<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, false, true>, bool> std::_Hashtable<std::string, std::pair<std::string const, SyncedPhotoView::PhotoStatus>, std::allocator<std::pair<std::string const, SyncedPhotoView::PhotoStatus> >, std::__detail::_Select1st, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_insert<std::pair<std::string const, SyncedPhotoView::PhotoStatus> const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, true> > > >(std::pair<std::string const, SyncedPhotoView::PhotoStatus> const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, true> > > const&, std::integral_constant<bool, true>)+0x66>)
+ 124a862:	0155      	lsls	r5, r2, #5
+ 124a864:	a80e      	add	r0, sp, #56	; 0x38
+ 124a866:	0155      	lsls	r5, r2, #5
+ 124a868:	a7ba      	add	r7, pc, #744	; (adr r7, 124ab54 <std::_Hashtable<std::string, std::pair<std::string const, SyncedPhotoView::PhotoStatus>, std::allocator<std::pair<std::string const, SyncedPhotoView::PhotoStatus> >, std::__detail::_Select1st, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::find(std::string const&)+0x10>)
+ 124a86a:	0155      	lsls	r5, r2, #5
+ 124a86c:	a6c8      	add	r6, pc, #800	; (adr r6, 124ab90 <std::_Hashtable<std::string, std::pair<std::string const, SyncedPhotoView::PhotoStatus>, std::allocator<std::pair<std::string const, SyncedPhotoView::PhotoStatus> >, std::__detail::_Select1st, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::find(std::string const&)+0x4c>)
+ 124a86e:	0155      	lsls	r5, r2, #5
+ 124a870:	a6be      	add	r6, pc, #760	; (adr r6, 124ab6c <std::_Hashtable<std::string, std::pair<std::string const, SyncedPhotoView::PhotoStatus>, std::allocator<std::pair<std::string const, SyncedPhotoView::PhotoStatus> >, std::__detail::_Select1st, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::find(std::string const&)+0x28>)
+ 124a872:	0155      	lsls	r5, r2, #5
+ 124a874:	a7ea      	add	r7, pc, #936	; (adr r7, 124ac20 <std::pair<std::__detail::_Node_iterator<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, false, true>, bool> std::_Hashtable<std::string, std::pair<std::string const, SyncedPhotoView::PhotoStatus>, std::allocator<std::pair<std::string const, SyncedPhotoView::PhotoStatus> >, std::__detail::_Select1st, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<true, false, true> >::_M_insert<std::pair<std::string const, SyncedPhotoView::PhotoStatus> const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, true> > > >(std::pair<std::string const, SyncedPhotoView::PhotoStatus> const&, std::__detail::_AllocNode<std::allocator<std::__detail::_Hash_node<std::pair<std::string const, SyncedPhotoView::PhotoStatus>, true> > > const&, std::integral_constant<bool, true>)+0x5a>)
+ 124a876:	0155      	lsls	r5, r2, #5
+ 124a878:	a798      	add	r7, pc, #608	; (adr r7, 124aadc <void std::vector<std::string, std::allocator<std::string> >::_M_emplace_back_aux<Core::PathBuffer<Core::StackString<char, 1024u> >&>(Core::PathBuffer<Core::StackString<char, 1024u> >&)+0xe4>)
+ 124a87a:	0155      	lsls	r5, r2, #5

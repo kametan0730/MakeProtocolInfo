@@ -1,0 +1,83 @@
+ 148029c:	b570      	push	{r4, r5, r6, lr}
+ 148029e:	b084      	sub	sp, #16
+ 14802a0:	460c      	mov	r4, r1
+ 14802a2:	4605      	mov	r5, r0
+ 14802a4:	4620      	mov	r0, r4
+ 14802a6:	f494 cdbc 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 14802aa:	ae01      	add	r6, sp, #4
+ 14802ac:	6128      	str	r0, [r5, #16]
+ 14802ae:	4621      	mov	r1, r4
+ 14802b0:	4630      	mov	r0, r6
+ 14802b2:	f486 cee0 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 14802b6:	f105 0014 	add.w	r0, r5, #20
+ 14802ba:	4631      	mov	r1, r6
+ 14802bc:	f172 d514 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 14802c0:	4827      	ldr	r0, [pc, #156]	; (1480360 <ModalFormRequestPacket::read(BinaryStream&)+0xc4>)
+ 14802c2:	9901      	ldr	r1, [sp, #4]
+ 14802c4:	4478      	add	r0, pc
+ 14802c6:	6802      	ldr	r2, [r0, #0]
+ 14802c8:	f1a1 000c 	sub.w	r0, r1, #12
+ 14802cc:	4290      	cmp	r0, r2
+ 14802ce:	d101      	bne.n	14802d4 <ModalFormRequestPacket::read(BinaryStream&)+0x38>
+ 14802d0:	b004      	add	sp, #16
+ 14802d2:	bd70      	pop	{r4, r5, r6, pc}
+ 14802d4:	4a23      	ldr	r2, [pc, #140]	; (1480364 <ModalFormRequestPacket::read(BinaryStream&)+0xc8>)
+ 14802d6:	447a      	add	r2, pc
+ 14802d8:	6813      	ldr	r3, [r2, #0]
+ 14802da:	1f0a      	subs	r2, r1, #4
+ 14802dc:	b15b      	cbz	r3, 14802f6 <ModalFormRequestPacket::read(BinaryStream&)+0x5a>
+ 14802de:	f3bf 8f5b 	dmb	ish
+ 14802e2:	e852 1f00 	ldrex	r1, [r2]
+ 14802e6:	1e4b      	subs	r3, r1, #1
+ 14802e8:	e842 3600 	strex	r6, r3, [r2]
+ 14802ec:	2e00      	cmp	r6, #0
+ 14802ee:	d1f8      	bne.n	14802e2 <ModalFormRequestPacket::read(BinaryStream&)+0x46>
+ 14802f0:	f3bf 8f5b 	dmb	ish
+ 14802f4:	e002      	b.n	14802fc <ModalFormRequestPacket::read(BinaryStream&)+0x60>
+ 14802f6:	6811      	ldr	r1, [r2, #0]
+ 14802f8:	1e4b      	subs	r3, r1, #1
+ 14802fa:	6013      	str	r3, [r2, #0]
+ 14802fc:	2900      	cmp	r1, #0
+ 14802fe:	bfdc      	itt	le
+ 1480300:	f10d 0108 	addle.w	r1, sp, #8
+ 1480304:	f173 d6bc 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1480308:	e7e2      	b.n	14802d0 <ModalFormRequestPacket::read(BinaryStream&)+0x34>
+ 148030a:	4a13      	ldr	r2, [pc, #76]	; (1480358 <ModalFormRequestPacket::read(BinaryStream&)+0xbc>)
+ 148030c:	4604      	mov	r4, r0
+ 148030e:	9901      	ldr	r1, [sp, #4]
+ 1480310:	447a      	add	r2, pc
+ 1480312:	f1a1 000c 	sub.w	r0, r1, #12
+ 1480316:	6812      	ldr	r2, [r2, #0]
+ 1480318:	4290      	cmp	r0, r2
+ 148031a:	d015      	beq.n	1480348 <ModalFormRequestPacket::read(BinaryStream&)+0xac>
+ 148031c:	4a0f      	ldr	r2, [pc, #60]	; (148035c <ModalFormRequestPacket::read(BinaryStream&)+0xc0>)
+ 148031e:	447a      	add	r2, pc
+ 1480320:	6813      	ldr	r3, [r2, #0]
+ 1480322:	1f0a      	subs	r2, r1, #4
+ 1480324:	b19b      	cbz	r3, 148034e <ModalFormRequestPacket::read(BinaryStream&)+0xb2>
+ 1480326:	f3bf 8f5b 	dmb	ish
+ 148032a:	e852 1f00 	ldrex	r1, [r2]
+ 148032e:	1e4b      	subs	r3, r1, #1
+ 1480330:	e842 3600 	strex	r6, r3, [r2]
+ 1480334:	2e00      	cmp	r6, #0
+ 1480336:	d1f8      	bne.n	148032a <ModalFormRequestPacket::read(BinaryStream&)+0x8e>
+ 1480338:	f3bf 8f5b 	dmb	ish
+ 148033c:	2900      	cmp	r1, #0
+ 148033e:	bfdc      	itt	le
+ 1480340:	f10d 010c 	addle.w	r1, sp, #12
+ 1480344:	f173 d69c 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1480348:	4620      	mov	r0, r4
+ 148034a:	f485 ceae 	blx	9060a8 <_Unwind_Resume@plt>
+ 148034e:	6811      	ldr	r1, [r2, #0]
+ 1480350:	1e4b      	subs	r3, r1, #1
+ 1480352:	6013      	str	r3, [r2, #0]
+ 1480354:	e7f2      	b.n	148033c <ModalFormRequestPacket::read(BinaryStream&)+0xa0>
+ 1480356:	bf00      	nop
+ 1480358:	4bbc      	ldr	r3, [pc, #752]	; (148064c <AddBehaviorTreePacket::~AddBehaviorTreePacket()>)
+ 148035a:	0132      	lsls	r2, r6, #4
+ 148035c:	4bb2      	ldr	r3, [pc, #712]	; (1480628 <AddBehaviorTreePacket::read(BinaryStream&)+0xac>)
+ 148035e:	0132      	lsls	r2, r6, #4
+ 1480360:	4c08      	ldr	r4, [pc, #32]	; (1480384 <ServerSettingsResponsePacket::~ServerSettingsResponsePacket()+0xc>)
+ 1480362:	0132      	lsls	r2, r6, #4
+ 1480364:	4bfa      	ldr	r3, [pc, #1000]	; (1480750 <AvailableCommandsPacket::write(BinaryStream&) const+0x4>)
+ 1480366:	0132      	lsls	r2, r6, #4

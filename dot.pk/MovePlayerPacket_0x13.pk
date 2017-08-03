@@ -1,0 +1,50 @@
+  e1dac8:	b5b0      	push	{r4, r5, r7, lr}
+  e1daca:	b084      	sub	sp, #16
+  e1dacc:	4604      	mov	r4, r0
+  e1dace:	4668      	mov	r0, sp
+  e1dad0:	460d      	mov	r5, r1
+  e1dad2:	f701 e516 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  e1dad6:	e9dd 0100 	ldrd	r0, r1, [sp]
+  e1dada:	e9c4 0104 	strd	r0, r1, [r4, #16]
+  e1dade:	4668      	mov	r0, sp
+  e1dae0:	4629      	mov	r1, r5
+  e1dae2:	f701 e526 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  e1dae6:	9800      	ldr	r0, [sp, #0]
+  e1dae8:	4629      	mov	r1, r5
+  e1daea:	61a0      	str	r0, [r4, #24]
+  e1daec:	9801      	ldr	r0, [sp, #4]
+  e1daee:	61e0      	str	r0, [r4, #28]
+  e1daf0:	9802      	ldr	r0, [sp, #8]
+  e1daf2:	6220      	str	r0, [r4, #32]
+  e1daf4:	4668      	mov	r0, sp
+  e1daf6:	f701 e522 	blx	91f53c <Vec2 ReadOnlyBinaryStream::getType<Vec2>()@plt>
+  e1dafa:	e9dd 0100 	ldrd	r0, r1, [sp]
+  e1dafe:	e9c4 0109 	strd	r0, r1, [r4, #36]	; 0x24
+  e1db02:	4628      	mov	r0, r5
+  e1db04:	f6e9 e2bc 	blx	907080 <ReadOnlyBinaryStream::getFloat()@plt>
+  e1db08:	62e0      	str	r0, [r4, #44]	; 0x2c
+  e1db0a:	4628      	mov	r0, r5
+  e1db0c:	f6e9 e276 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+  e1db10:	f884 0030 	strb.w	r0, [r4, #48]	; 0x30
+  e1db14:	4628      	mov	r0, r5
+  e1db16:	f6ee e0d6 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+  e1db1a:	f884 0031 	strb.w	r0, [r4, #49]	; 0x31
+  e1db1e:	4668      	mov	r0, sp
+  e1db20:	4629      	mov	r1, r5
+  e1db22:	f701 e4ee 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+  e1db26:	e9dd 0100 	ldrd	r0, r1, [sp]
+  e1db2a:	e9c4 010e 	strd	r0, r1, [r4, #56]	; 0x38
+  e1db2e:	f894 0030 	ldrb.w	r0, [r4, #48]	; 0x30
+  e1db32:	2802      	cmp	r0, #2
+  e1db34:	d107      	bne.n	e1db46 <MovePlayerPacket::read(BinaryStream&)+0x7e>
+  e1db36:	4628      	mov	r0, r5
+  e1db38:	f701 e506 	blx	91f548 <ReadOnlyBinaryStream::getSignedInt()@plt>
+  e1db3c:	6420      	str	r0, [r4, #64]	; 0x40
+  e1db3e:	4628      	mov	r0, r5
+  e1db40:	f701 e502 	blx	91f548 <ReadOnlyBinaryStream::getSignedInt()@plt>
+  e1db44:	e001      	b.n	e1db4a <MovePlayerPacket::read(BinaryStream&)+0x82>
+  e1db46:	2000      	movs	r0, #0
+  e1db48:	6420      	str	r0, [r4, #64]	; 0x40
+  e1db4a:	6460      	str	r0, [r4, #68]	; 0x44
+  e1db4c:	b004      	add	sp, #16
+  e1db4e:	bdb0      	pop	{r4, r5, r7, pc}

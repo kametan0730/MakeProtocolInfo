@@ -1,0 +1,92 @@
+ 14863f0:	b570      	push	{r4, r5, r6, lr}
+ 14863f2:	b088      	sub	sp, #32
+ 14863f4:	ae01      	add	r6, sp, #4
+ 14863f6:	4604      	mov	r4, r0
+ 14863f8:	460d      	mov	r5, r1
+ 14863fa:	4630      	mov	r0, r6
+ 14863fc:	f480 ce3a 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 1486400:	f104 0010 	add.w	r0, r4, #16
+ 1486404:	4631      	mov	r1, r6
+ 1486406:	f16c d46f 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 148640a:	4834      	ldr	r0, [pc, #208]	; (14864dc <CommandRequestPacket::read(BinaryStream&)+0xec>)
+ 148640c:	9901      	ldr	r1, [sp, #4]
+ 148640e:	4478      	add	r0, pc
+ 1486410:	6802      	ldr	r2, [r0, #0]
+ 1486412:	f1a1 000c 	sub.w	r0, r1, #12
+ 1486416:	4290      	cmp	r0, r2
+ 1486418:	d113      	bne.n	1486442 <CommandRequestPacket::read(BinaryStream&)+0x52>
+ 148641a:	ae02      	add	r6, sp, #8
+ 148641c:	4629      	mov	r1, r5
+ 148641e:	4630      	mov	r0, r6
+ 1486420:	f4c2 caaa 	blx	948978 <CommandOriginData ReadOnlyBinaryStream::getType<CommandOriginData>()@plt>
+ 1486424:	f104 0018 	add.w	r0, r4, #24
+ 1486428:	4631      	mov	r1, r6
+ 148642a:	f4c2 caac 	blx	948984 <CommandOriginData::operator=(CommandOriginData const&)@plt>
+ 148642e:	a802      	add	r0, sp, #8
+ 1486430:	f4c0 ca7c 	blx	94692c <CommandOriginData::~CommandOriginData()@plt>
+ 1486434:	4628      	mov	r0, r5
+ 1486436:	f485 cc46 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+ 148643a:	f884 0028 	strb.w	r0, [r4, #40]	; 0x28
+ 148643e:	b008      	add	sp, #32
+ 1486440:	bd70      	pop	{r4, r5, r6, pc}
+ 1486442:	4a27      	ldr	r2, [pc, #156]	; (14864e0 <CommandRequestPacket::read(BinaryStream&)+0xf0>)
+ 1486444:	447a      	add	r2, pc
+ 1486446:	6813      	ldr	r3, [r2, #0]
+ 1486448:	1f0a      	subs	r2, r1, #4
+ 148644a:	b15b      	cbz	r3, 1486464 <CommandRequestPacket::read(BinaryStream&)+0x74>
+ 148644c:	f3bf 8f5b 	dmb	ish
+ 1486450:	e852 1f00 	ldrex	r1, [r2]
+ 1486454:	1e4b      	subs	r3, r1, #1
+ 1486456:	e842 3600 	strex	r6, r3, [r2]
+ 148645a:	2e00      	cmp	r6, #0
+ 148645c:	d1f8      	bne.n	1486450 <CommandRequestPacket::read(BinaryStream&)+0x60>
+ 148645e:	f3bf 8f5b 	dmb	ish
+ 1486462:	e002      	b.n	148646a <CommandRequestPacket::read(BinaryStream&)+0x7a>
+ 1486464:	6811      	ldr	r1, [r2, #0]
+ 1486466:	1e4b      	subs	r3, r1, #1
+ 1486468:	6013      	str	r3, [r2, #0]
+ 148646a:	2900      	cmp	r1, #0
+ 148646c:	bfdc      	itt	le
+ 148646e:	f10d 011c 	addle.w	r1, sp, #28
+ 1486472:	f16d d605 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1486476:	e7d0      	b.n	148641a <CommandRequestPacket::read(BinaryStream&)+0x2a>
+ 1486478:	4a16      	ldr	r2, [pc, #88]	; (14864d4 <CommandRequestPacket::read(BinaryStream&)+0xe4>)
+ 148647a:	4604      	mov	r4, r0
+ 148647c:	9901      	ldr	r1, [sp, #4]
+ 148647e:	447a      	add	r2, pc
+ 1486480:	f1a1 000c 	sub.w	r0, r1, #12
+ 1486484:	6812      	ldr	r2, [r2, #0]
+ 1486486:	4290      	cmp	r0, r2
+ 1486488:	d015      	beq.n	14864b6 <CommandRequestPacket::read(BinaryStream&)+0xc6>
+ 148648a:	4a13      	ldr	r2, [pc, #76]	; (14864d8 <CommandRequestPacket::read(BinaryStream&)+0xe8>)
+ 148648c:	447a      	add	r2, pc
+ 148648e:	6813      	ldr	r3, [r2, #0]
+ 1486490:	1f0a      	subs	r2, r1, #4
+ 1486492:	b1d3      	cbz	r3, 14864ca <CommandRequestPacket::read(BinaryStream&)+0xda>
+ 1486494:	f3bf 8f5b 	dmb	ish
+ 1486498:	e852 1f00 	ldrex	r1, [r2]
+ 148649c:	1e4b      	subs	r3, r1, #1
+ 148649e:	e842 3600 	strex	r6, r3, [r2]
+ 14864a2:	2e00      	cmp	r6, #0
+ 14864a4:	d1f8      	bne.n	1486498 <CommandRequestPacket::read(BinaryStream&)+0xa8>
+ 14864a6:	f3bf 8f5b 	dmb	ish
+ 14864aa:	2900      	cmp	r1, #0
+ 14864ac:	bfdc      	itt	le
+ 14864ae:	f10d 011c 	addle.w	r1, sp, #28
+ 14864b2:	f16d d5e5 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 14864b6:	4620      	mov	r0, r4
+ 14864b8:	f47f cdf6 	blx	9060a8 <_Unwind_Resume@plt>
+ 14864bc:	4604      	mov	r4, r0
+ 14864be:	a802      	add	r0, sp, #8
+ 14864c0:	f4c0 ca34 	blx	94692c <CommandOriginData::~CommandOriginData()@plt>
+ 14864c4:	4620      	mov	r0, r4
+ 14864c6:	f47f cdf0 	blx	9060a8 <_Unwind_Resume@plt>
+ 14864ca:	6811      	ldr	r1, [r2, #0]
+ 14864cc:	1e4b      	subs	r3, r1, #1
+ 14864ce:	6013      	str	r3, [r2, #0]
+ 14864d0:	e7eb      	b.n	14864aa <CommandRequestPacket::read(BinaryStream&)+0xba>
+ 14864d2:	bf00      	nop
+ 14864d4:	ea4e 0131 	orr.w	r1, lr, r1, rrx
+ 14864d8:	ea44 0131 	orr.w	r1, r4, r1, rrx
+ 14864dc:	eabe 0131 			; <UNDEFINED> instruction: 0xeabe0131
+ 14864e0:	ea8c 0131 	eor.w	r1, ip, r1, rrx

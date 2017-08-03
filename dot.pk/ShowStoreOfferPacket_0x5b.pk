@@ -1,0 +1,81 @@
+ 147fc60:	b570      	push	{r4, r5, r6, lr}
+ 147fc62:	b084      	sub	sp, #16
+ 147fc64:	ae01      	add	r6, sp, #4
+ 147fc66:	4604      	mov	r4, r0
+ 147fc68:	460d      	mov	r5, r1
+ 147fc6a:	4630      	mov	r0, r6
+ 147fc6c:	f487 ca02 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147fc70:	f104 0010 	add.w	r0, r4, #16
+ 147fc74:	4631      	mov	r1, r6
+ 147fc76:	f173 d037 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147fc7a:	4829      	ldr	r0, [pc, #164]	; (147fd20 <ShowStoreOfferPacket::read(BinaryStream&)+0xc0>)
+ 147fc7c:	9901      	ldr	r1, [sp, #4]
+ 147fc7e:	4478      	add	r0, pc
+ 147fc80:	6802      	ldr	r2, [r0, #0]
+ 147fc82:	f1a1 000c 	sub.w	r0, r1, #12
+ 147fc86:	4290      	cmp	r0, r2
+ 147fc88:	d105      	bne.n	147fc96 <ShowStoreOfferPacket::read(BinaryStream&)+0x36>
+ 147fc8a:	4628      	mov	r0, r5
+ 147fc8c:	f48c c81a 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+ 147fc90:	7520      	strb	r0, [r4, #20]
+ 147fc92:	b004      	add	sp, #16
+ 147fc94:	bd70      	pop	{r4, r5, r6, pc}
+ 147fc96:	4a23      	ldr	r2, [pc, #140]	; (147fd24 <ShowStoreOfferPacket::read(BinaryStream&)+0xc4>)
+ 147fc98:	447a      	add	r2, pc
+ 147fc9a:	6813      	ldr	r3, [r2, #0]
+ 147fc9c:	1f0a      	subs	r2, r1, #4
+ 147fc9e:	b15b      	cbz	r3, 147fcb8 <ShowStoreOfferPacket::read(BinaryStream&)+0x58>
+ 147fca0:	f3bf 8f5b 	dmb	ish
+ 147fca4:	e852 1f00 	ldrex	r1, [r2]
+ 147fca8:	1e4b      	subs	r3, r1, #1
+ 147fcaa:	e842 3600 	strex	r6, r3, [r2]
+ 147fcae:	2e00      	cmp	r6, #0
+ 147fcb0:	d1f8      	bne.n	147fca4 <ShowStoreOfferPacket::read(BinaryStream&)+0x44>
+ 147fcb2:	f3bf 8f5b 	dmb	ish
+ 147fcb6:	e002      	b.n	147fcbe <ShowStoreOfferPacket::read(BinaryStream&)+0x5e>
+ 147fcb8:	6811      	ldr	r1, [r2, #0]
+ 147fcba:	1e4b      	subs	r3, r1, #1
+ 147fcbc:	6013      	str	r3, [r2, #0]
+ 147fcbe:	2900      	cmp	r1, #0
+ 147fcc0:	bfdc      	itt	le
+ 147fcc2:	f10d 0108 	addle.w	r1, sp, #8
+ 147fcc6:	f174 d1db 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147fcca:	e7de      	b.n	147fc8a <ShowStoreOfferPacket::read(BinaryStream&)+0x2a>
+ 147fccc:	4a12      	ldr	r2, [pc, #72]	; (147fd18 <ShowStoreOfferPacket::read(BinaryStream&)+0xb8>)
+ 147fcce:	4604      	mov	r4, r0
+ 147fcd0:	9901      	ldr	r1, [sp, #4]
+ 147fcd2:	447a      	add	r2, pc
+ 147fcd4:	f1a1 000c 	sub.w	r0, r1, #12
+ 147fcd8:	6812      	ldr	r2, [r2, #0]
+ 147fcda:	4290      	cmp	r0, r2
+ 147fcdc:	d015      	beq.n	147fd0a <ShowStoreOfferPacket::read(BinaryStream&)+0xaa>
+ 147fcde:	4a0f      	ldr	r2, [pc, #60]	; (147fd1c <ShowStoreOfferPacket::read(BinaryStream&)+0xbc>)
+ 147fce0:	447a      	add	r2, pc
+ 147fce2:	6813      	ldr	r3, [r2, #0]
+ 147fce4:	1f0a      	subs	r2, r1, #4
+ 147fce6:	b19b      	cbz	r3, 147fd10 <ShowStoreOfferPacket::read(BinaryStream&)+0xb0>
+ 147fce8:	f3bf 8f5b 	dmb	ish
+ 147fcec:	e852 1f00 	ldrex	r1, [r2]
+ 147fcf0:	1e4b      	subs	r3, r1, #1
+ 147fcf2:	e842 3600 	strex	r6, r3, [r2]
+ 147fcf6:	2e00      	cmp	r6, #0
+ 147fcf8:	d1f8      	bne.n	147fcec <ShowStoreOfferPacket::read(BinaryStream&)+0x8c>
+ 147fcfa:	f3bf 8f5b 	dmb	ish
+ 147fcfe:	2900      	cmp	r1, #0
+ 147fd00:	bfdc      	itt	le
+ 147fd02:	f10d 010c 	addle.w	r1, sp, #12
+ 147fd06:	f174 d1bb 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147fd0a:	4620      	mov	r0, r4
+ 147fd0c:	f486 c9cc 	blx	9060a8 <_Unwind_Resume@plt>
+ 147fd10:	6811      	ldr	r1, [r2, #0]
+ 147fd12:	1e4b      	subs	r3, r1, #1
+ 147fd14:	6013      	str	r3, [r2, #0]
+ 147fd16:	e7f2      	b.n	147fcfe <ShowStoreOfferPacket::read(BinaryStream&)+0x9e>
+ 147fd18:	51fa      	str	r2, [r7, r7]
+ 147fd1a:	0132      	lsls	r2, r6, #4
+ 147fd1c:	51f0      	str	r0, [r6, r7]
+ 147fd1e:	0132      	lsls	r2, r6, #4
+ 147fd20:	524e      	strh	r6, [r1, r1]
+ 147fd22:	0132      	lsls	r2, r6, #4
+ 147fd24:	5238      	strh	r0, [r7, r0]
+ 147fd26:	0132      	lsls	r2, r6, #4

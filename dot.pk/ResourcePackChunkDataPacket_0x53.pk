@@ -1,0 +1,111 @@
+ 147effc:	b5f0      	push	{r4, r5, r6, r7, lr}
+ 147effe:	b083      	sub	sp, #12
+ 147f000:	466e      	mov	r6, sp
+ 147f002:	4605      	mov	r5, r0
+ 147f004:	4630      	mov	r0, r6
+ 147f006:	460c      	mov	r4, r1
+ 147f008:	f488 c834 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147f00c:	f105 0010 	add.w	r0, r5, #16
+ 147f010:	4631      	mov	r1, r6
+ 147f012:	f173 d669 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147f016:	483b      	ldr	r0, [pc, #236]	; (147f104 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x108>)
+ 147f018:	9900      	ldr	r1, [sp, #0]
+ 147f01a:	4478      	add	r0, pc
+ 147f01c:	6802      	ldr	r2, [r0, #0]
+ 147f01e:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f022:	4290      	cmp	r0, r2
+ 147f024:	d128      	bne.n	147f078 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x7c>
+ 147f026:	4620      	mov	r0, r4
+ 147f028:	f4bf c858 	blx	93e0dc <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+ 147f02c:	6168      	str	r0, [r5, #20]
+ 147f02e:	4620      	mov	r0, r4
+ 147f030:	f4bf c85a 	blx	93e0e8 <ReadOnlyBinaryStream::getUnsignedInt64()@plt>
+ 147f034:	e9c5 0106 	strd	r0, r1, [r5, #24]
+ 147f038:	4620      	mov	r0, r4
+ 147f03a:	f4bf c850 	blx	93e0dc <ReadOnlyBinaryStream::getUnsignedInt()@plt>
+ 147f03e:	462f      	mov	r7, r5
+ 147f040:	4606      	mov	r6, r0
+ 147f042:	f857 0f20 	ldr.w	r0, [r7, #32]!
+ 147f046:	6879      	ldr	r1, [r7, #4]
+ 147f048:	1a09      	subs	r1, r1, r0
+ 147f04a:	428e      	cmp	r6, r1
+ 147f04c:	d904      	bls.n	147f058 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x5c>
+ 147f04e:	1a71      	subs	r1, r6, r1
+ 147f050:	4638      	mov	r0, r7
+ 147f052:	f4a7 cd6c 	blx	926b2c <std::vector<unsigned char, std::allocator<unsigned char> >::_M_default_append(unsigned int)@plt>
+ 147f056:	e002      	b.n	147f05e <ResourcePackChunkDataPacket::read(BinaryStream&)+0x62>
+ 147f058:	bf3c      	itt	cc
+ 147f05a:	4430      	addcc	r0, r6
+ 147f05c:	6268      	strcc	r0, [r5, #36]	; 0x24
+ 147f05e:	2e01      	cmp	r6, #1
+ 147f060:	db08      	blt.n	147f074 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x78>
+ 147f062:	2500      	movs	r5, #0
+ 147f064:	4620      	mov	r0, r4
+ 147f066:	f487 cfca 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147f06a:	6839      	ldr	r1, [r7, #0]
+ 147f06c:	5548      	strb	r0, [r1, r5]
+ 147f06e:	3501      	adds	r5, #1
+ 147f070:	42ae      	cmp	r6, r5
+ 147f072:	d1f7      	bne.n	147f064 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x68>
+ 147f074:	b003      	add	sp, #12
+ 147f076:	bdf0      	pop	{r4, r5, r6, r7, pc}
+ 147f078:	4a23      	ldr	r2, [pc, #140]	; (147f108 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x10c>)
+ 147f07a:	447a      	add	r2, pc
+ 147f07c:	6813      	ldr	r3, [r2, #0]
+ 147f07e:	1f0a      	subs	r2, r1, #4
+ 147f080:	b15b      	cbz	r3, 147f09a <ResourcePackChunkDataPacket::read(BinaryStream&)+0x9e>
+ 147f082:	f3bf 8f5b 	dmb	ish
+ 147f086:	e852 1f00 	ldrex	r1, [r2]
+ 147f08a:	1e4b      	subs	r3, r1, #1
+ 147f08c:	e842 3700 	strex	r7, r3, [r2]
+ 147f090:	2f00      	cmp	r7, #0
+ 147f092:	d1f8      	bne.n	147f086 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x8a>
+ 147f094:	f3bf 8f5b 	dmb	ish
+ 147f098:	e002      	b.n	147f0a0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xa4>
+ 147f09a:	6811      	ldr	r1, [r2, #0]
+ 147f09c:	1e4b      	subs	r3, r1, #1
+ 147f09e:	6013      	str	r3, [r2, #0]
+ 147f0a0:	2900      	cmp	r1, #0
+ 147f0a2:	bfdc      	itt	le
+ 147f0a4:	f10d 0104 	addle.w	r1, sp, #4
+ 147f0a8:	f174 d7ea 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f0ac:	e7bb      	b.n	147f026 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x2a>
+ 147f0ae:	4a13      	ldr	r2, [pc, #76]	; (147f0fc <ResourcePackChunkDataPacket::read(BinaryStream&)+0x100>)
+ 147f0b0:	4604      	mov	r4, r0
+ 147f0b2:	9900      	ldr	r1, [sp, #0]
+ 147f0b4:	447a      	add	r2, pc
+ 147f0b6:	f1a1 000c 	sub.w	r0, r1, #12
+ 147f0ba:	6812      	ldr	r2, [r2, #0]
+ 147f0bc:	4290      	cmp	r0, r2
+ 147f0be:	d015      	beq.n	147f0ec <ResourcePackChunkDataPacket::read(BinaryStream&)+0xf0>
+ 147f0c0:	4a0f      	ldr	r2, [pc, #60]	; (147f100 <ResourcePackChunkDataPacket::read(BinaryStream&)+0x104>)
+ 147f0c2:	447a      	add	r2, pc
+ 147f0c4:	6813      	ldr	r3, [r2, #0]
+ 147f0c6:	1f0a      	subs	r2, r1, #4
+ 147f0c8:	b19b      	cbz	r3, 147f0f2 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xf6>
+ 147f0ca:	f3bf 8f5b 	dmb	ish
+ 147f0ce:	e852 1f00 	ldrex	r1, [r2]
+ 147f0d2:	1e4b      	subs	r3, r1, #1
+ 147f0d4:	e842 3700 	strex	r7, r3, [r2]
+ 147f0d8:	2f00      	cmp	r7, #0
+ 147f0da:	d1f8      	bne.n	147f0ce <ResourcePackChunkDataPacket::read(BinaryStream&)+0xd2>
+ 147f0dc:	f3bf 8f5b 	dmb	ish
+ 147f0e0:	2900      	cmp	r1, #0
+ 147f0e2:	bfdc      	itt	le
+ 147f0e4:	f10d 0108 	addle.w	r1, sp, #8
+ 147f0e8:	f174 d7ca 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147f0ec:	4620      	mov	r0, r4
+ 147f0ee:	f486 cfdc 	blx	9060a8 <_Unwind_Resume@plt>
+ 147f0f2:	6811      	ldr	r1, [r2, #0]
+ 147f0f4:	1e4b      	subs	r3, r1, #1
+ 147f0f6:	6013      	str	r3, [r2, #0]
+ 147f0f8:	e7f2      	b.n	147f0e0 <ResourcePackChunkDataPacket::read(BinaryStream&)+0xe4>
+ 147f0fa:	bf00      	nop
+ 147f0fc:	5e18      	ldrsh	r0, [r3, r0]
+ 147f0fe:	0132      	lsls	r2, r6, #4
+ 147f100:	5e0e      	ldrsh	r6, [r1, r0]
+ 147f102:	0132      	lsls	r2, r6, #4
+ 147f104:	5eb2      	ldrsh	r2, [r6, r2]
+ 147f106:	0132      	lsls	r2, r6, #4
+ 147f108:	5e56      	ldrsh	r6, [r2, r1]
+ 147f10a:	0132      	lsls	r2, r6, #4

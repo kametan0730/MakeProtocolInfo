@@ -1,0 +1,104 @@
+  bf825c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  bf8260:	b085      	sub	sp, #20
+  bf8262:	468b      	mov	fp, r1
+  bf8264:	4606      	mov	r6, r0
+  bf8266:	4658      	mov	r0, fp
+  bf8268:	f50e eec8 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+  bf826c:	f886 0028 	strb.w	r0, [r6, #40]	; 0x28
+  bf8270:	f106 0a10 	add.w	sl, r6, #16
+  bf8274:	69b1      	ldr	r1, [r6, #24]
+  bf8276:	4650      	mov	r0, sl
+  bf8278:	f515 e99c 	blx	90d5b4 <std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_erase(std::_Rb_tree_node<std::string>*)@plt>
+  bf827c:	f106 0014 	add.w	r0, r6, #20
+  bf8280:	2100      	movs	r1, #0
+  bf8282:	e9c6 1006 	strd	r1, r0, [r6, #24]
+  bf8286:	e9c6 0108 	strd	r0, r1, [r6, #32]
+  bf828a:	4658      	mov	r0, fp
+  bf828c:	f515 ee0c 	blx	90dea8 <ReadOnlyBinaryStream::getUnsignedShort()@plt>
+  bf8290:	4606      	mov	r6, r0
+  bf8292:	b3ae      	cbz	r6, bf8300 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xa4>
+  bf8294:	4831      	ldr	r0, [pc, #196]	; (bf835c <ResourcePackClientResponsePacket::read(BinaryStream&)+0x100>)
+  bf8296:	f10d 0804 	add.w	r8, sp, #4
+  bf829a:	2500      	movs	r5, #0
+  bf829c:	46e9      	mov	r9, sp
+  bf829e:	4478      	add	r0, pc
+  bf82a0:	6804      	ldr	r4, [r0, #0]
+  bf82a2:	482f      	ldr	r0, [pc, #188]	; (bf8360 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x104>)
+  bf82a4:	4478      	add	r0, pc
+  bf82a6:	6807      	ldr	r7, [r0, #0]
+  bf82a8:	e019      	b.n	bf82de <ResourcePackClientResponsePacket::read(BinaryStream&)+0x82>
+  bf82aa:	1f0a      	subs	r2, r1, #4
+  bf82ac:	b16f      	cbz	r7, bf82ca <ResourcePackClientResponsePacket::read(BinaryStream&)+0x6e>
+  bf82ae:	46bc      	mov	ip, r7
+  bf82b0:	f3bf 8f5b 	dmb	ish
+  bf82b4:	e852 1f00 	ldrex	r1, [r2]
+  bf82b8:	1e4b      	subs	r3, r1, #1
+  bf82ba:	e842 3700 	strex	r7, r3, [r2]
+  bf82be:	2f00      	cmp	r7, #0
+  bf82c0:	d1f8      	bne.n	bf82b4 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x58>
+  bf82c2:	f3bf 8f5b 	dmb	ish
+  bf82c6:	4667      	mov	r7, ip
+  bf82c8:	e002      	b.n	bf82d0 <ResourcePackClientResponsePacket::read(BinaryStream&)+0x74>
+  bf82ca:	6811      	ldr	r1, [r2, #0]
+  bf82cc:	1e4b      	subs	r3, r1, #1
+  bf82ce:	6013      	str	r3, [r2, #0]
+  bf82d0:	2900      	cmp	r1, #0
+  bf82d2:	bfdc      	itt	le
+  bf82d4:	f10d 010c 	addle.w	r1, sp, #12
+  bf82d8:	f196 e8bc 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  bf82dc:	e00d      	b.n	bf82fa <ResourcePackClientResponsePacket::read(BinaryStream&)+0x9e>
+  bf82de:	4648      	mov	r0, r9
+  bf82e0:	4659      	mov	r1, fp
+  bf82e2:	f50e eec8 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+  bf82e6:	4640      	mov	r0, r8
+  bf82e8:	4651      	mov	r1, sl
+  bf82ea:	464a      	mov	r2, r9
+  bf82ec:	f515 e95c 	blx	90d5a8 <std::pair<std::_Rb_tree_iterator<std::string>, bool> std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, std::less<std::string>, std::allocator<std::string> >::_M_emplace_unique<std::string>(std::string&&)@plt>
+  bf82f0:	9900      	ldr	r1, [sp, #0]
+  bf82f2:	f1a1 000c 	sub.w	r0, r1, #12
+  bf82f6:	42a0      	cmp	r0, r4
+  bf82f8:	d1d7      	bne.n	bf82aa <ResourcePackClientResponsePacket::read(BinaryStream&)+0x4e>
+  bf82fa:	3501      	adds	r5, #1
+  bf82fc:	42b5      	cmp	r5, r6
+  bf82fe:	dbee      	blt.n	bf82de <ResourcePackClientResponsePacket::read(BinaryStream&)+0x82>
+  bf8300:	b005      	add	sp, #20
+  bf8302:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  bf8306:	4a13      	ldr	r2, [pc, #76]	; (bf8354 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xf8>)
+  bf8308:	4604      	mov	r4, r0
+  bf830a:	9900      	ldr	r1, [sp, #0]
+  bf830c:	447a      	add	r2, pc
+  bf830e:	f1a1 000c 	sub.w	r0, r1, #12
+  bf8312:	6812      	ldr	r2, [r2, #0]
+  bf8314:	4290      	cmp	r0, r2
+  bf8316:	d015      	beq.n	bf8344 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xe8>
+  bf8318:	4a0f      	ldr	r2, [pc, #60]	; (bf8358 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xfc>)
+  bf831a:	447a      	add	r2, pc
+  bf831c:	6813      	ldr	r3, [r2, #0]
+  bf831e:	1f0a      	subs	r2, r1, #4
+  bf8320:	b19b      	cbz	r3, bf834a <ResourcePackClientResponsePacket::read(BinaryStream&)+0xee>
+  bf8322:	f3bf 8f5b 	dmb	ish
+  bf8326:	e852 1f00 	ldrex	r1, [r2]
+  bf832a:	1e4b      	subs	r3, r1, #1
+  bf832c:	e842 3700 	strex	r7, r3, [r2]
+  bf8330:	2f00      	cmp	r7, #0
+  bf8332:	d1f8      	bne.n	bf8326 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xca>
+  bf8334:	f3bf 8f5b 	dmb	ish
+  bf8338:	2900      	cmp	r1, #0
+  bf833a:	bfdc      	itt	le
+  bf833c:	f10d 0110 	addle.w	r1, sp, #16
+  bf8340:	f196 e888 	blxle	d8e454 <void __gnu_cxx::new_allocator<TouchGlyphButtonBinding>::construct<TouchGlyphButtonBinding, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool, int, float const&>(TouchGlyphButtonBinding*, char const (&) [10], char const (&) [21], char const (&) [18], ButtonColors const&, int const&, int const&, int const&, int const&, bool&&, int&&, float const&)+0x29c>
+  bf8344:	4620      	mov	r0, r4
+  bf8346:	f50d eeb0 	blx	9060a8 <_Unwind_Resume@plt>
+  bf834a:	6811      	ldr	r1, [r2, #0]
+  bf834c:	1e4b      	subs	r3, r1, #1
+  bf834e:	6013      	str	r3, [r2, #0]
+  bf8350:	e7f2      	b.n	bf8338 <ResourcePackClientResponsePacket::read(BinaryStream&)+0xdc>
+  bf8352:	bf00      	nop
+  bf8354:	cbc0      	ldmia	r3!, {r6, r7}
+  bf8356:	01ba      	lsls	r2, r7, #6
+  bf8358:	cbb6      	ldmia	r3!, {r1, r2, r4, r5, r7}
+  bf835a:	01ba      	lsls	r2, r7, #6
+  bf835c:	cc2e      	ldmia	r4!, {r1, r2, r3, r5}
+  bf835e:	01ba      	lsls	r2, r7, #6
+  bf8360:	cc2c      	ldmia	r4!, {r2, r3, r5}
+  bf8362:	01ba      	lsls	r2, r7, #6

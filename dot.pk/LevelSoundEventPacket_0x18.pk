@@ -1,0 +1,30 @@
+  e1e7d0:	b5b0      	push	{r4, r5, r7, lr}
+  e1e7d2:	b084      	sub	sp, #16
+  e1e7d4:	460d      	mov	r5, r1
+  e1e7d6:	4604      	mov	r4, r0
+  e1e7d8:	4628      	mov	r0, r5
+  e1e7da:	f6e8 e410 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+  e1e7de:	7360      	strb	r0, [r4, #13]
+  e1e7e0:	a801      	add	r0, sp, #4
+  e1e7e2:	4629      	mov	r1, r5
+  e1e7e4:	f700 e6a4 	blx	91f530 <Vec3 ReadOnlyBinaryStream::getType<Vec3>()@plt>
+  e1e7e8:	9801      	ldr	r0, [sp, #4]
+  e1e7ea:	6120      	str	r0, [r4, #16]
+  e1e7ec:	9802      	ldr	r0, [sp, #8]
+  e1e7ee:	6160      	str	r0, [r4, #20]
+  e1e7f0:	9803      	ldr	r0, [sp, #12]
+  e1e7f2:	61a0      	str	r0, [r4, #24]
+  e1e7f4:	4628      	mov	r0, r5
+  e1e7f6:	f6e8 e456 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  e1e7fa:	61e0      	str	r0, [r4, #28]
+  e1e7fc:	4628      	mov	r0, r5
+  e1e7fe:	f6e8 e452 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+  e1e802:	6220      	str	r0, [r4, #32]
+  e1e804:	4628      	mov	r0, r5
+  e1e806:	f6ed e25e 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+  e1e80a:	f884 0024 	strb.w	r0, [r4, #36]	; 0x24
+  e1e80e:	4628      	mov	r0, r5
+  e1e810:	f6ed e258 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+  e1e814:	f884 0025 	strb.w	r0, [r4, #37]	; 0x25
+  e1e818:	b004      	add	sp, #16
+  e1e81a:	bdb0      	pop	{r4, r5, r7, pc}

@@ -1,0 +1,45 @@
+ 147d264:	b5b0      	push	{r4, r5, r7, lr}
+ 147d266:	b084      	sub	sp, #16
+ 147d268:	4604      	mov	r4, r0
+ 147d26a:	a801      	add	r0, sp, #4
+ 147d26c:	460d      	mov	r5, r1
+ 147d26e:	f4a2 c996 	blx	91f59c <NetworkBlockPosition ReadOnlyBinaryStream::getType<NetworkBlockPosition>()@plt>
+ 147d272:	4815      	ldr	r0, [pc, #84]	; (147d2c8 <BlockEntityDataPacket::read(BinaryStream&)+0x64>)
+ 147d274:	9901      	ldr	r1, [sp, #4]
+ 147d276:	4478      	add	r0, pc
+ 147d278:	6121      	str	r1, [r4, #16]
+ 147d27a:	9902      	ldr	r1, [sp, #8]
+ 147d27c:	6161      	str	r1, [r4, #20]
+ 147d27e:	6800      	ldr	r0, [r0, #0]
+ 147d280:	9903      	ldr	r1, [sp, #12]
+ 147d282:	3008      	adds	r0, #8
+ 147d284:	61a1      	str	r1, [r4, #24]
+ 147d286:	e9cd 0501 	strd	r0, r5, [sp, #4]
+ 147d28a:	a901      	add	r1, sp, #4
+ 147d28c:	4668      	mov	r0, sp
+ 147d28e:	f4ca c8fa 	blx	947484 <NbtIo::read(IDataInput&)@plt>
+ 147d292:	9d00      	ldr	r5, [sp, #0]
+ 147d294:	f104 001c 	add.w	r0, r4, #28
+ 147d298:	4629      	mov	r1, r5
+ 147d29a:	f4ca c8fa 	blx	947490 <CompoundTag::operator=(CompoundTag&&)@plt>
+ 147d29e:	b11d      	cbz	r5, 147d2a8 <BlockEntityDataPacket::read(BinaryStream&)+0x44>
+ 147d2a0:	6828      	ldr	r0, [r5, #0]
+ 147d2a2:	6841      	ldr	r1, [r0, #4]
+ 147d2a4:	4628      	mov	r0, r5
+ 147d2a6:	4788      	blx	r1
+ 147d2a8:	b004      	add	sp, #16
+ 147d2aa:	bdb0      	pop	{r4, r5, r7, pc}
+ 147d2ac:	4604      	mov	r4, r0
+ 147d2ae:	f488 cefc 	blx	9060a8 <_Unwind_Resume@plt>
+ 147d2b2:	4604      	mov	r4, r0
+ 147d2b4:	b11d      	cbz	r5, 147d2be <BlockEntityDataPacket::read(BinaryStream&)+0x5a>
+ 147d2b6:	6828      	ldr	r0, [r5, #0]
+ 147d2b8:	6841      	ldr	r1, [r0, #4]
+ 147d2ba:	4628      	mov	r0, r5
+ 147d2bc:	4788      	blx	r1
+ 147d2be:	2000      	movs	r0, #0
+ 147d2c0:	9000      	str	r0, [sp, #0]
+ 147d2c2:	4620      	mov	r0, r4
+ 147d2c4:	f488 cef0 	blx	9060a8 <_Unwind_Resume@plt>
+ 147d2c8:	8e0e      	ldrh	r6, [r1, #48]	; 0x30
+ 147d2ca:	0132      	lsls	r2, r6, #4

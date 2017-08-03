@@ -1,0 +1,42 @@
+ 147c958:	b5b0      	push	{r4, r5, r7, lr}
+ 147c95a:	b084      	sub	sp, #16
+ 147c95c:	460c      	mov	r4, r1
+ 147c95e:	4605      	mov	r5, r0
+ 147c960:	4620      	mov	r0, r4
+ 147c962:	f498 ca5e 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 147c966:	7368      	strb	r0, [r5, #13]
+ 147c968:	2001      	movs	r0, #1
+ 147c96a:	f489 cba4 	blx	9060b4 <operator new(unsigned int)@plt>
+ 147c96e:	4912      	ldr	r1, [pc, #72]	; (147c9b8 <InventoryContentPacket::read(BinaryStream&)+0x60>)
+ 147c970:	4a12      	ldr	r2, [pc, #72]	; (147c9bc <InventoryContentPacket::read(BinaryStream&)+0x64>)
+ 147c972:	4479      	add	r1, pc
+ 147c974:	9000      	str	r0, [sp, #0]
+ 147c976:	447a      	add	r2, pc
+ 147c978:	6809      	ldr	r1, [r1, #0]
+ 147c97a:	6812      	ldr	r2, [r2, #0]
+ 147c97c:	e9cd 2102 	strd	r2, r1, [sp, #8]
+ 147c980:	f105 0110 	add.w	r1, r5, #16
+ 147c984:	466a      	mov	r2, sp
+ 147c986:	4620      	mov	r0, r4
+ 147c988:	f4c9 ceda 	blx	946740 <void ReadOnlyBinaryStream::readVectorList<ItemInstance>(std::vector<ItemInstance, std::allocator<ItemInstance> >&, std::function<ItemInstance (ReadOnlyBinaryStream&)>&&)@plt>
+ 147c98c:	9b02      	ldr	r3, [sp, #8]
+ 147c98e:	b11b      	cbz	r3, 147c998 <InventoryContentPacket::read(BinaryStream&)+0x40>
+ 147c990:	4668      	mov	r0, sp
+ 147c992:	2203      	movs	r2, #3
+ 147c994:	4601      	mov	r1, r0
+ 147c996:	4798      	blx	r3
+ 147c998:	b004      	add	sp, #16
+ 147c99a:	bdb0      	pop	{r4, r5, r7, pc}
+ 147c99c:	9b02      	ldr	r3, [sp, #8]
+ 147c99e:	4604      	mov	r4, r0
+ 147c9a0:	b11b      	cbz	r3, 147c9aa <InventoryContentPacket::read(BinaryStream&)+0x52>
+ 147c9a2:	4668      	mov	r0, sp
+ 147c9a4:	2203      	movs	r2, #3
+ 147c9a6:	4601      	mov	r1, r0
+ 147c9a8:	4798      	blx	r3
+ 147c9aa:	4620      	mov	r0, r4
+ 147c9ac:	f489 cb7c 	blx	9060a8 <_Unwind_Resume@plt>
+ 147c9b0:	f661 dee2 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147c9b4:	f661 dee0 	bl	ade778 <MinecraftUnitTest::BasicTimerTests::generateTestDataFor_BasicTimerFinished_RepeatIfFinishedWithTimeMoreThanDelay_ReturnsTrueRepeatedly()+0x30>
+ 147c9b8:	f45e 0132 	orrs.w	r1, lr, #11665408	; 0xb20000
+ 147c9bc:	f45e 0132 	orrs.w	r1, lr, #11665408	; 0xb20000

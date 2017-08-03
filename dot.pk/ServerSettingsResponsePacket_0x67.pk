@@ -1,0 +1,83 @@
+ 1480494:	b570      	push	{r4, r5, r6, lr}
+ 1480496:	b084      	sub	sp, #16
+ 1480498:	460c      	mov	r4, r1
+ 148049a:	4605      	mov	r5, r0
+ 148049c:	4620      	mov	r0, r4
+ 148049e:	f494 ccc0 	blx	914e20 <ReadOnlyBinaryStream::getUnsignedVarInt()@plt>
+ 14804a2:	ae01      	add	r6, sp, #4
+ 14804a4:	6128      	str	r0, [r5, #16]
+ 14804a6:	4621      	mov	r1, r4
+ 14804a8:	4630      	mov	r0, r6
+ 14804aa:	f486 cde4 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 14804ae:	f105 0014 	add.w	r0, r5, #20
+ 14804b2:	4631      	mov	r1, r6
+ 14804b4:	f172 d418 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 14804b8:	4827      	ldr	r0, [pc, #156]	; (1480558 <ServerSettingsResponsePacket::read(BinaryStream&)+0xc4>)
+ 14804ba:	9901      	ldr	r1, [sp, #4]
+ 14804bc:	4478      	add	r0, pc
+ 14804be:	6802      	ldr	r2, [r0, #0]
+ 14804c0:	f1a1 000c 	sub.w	r0, r1, #12
+ 14804c4:	4290      	cmp	r0, r2
+ 14804c6:	d101      	bne.n	14804cc <ServerSettingsResponsePacket::read(BinaryStream&)+0x38>
+ 14804c8:	b004      	add	sp, #16
+ 14804ca:	bd70      	pop	{r4, r5, r6, pc}
+ 14804cc:	4a23      	ldr	r2, [pc, #140]	; (148055c <ServerSettingsResponsePacket::read(BinaryStream&)+0xc8>)
+ 14804ce:	447a      	add	r2, pc
+ 14804d0:	6813      	ldr	r3, [r2, #0]
+ 14804d2:	1f0a      	subs	r2, r1, #4
+ 14804d4:	b15b      	cbz	r3, 14804ee <ServerSettingsResponsePacket::read(BinaryStream&)+0x5a>
+ 14804d6:	f3bf 8f5b 	dmb	ish
+ 14804da:	e852 1f00 	ldrex	r1, [r2]
+ 14804de:	1e4b      	subs	r3, r1, #1
+ 14804e0:	e842 3600 	strex	r6, r3, [r2]
+ 14804e4:	2e00      	cmp	r6, #0
+ 14804e6:	d1f8      	bne.n	14804da <ServerSettingsResponsePacket::read(BinaryStream&)+0x46>
+ 14804e8:	f3bf 8f5b 	dmb	ish
+ 14804ec:	e002      	b.n	14804f4 <ServerSettingsResponsePacket::read(BinaryStream&)+0x60>
+ 14804ee:	6811      	ldr	r1, [r2, #0]
+ 14804f0:	1e4b      	subs	r3, r1, #1
+ 14804f2:	6013      	str	r3, [r2, #0]
+ 14804f4:	2900      	cmp	r1, #0
+ 14804f6:	bfdc      	itt	le
+ 14804f8:	f10d 0108 	addle.w	r1, sp, #8
+ 14804fc:	f173 d5c0 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1480500:	e7e2      	b.n	14804c8 <ServerSettingsResponsePacket::read(BinaryStream&)+0x34>
+ 1480502:	4a13      	ldr	r2, [pc, #76]	; (1480550 <ServerSettingsResponsePacket::read(BinaryStream&)+0xbc>)
+ 1480504:	4604      	mov	r4, r0
+ 1480506:	9901      	ldr	r1, [sp, #4]
+ 1480508:	447a      	add	r2, pc
+ 148050a:	f1a1 000c 	sub.w	r0, r1, #12
+ 148050e:	6812      	ldr	r2, [r2, #0]
+ 1480510:	4290      	cmp	r0, r2
+ 1480512:	d015      	beq.n	1480540 <ServerSettingsResponsePacket::read(BinaryStream&)+0xac>
+ 1480514:	4a0f      	ldr	r2, [pc, #60]	; (1480554 <ServerSettingsResponsePacket::read(BinaryStream&)+0xc0>)
+ 1480516:	447a      	add	r2, pc
+ 1480518:	6813      	ldr	r3, [r2, #0]
+ 148051a:	1f0a      	subs	r2, r1, #4
+ 148051c:	b19b      	cbz	r3, 1480546 <ServerSettingsResponsePacket::read(BinaryStream&)+0xb2>
+ 148051e:	f3bf 8f5b 	dmb	ish
+ 1480522:	e852 1f00 	ldrex	r1, [r2]
+ 1480526:	1e4b      	subs	r3, r1, #1
+ 1480528:	e842 3600 	strex	r6, r3, [r2]
+ 148052c:	2e00      	cmp	r6, #0
+ 148052e:	d1f8      	bne.n	1480522 <ServerSettingsResponsePacket::read(BinaryStream&)+0x8e>
+ 1480530:	f3bf 8f5b 	dmb	ish
+ 1480534:	2900      	cmp	r1, #0
+ 1480536:	bfdc      	itt	le
+ 1480538:	f10d 010c 	addle.w	r1, sp, #12
+ 148053c:	f173 d5a0 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1480540:	4620      	mov	r0, r4
+ 1480542:	f485 cdb2 	blx	9060a8 <_Unwind_Resume@plt>
+ 1480546:	6811      	ldr	r1, [r2, #0]
+ 1480548:	1e4b      	subs	r3, r1, #1
+ 148054a:	6013      	str	r3, [r2, #0]
+ 148054c:	e7f2      	b.n	1480534 <ServerSettingsResponsePacket::read(BinaryStream&)+0xa0>
+ 148054e:	bf00      	nop
+ 1480550:	49c4      	ldr	r1, [pc, #784]	; (1480864 <AvailableCommandsPacket::write(BinaryStream&) const+0x118>)
+ 1480552:	0132      	lsls	r2, r6, #4
+ 1480554:	49ba      	ldr	r1, [pc, #744]	; (1480840 <AvailableCommandsPacket::write(BinaryStream&) const+0xf4>)
+ 1480556:	0132      	lsls	r2, r6, #4
+ 1480558:	4a10      	ldr	r2, [pc, #64]	; (148059c <AddBehaviorTreePacket::read(BinaryStream&)+0x20>)
+ 148055a:	0132      	lsls	r2, r6, #4
+ 148055c:	4a02      	ldr	r2, [pc, #8]	; (1480568 <ServerSettingsResponsePacket::handle(NetworkIdentifier const&, NetEventCallback&) const+0x8>)
+ 148055e:	0132      	lsls	r2, r6, #4

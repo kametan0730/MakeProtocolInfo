@@ -1,0 +1,6 @@
+ 147781e:	b510      	push	{r4, lr}
+ 1477820:	4604      	mov	r4, r0
+ 1477822:	4608      	mov	r0, r1
+ 1477824:	f4a4 ce9c 	blx	91c560 <ReadOnlyBinaryStream::getSignedBigEndianInt()@plt>
+ 1477828:	6120      	str	r0, [r4, #16]
+ 147782a:	bd10      	pop	{r4, pc}

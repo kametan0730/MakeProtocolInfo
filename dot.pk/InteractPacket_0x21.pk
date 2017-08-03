@@ -1,0 +1,37 @@
+ 107fa4c:	b5b0      	push	{r4, r5, r7, lr}
+ 107fa4e:	b082      	sub	sp, #8
+ 107fa50:	460d      	mov	r5, r1
+ 107fa52:	4604      	mov	r4, r0
+ 107fa54:	4628      	mov	r0, r5
+ 107fa56:	f487 e2d2 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 107fa5a:	7360      	strb	r0, [r4, #13]
+ 107fa5c:	4668      	mov	r0, sp
+ 107fa5e:	4629      	mov	r1, r5
+ 107fa60:	f49f e54e 	blx	91f500 <EntityRuntimeID ReadOnlyBinaryStream::getType<EntityRuntimeID>()@plt>
+ 107fa64:	e9dd 0100 	ldrd	r0, r1, [sp]
+ 107fa68:	e9c4 0104 	strd	r0, r1, [r4, #16]
+ 107fa6c:	7b60      	ldrb	r0, [r4, #13]
+ 107fa6e:	2804      	cmp	r0, #4
+ 107fa70:	d10b      	bne.n	107fa8a <InteractPacket::read(BinaryStream&)+0x3e>
+ 107fa72:	4628      	mov	r0, r5
+ 107fa74:	f487 e304 	blx	907080 <ReadOnlyBinaryStream::getFloat()@plt>
+ 107fa78:	61a0      	str	r0, [r4, #24]
+ 107fa7a:	4628      	mov	r0, r5
+ 107fa7c:	f487 e300 	blx	907080 <ReadOnlyBinaryStream::getFloat()@plt>
+ 107fa80:	61e0      	str	r0, [r4, #28]
+ 107fa82:	4628      	mov	r0, r5
+ 107fa84:	f487 e2fc 	blx	907080 <ReadOnlyBinaryStream::getFloat()@plt>
+ 107fa88:	e007      	b.n	107fa9a <InteractPacket::read(BinaryStream&)+0x4e>
+ 107fa8a:	4805      	ldr	r0, [pc, #20]	; (107faa0 <InteractPacket::read(BinaryStream&)+0x54>)
+ 107fa8c:	4478      	add	r0, pc
+ 107fa8e:	6800      	ldr	r0, [r0, #0]
+ 107fa90:	6801      	ldr	r1, [r0, #0]
+ 107fa92:	61a1      	str	r1, [r4, #24]
+ 107fa94:	6841      	ldr	r1, [r0, #4]
+ 107fa96:	61e1      	str	r1, [r4, #28]
+ 107fa98:	6880      	ldr	r0, [r0, #8]
+ 107fa9a:	6220      	str	r0, [r4, #32]
+ 107fa9c:	b002      	add	sp, #8
+ 107fa9e:	bdb0      	pop	{r4, r5, r7, pc}
+ 107faa0:	53f0      	strh	r0, [r6, r7]
+ 107faa2:	0172      	lsls	r2, r6, #5
