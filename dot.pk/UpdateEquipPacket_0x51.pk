@@ -1,0 +1,52 @@
+ 147e61c:	b5b0      	push	{r4, r5, r7, lr}
+ 147e61e:	b084      	sub	sp, #16
+ 147e620:	460d      	mov	r5, r1
+ 147e622:	4604      	mov	r4, r0
+ 147e624:	4628      	mov	r0, r5
+ 147e626:	f488 ccea 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147e62a:	7360      	strb	r0, [r4, #13]
+ 147e62c:	4628      	mov	r0, r5
+ 147e62e:	f488 cce6 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147e632:	73a0      	strb	r0, [r4, #14]
+ 147e634:	4628      	mov	r0, r5
+ 147e636:	f488 cd36 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147e63a:	6120      	str	r0, [r4, #16]
+ 147e63c:	a802      	add	r0, sp, #8
+ 147e63e:	4629      	mov	r1, r5
+ 147e640:	f4bf cd5e 	blx	93e100 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+ 147e644:	4814      	ldr	r0, [pc, #80]	; (147e698 <UpdateEquipPacket::read(BinaryStream&)+0x7c>)
+ 147e646:	e9dd 1202 	ldrd	r1, r2, [sp, #8]
+ 147e64a:	4478      	add	r0, pc
+ 147e64c:	e9c4 1206 	strd	r1, r2, [r4, #24]
+ 147e650:	6800      	ldr	r0, [r0, #0]
+ 147e652:	3008      	adds	r0, #8
+ 147e654:	e9cd 0502 	strd	r0, r5, [sp, #8]
+ 147e658:	a801      	add	r0, sp, #4
+ 147e65a:	a902      	add	r1, sp, #8
+ 147e65c:	f4c8 cf12 	blx	947484 <NbtIo::read(IDataInput&)@plt>
+ 147e660:	9d01      	ldr	r5, [sp, #4]
+ 147e662:	f104 0020 	add.w	r0, r4, #32
+ 147e666:	4629      	mov	r1, r5
+ 147e668:	f4c8 cf12 	blx	947490 <CompoundTag::operator=(CompoundTag&&)@plt>
+ 147e66c:	b11d      	cbz	r5, 147e676 <UpdateEquipPacket::read(BinaryStream&)+0x5a>
+ 147e66e:	6828      	ldr	r0, [r5, #0]
+ 147e670:	6841      	ldr	r1, [r0, #4]
+ 147e672:	4628      	mov	r0, r5
+ 147e674:	4788      	blx	r1
+ 147e676:	b004      	add	sp, #16
+ 147e678:	bdb0      	pop	{r4, r5, r7, pc}
+ 147e67a:	4604      	mov	r4, r0
+ 147e67c:	f487 cd14 	blx	9060a8 <_Unwind_Resume@plt>
+ 147e680:	4604      	mov	r4, r0
+ 147e682:	b11d      	cbz	r5, 147e68c <UpdateEquipPacket::read(BinaryStream&)+0x70>
+ 147e684:	6828      	ldr	r0, [r5, #0]
+ 147e686:	6841      	ldr	r1, [r0, #4]
+ 147e688:	4628      	mov	r0, r5
+ 147e68a:	4788      	blx	r1
+ 147e68c:	2000      	movs	r0, #0
+ 147e68e:	9001      	str	r0, [sp, #4]
+ 147e690:	4620      	mov	r0, r4
+ 147e692:	f487 cd0a 	blx	9060a8 <_Unwind_Resume@plt>
+ 147e696:	bf00      	nop
+ 147e698:	7a3a      	ldrb	r2, [r7, #8]
+ 147e69a:	0132      	lsls	r2, r6, #4

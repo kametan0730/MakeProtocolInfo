@@ -1,0 +1,136 @@
+ 147e354:	b570      	push	{r4, r5, r6, lr}
+ 147e356:	b086      	sub	sp, #24
+ 147e358:	460d      	mov	r5, r1
+ 147e35a:	4604      	mov	r4, r0
+ 147e35c:	4628      	mov	r0, r5
+ 147e35e:	f488 ce4e 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147e362:	7360      	strb	r0, [r4, #13]
+ 147e364:	4628      	mov	r0, r5
+ 147e366:	f488 ce4a 	blx	906ffc <ReadOnlyBinaryStream::getByte()@plt>
+ 147e36a:	73a0      	strb	r0, [r4, #14]
+ 147e36c:	4628      	mov	r0, r5
+ 147e36e:	f488 ce9a 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147e372:	6160      	str	r0, [r4, #20]
+ 147e374:	4628      	mov	r0, r5
+ 147e376:	f488 ce96 	blx	9070a4 <ReadOnlyBinaryStream::getVarInt()@plt>
+ 147e37a:	61a0      	str	r0, [r4, #24]
+ 147e37c:	4628      	mov	r0, r5
+ 147e37e:	f48d cca2 	blx	90bcc4 <ReadOnlyBinaryStream::getBool()@plt>
+ 147e382:	7720      	strb	r0, [r4, #28]
+ 147e384:	a804      	add	r0, sp, #16
+ 147e386:	4629      	mov	r1, r5
+ 147e388:	f4bf ceba 	blx	93e100 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+ 147e38c:	e9dd 0104 	ldrd	r0, r1, [sp, #16]
+ 147e390:	e9c4 0108 	strd	r0, r1, [r4, #32]
+ 147e394:	a804      	add	r0, sp, #16
+ 147e396:	4629      	mov	r1, r5
+ 147e398:	f4bf ceb2 	blx	93e100 <EntityUniqueID ReadOnlyBinaryStream::getType<EntityUniqueID>()@plt>
+ 147e39c:	ae03      	add	r6, sp, #12
+ 147e39e:	e9dd 0104 	ldrd	r0, r1, [sp, #16]
+ 147e3a2:	e9c4 010a 	strd	r0, r1, [r4, #40]	; 0x28
+ 147e3a6:	4629      	mov	r1, r5
+ 147e3a8:	4630      	mov	r0, r6
+ 147e3aa:	f488 ce64 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 147e3ae:	f104 0010 	add.w	r0, r4, #16
+ 147e3b2:	4631      	mov	r1, r6
+ 147e3b4:	f174 d498 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 147e3b8:	4838      	ldr	r0, [pc, #224]	; (147e49c <UpdateTradePacket::read(BinaryStream&)+0x148>)
+ 147e3ba:	9903      	ldr	r1, [sp, #12]
+ 147e3bc:	4478      	add	r0, pc
+ 147e3be:	6802      	ldr	r2, [r0, #0]
+ 147e3c0:	f1a1 000c 	sub.w	r0, r1, #12
+ 147e3c4:	4290      	cmp	r0, r2
+ 147e3c6:	d116      	bne.n	147e3f6 <UpdateTradePacket::read(BinaryStream&)+0xa2>
+ 147e3c8:	4836      	ldr	r0, [pc, #216]	; (147e4a4 <UpdateTradePacket::read(BinaryStream&)+0x150>)
+ 147e3ca:	4478      	add	r0, pc
+ 147e3cc:	6800      	ldr	r0, [r0, #0]
+ 147e3ce:	3008      	adds	r0, #8
+ 147e3d0:	e9cd 0501 	strd	r0, r5, [sp, #4]
+ 147e3d4:	a901      	add	r1, sp, #4
+ 147e3d6:	4668      	mov	r0, sp
+ 147e3d8:	f4c9 c854 	blx	947484 <NbtIo::read(IDataInput&)@plt>
+ 147e3dc:	9d00      	ldr	r5, [sp, #0]
+ 147e3de:	f104 0030 	add.w	r0, r4, #48	; 0x30
+ 147e3e2:	4629      	mov	r1, r5
+ 147e3e4:	f4c9 c854 	blx	947490 <CompoundTag::operator=(CompoundTag&&)@plt>
+ 147e3e8:	b11d      	cbz	r5, 147e3f2 <UpdateTradePacket::read(BinaryStream&)+0x9e>
+ 147e3ea:	6828      	ldr	r0, [r5, #0]
+ 147e3ec:	6841      	ldr	r1, [r0, #4]
+ 147e3ee:	4628      	mov	r0, r5
+ 147e3f0:	4788      	blx	r1
+ 147e3f2:	b006      	add	sp, #24
+ 147e3f4:	bd70      	pop	{r4, r5, r6, pc}
+ 147e3f6:	4a2a      	ldr	r2, [pc, #168]	; (147e4a0 <UpdateTradePacket::read(BinaryStream&)+0x14c>)
+ 147e3f8:	447a      	add	r2, pc
+ 147e3fa:	6813      	ldr	r3, [r2, #0]
+ 147e3fc:	1f0a      	subs	r2, r1, #4
+ 147e3fe:	b15b      	cbz	r3, 147e418 <UpdateTradePacket::read(BinaryStream&)+0xc4>
+ 147e400:	f3bf 8f5b 	dmb	ish
+ 147e404:	e852 1f00 	ldrex	r1, [r2]
+ 147e408:	1e4b      	subs	r3, r1, #1
+ 147e40a:	e842 3600 	strex	r6, r3, [r2]
+ 147e40e:	2e00      	cmp	r6, #0
+ 147e410:	d1f8      	bne.n	147e404 <UpdateTradePacket::read(BinaryStream&)+0xb0>
+ 147e412:	f3bf 8f5b 	dmb	ish
+ 147e416:	e002      	b.n	147e41e <UpdateTradePacket::read(BinaryStream&)+0xca>
+ 147e418:	6811      	ldr	r1, [r2, #0]
+ 147e41a:	1e4b      	subs	r3, r1, #1
+ 147e41c:	6013      	str	r3, [r2, #0]
+ 147e41e:	2900      	cmp	r1, #0
+ 147e420:	bfdc      	itt	le
+ 147e422:	f10d 0110 	addle.w	r1, sp, #16
+ 147e426:	f175 d62b 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147e42a:	e7cd      	b.n	147e3c8 <UpdateTradePacket::read(BinaryStream&)+0x74>
+ 147e42c:	4a19      	ldr	r2, [pc, #100]	; (147e494 <UpdateTradePacket::read(BinaryStream&)+0x140>)
+ 147e42e:	4604      	mov	r4, r0
+ 147e430:	9903      	ldr	r1, [sp, #12]
+ 147e432:	447a      	add	r2, pc
+ 147e434:	f1a1 000c 	sub.w	r0, r1, #12
+ 147e438:	6812      	ldr	r2, [r2, #0]
+ 147e43a:	4290      	cmp	r0, r2
+ 147e43c:	d022      	beq.n	147e484 <UpdateTradePacket::read(BinaryStream&)+0x130>
+ 147e43e:	4a16      	ldr	r2, [pc, #88]	; (147e498 <UpdateTradePacket::read(BinaryStream&)+0x144>)
+ 147e440:	447a      	add	r2, pc
+ 147e442:	6813      	ldr	r3, [r2, #0]
+ 147e444:	1f0a      	subs	r2, r1, #4
+ 147e446:	b303      	cbz	r3, 147e48a <UpdateTradePacket::read(BinaryStream&)+0x136>
+ 147e448:	f3bf 8f5b 	dmb	ish
+ 147e44c:	e852 1f00 	ldrex	r1, [r2]
+ 147e450:	1e4b      	subs	r3, r1, #1
+ 147e452:	e842 3600 	strex	r6, r3, [r2]
+ 147e456:	2e00      	cmp	r6, #0
+ 147e458:	d1f8      	bne.n	147e44c <UpdateTradePacket::read(BinaryStream&)+0xf8>
+ 147e45a:	f3bf 8f5b 	dmb	ish
+ 147e45e:	2900      	cmp	r1, #0
+ 147e460:	dc10      	bgt.n	147e484 <UpdateTradePacket::read(BinaryStream&)+0x130>
+ 147e462:	a904      	add	r1, sp, #16
+ 147e464:	f175 d60c 	bl	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 147e468:	4620      	mov	r0, r4
+ 147e46a:	f487 ce1e 	blx	9060a8 <_Unwind_Resume@plt>
+ 147e46e:	4604      	mov	r4, r0
+ 147e470:	f487 ce1a 	blx	9060a8 <_Unwind_Resume@plt>
+ 147e474:	4604      	mov	r4, r0
+ 147e476:	b11d      	cbz	r5, 147e480 <UpdateTradePacket::read(BinaryStream&)+0x12c>
+ 147e478:	6828      	ldr	r0, [r5, #0]
+ 147e47a:	6841      	ldr	r1, [r0, #4]
+ 147e47c:	4628      	mov	r0, r5
+ 147e47e:	4788      	blx	r1
+ 147e480:	2000      	movs	r0, #0
+ 147e482:	9000      	str	r0, [sp, #0]
+ 147e484:	4620      	mov	r0, r4
+ 147e486:	f487 ce10 	blx	9060a8 <_Unwind_Resume@plt>
+ 147e48a:	6811      	ldr	r1, [r2, #0]
+ 147e48c:	1e4b      	subs	r3, r1, #1
+ 147e48e:	6013      	str	r3, [r2, #0]
+ 147e490:	e7e5      	b.n	147e45e <UpdateTradePacket::read(BinaryStream&)+0x10a>
+ 147e492:	bf00      	nop
+ 147e494:	6a9a      	ldr	r2, [r3, #40]	; 0x28
+ 147e496:	0132      	lsls	r2, r6, #4
+ 147e498:	6a90      	ldr	r0, [r2, #40]	; 0x28
+ 147e49a:	0132      	lsls	r2, r6, #4
+ 147e49c:	6b10      	ldr	r0, [r2, #48]	; 0x30
+ 147e49e:	0132      	lsls	r2, r6, #4
+ 147e4a0:	6ad8      	ldr	r0, [r3, #44]	; 0x2c
+ 147e4a2:	0132      	lsls	r2, r6, #4
+ 147e4a4:	7cba      	ldrb	r2, [r7, #18]
+ 147e4a6:	0132      	lsls	r2, r6, #4

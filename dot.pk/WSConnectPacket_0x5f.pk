@@ -1,0 +1,78 @@
+ 14800b0:	b5b0      	push	{r4, r5, r7, lr}
+ 14800b2:	b084      	sub	sp, #16
+ 14800b4:	ad01      	add	r5, sp, #4
+ 14800b6:	4604      	mov	r4, r0
+ 14800b8:	4628      	mov	r0, r5
+ 14800ba:	f486 cfdc 	blx	907074 <ReadOnlyBinaryStream::getString()@plt>
+ 14800be:	f104 0010 	add.w	r0, r4, #16
+ 14800c2:	4629      	mov	r1, r5
+ 14800c4:	f172 d610 	bl	21f2ce8 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x32cd4>
+ 14800c8:	4827      	ldr	r0, [pc, #156]	; (1480168 <WSConnectPacket::read(BinaryStream&)+0xb8>)
+ 14800ca:	9901      	ldr	r1, [sp, #4]
+ 14800cc:	4478      	add	r0, pc
+ 14800ce:	6802      	ldr	r2, [r0, #0]
+ 14800d0:	f1a1 000c 	sub.w	r0, r1, #12
+ 14800d4:	4290      	cmp	r0, r2
+ 14800d6:	d101      	bne.n	14800dc <WSConnectPacket::read(BinaryStream&)+0x2c>
+ 14800d8:	b004      	add	sp, #16
+ 14800da:	bdb0      	pop	{r4, r5, r7, pc}
+ 14800dc:	4a23      	ldr	r2, [pc, #140]	; (148016c <WSConnectPacket::read(BinaryStream&)+0xbc>)
+ 14800de:	447a      	add	r2, pc
+ 14800e0:	6813      	ldr	r3, [r2, #0]
+ 14800e2:	1f0a      	subs	r2, r1, #4
+ 14800e4:	b15b      	cbz	r3, 14800fe <WSConnectPacket::read(BinaryStream&)+0x4e>
+ 14800e6:	f3bf 8f5b 	dmb	ish
+ 14800ea:	e852 1f00 	ldrex	r1, [r2]
+ 14800ee:	1e4b      	subs	r3, r1, #1
+ 14800f0:	e842 3500 	strex	r5, r3, [r2]
+ 14800f4:	2d00      	cmp	r5, #0
+ 14800f6:	d1f8      	bne.n	14800ea <WSConnectPacket::read(BinaryStream&)+0x3a>
+ 14800f8:	f3bf 8f5b 	dmb	ish
+ 14800fc:	e002      	b.n	1480104 <WSConnectPacket::read(BinaryStream&)+0x54>
+ 14800fe:	6811      	ldr	r1, [r2, #0]
+ 1480100:	1e4b      	subs	r3, r1, #1
+ 1480102:	6013      	str	r3, [r2, #0]
+ 1480104:	2900      	cmp	r1, #0
+ 1480106:	bfdc      	itt	le
+ 1480108:	f10d 0108 	addle.w	r1, sp, #8
+ 148010c:	f173 d7b8 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1480110:	e7e2      	b.n	14800d8 <WSConnectPacket::read(BinaryStream&)+0x28>
+ 1480112:	4a13      	ldr	r2, [pc, #76]	; (1480160 <WSConnectPacket::read(BinaryStream&)+0xb0>)
+ 1480114:	4604      	mov	r4, r0
+ 1480116:	9901      	ldr	r1, [sp, #4]
+ 1480118:	447a      	add	r2, pc
+ 148011a:	f1a1 000c 	sub.w	r0, r1, #12
+ 148011e:	6812      	ldr	r2, [r2, #0]
+ 1480120:	4290      	cmp	r0, r2
+ 1480122:	d015      	beq.n	1480150 <WSConnectPacket::read(BinaryStream&)+0xa0>
+ 1480124:	4a0f      	ldr	r2, [pc, #60]	; (1480164 <WSConnectPacket::read(BinaryStream&)+0xb4>)
+ 1480126:	447a      	add	r2, pc
+ 1480128:	6813      	ldr	r3, [r2, #0]
+ 148012a:	1f0a      	subs	r2, r1, #4
+ 148012c:	b19b      	cbz	r3, 1480156 <WSConnectPacket::read(BinaryStream&)+0xa6>
+ 148012e:	f3bf 8f5b 	dmb	ish
+ 1480132:	e852 1f00 	ldrex	r1, [r2]
+ 1480136:	1e4b      	subs	r3, r1, #1
+ 1480138:	e842 3500 	strex	r5, r3, [r2]
+ 148013c:	2d00      	cmp	r5, #0
+ 148013e:	d1f8      	bne.n	1480132 <WSConnectPacket::read(BinaryStream&)+0x82>
+ 1480140:	f3bf 8f5b 	dmb	ish
+ 1480144:	2900      	cmp	r1, #0
+ 1480146:	bfdc      	itt	le
+ 1480148:	f10d 010c 	addle.w	r1, sp, #12
+ 148014c:	f173 d798 	blle	21f4080 <__cxxabiv1::__vmi_class_type_info::__do_upcast(__cxxabiv1::__class_type_info const*, void const*, __cxxabiv1::__class_type_info::__upcast_result&) const+0x3406c>
+ 1480150:	4620      	mov	r0, r4
+ 1480152:	f485 cfaa 	blx	9060a8 <_Unwind_Resume@plt>
+ 1480156:	6811      	ldr	r1, [r2, #0]
+ 1480158:	1e4b      	subs	r3, r1, #1
+ 148015a:	6013      	str	r3, [r2, #0]
+ 148015c:	e7f2      	b.n	1480144 <WSConnectPacket::read(BinaryStream&)+0x94>
+ 148015e:	bf00      	nop
+ 1480160:	4db4      	ldr	r5, [pc, #720]	; (1480434 <ServerSettingsResponsePacket::~ServerSettingsResponsePacket()+0x4c>)
+ 1480162:	0132      	lsls	r2, r6, #4
+ 1480164:	4daa      	ldr	r5, [pc, #680]	; (1480410 <ServerSettingsResponsePacket::~ServerSettingsResponsePacket()+0x28>)
+ 1480166:	0132      	lsls	r2, r6, #4
+ 1480168:	4e00      	ldr	r6, [pc, #0]	; (148016c <WSConnectPacket::read(BinaryStream&)+0xbc>)
+ 148016a:	0132      	lsls	r2, r6, #4
+ 148016c:	4df2      	ldr	r5, [pc, #968]	; (1480538 <ServerSettingsResponsePacket::read(BinaryStream&)+0xa4>)
+ 148016e:	0132      	lsls	r2, r6, #4
